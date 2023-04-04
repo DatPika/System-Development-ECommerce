@@ -1,0 +1,10 @@
+Feature: (Name)
+  (Description)
+
+  Scenario: (User Story)
+  	Given (Context)
+    And (Optional ...)
+  	When (Condition)
+  	And (Optional ...)
+  	Then (Result)
+    And (Optional ...)
