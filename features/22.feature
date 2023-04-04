@@ -1,7 +1,7 @@
 Feature: (Name)
   (Description)
 
-  Scenario: (User Story)
+  Scenario: (Title of Scenario)
   	Given (Context)
     And (Optional ...)
   	When (Condition)
