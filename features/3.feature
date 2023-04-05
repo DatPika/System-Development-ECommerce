@@ -4,9 +4,9 @@ Feature: Deleting in Trip Table
   I need to be able to select the record to delete and press the Delete Button
 
   Scenario: Removing a valid trip record 
-  	Given I added a trip record
+  	Given I have multiple trip records
     And I am on the Delete Trip Record Page
-  	When I select a record from the trip table
+  	When I select 2 recent records from the trip table
     And I press on the "Delete" Button
     And I press on the "Confirm" Button
   	Then I see the Main page
