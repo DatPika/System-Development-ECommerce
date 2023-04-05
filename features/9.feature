@@ -1,5 +1,5 @@
 Feature: Add in Expense Table
-  In order to add Expense records to the database
+  In order to add Expense records in the database
   As a user
   I need to be able to input data in the text fields and press the "Add Record" button
 

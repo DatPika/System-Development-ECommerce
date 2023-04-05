@@ -1,5 +1,5 @@
 Feature: Edit in Expense Table
-  In order to edit Expense records to the database
+  In order to edit Expense records in the database
   As a user
   I need to be able to edit data in the text fields and press the "Edit Record" button
 
