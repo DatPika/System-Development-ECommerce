@@ -12,4 +12,4 @@ Feature: Adding in Trip Table
     And I input (Ask daniel for project name/id)
   	And I press on the "Add" Button
   	Then I see the Main Page
-    And I should be able to see that the record was added in the trip table
+    And I should be able to see that the record was created in the trip table when looking in the view trip table page

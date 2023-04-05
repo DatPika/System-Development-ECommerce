@@ -13,4 +13,4 @@ Feature: Editing in Trip Table
     And I change the (Ask daniel for project name/id)
     And I press on the "Save" Button
   	Then I see the Main page
-    And I should be able to see that the record was modified in the trip table
+    And I should be able to see that the chosen record was modified in the trip table when looking in the view trip table page
