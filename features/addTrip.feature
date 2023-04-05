@@ -1,6 +1,6 @@
 Feature: Adding in Trip Table
   In order to add a record in the trip Table
-  As an user
+  As a user
   I need to be able to input data in the fields and press the Add Button 
 
   Scenario: Adding a valid trip record

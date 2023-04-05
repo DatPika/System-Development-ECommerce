@@ -1,6 +1,6 @@
 Feature: View Trip Table
   In order to see the view trip table page
-  As an user
+  As a user
   I need to be able to press the View Trip Button
 
   Scenario: Viewing the trip table page

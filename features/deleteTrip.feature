@@ -1,6 +1,6 @@
 Feature: Deleting in Trip Table
   In order to delete a record in the trip Table
-  As an user
+  As a user
   I need to be able to select the record to delete and press the Delete Button
 
   Scenario: Removing a valid trip record 

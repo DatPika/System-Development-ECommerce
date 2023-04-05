@@ -1,6 +1,6 @@
 Feature: Editing in Trip Table
   In order to edit a record in the trip Table
-  As an user
+  As a user
   I need to be able to change the data in the fields and press the Save Button
 
   Scenario: Changing a valid trip record
