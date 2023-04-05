@@ -6,8 +6,8 @@ Feature: Delete in Expense Table
   Scenario: The user wants to delete multiple Expense records
     Given I am logged in
     And I am on the delete Expense record page
-    When I select 3 records from the Expense table 
+    When I select the first 3 records from the Expense table 
     And I press on the "Delete" button
     And I press on the "Confirm" button
-    Then the 3 Expense records should be deleted
+    Then the first 3 Expense records should be deleted
     And I see the Expanse table

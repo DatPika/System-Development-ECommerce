@@ -1,5 +1,5 @@
-Feature: Add supplier autofill option
-  In order to add supplier autofill options
+Feature: Add Supplier autofill option
+  In order to add Supplier autofill options
   As a user
   I need to be able to input data in the text fields and press the "Add Supplier" button
 

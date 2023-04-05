@@ -5,7 +5,7 @@ Feature: Add in Expense Table
 
   Scenario: The user wants to add an Expense record with the supplier autofill feature
     Given I am logged in
-    And I am on the add record page
+    And I am on the add Expense record page
     When I click "Chris Paul" from the suggested list
     And I input "PVC Film" in "details/information"
     And I input "200" in "amount"
@@ -15,7 +15,7 @@ Feature: Add in Expense Table
 
   Scenario: The user wants to add an Expense record without the supplier autofill feature
     Given I am logged in
-    And I am on the add record page
+    And I am on the add Expense record page
     When I input "Devin Booker" in "name"
     And I input "PVC Film" in "details/information"
     And I input "200" in "amount"
