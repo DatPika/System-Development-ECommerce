@@ -4,12 +4,14 @@ Feature: Adding in Trip Table
   I need to be able to input data in the text fields and press the Add Button 
 
   Scenario: Adding a valid trip record
-  	Given I am on the Add Trip Record page
+  	Given I have a project record
+    And I have a client record
+    And I am on the Add Trip Record page
   	When I input "120.75" in "distance"
-    And I input "Yes" in "estimation"
+    And I input "No" in "estimation"
     And I input "Bob" in "client_name"
-    And I input "4/4/2023" in "date" (idk if it will be current date or custom date)
-    And I input (Ask daniel for project name/id)
-  	And I press on the "Add" Button
+    And I input "4/4/2023" in "date"
+    And I input "1" in "project_id"
+  	And I press on the Add Button
   	Then I see the Main Page
     And I should be able to see that the record was created in the trip table when looking in the view trip table page
