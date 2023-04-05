@@ -4,7 +4,6 @@ Feature: View Expense Table
   I need to be able to select the "Edit/View Expense" button
 
   Scenario: The user wants to view the Expense table
-    Given I am logged in
-    And I am on the home page
+    Given I am on the home page
     When I click the "Edit/View Expense" button
     Then I see the Expense table

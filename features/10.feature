@@ -4,8 +4,7 @@ Feature: Edit in Expense Table
   I need to be able to edit data in the text fields and press the "Edit Record" button
 
   Scenario: The user wants to edit an Expense record with the supplier autofill feature
-    Given I am logged in
-    And I am on the edit Expense record page
+    Given I am on the edit Expense record page
     When I click "Kevin Durant" from the suggested list
     And I change the "details/information" value to "White Paint"  
     And I change the "amount" value to "200"

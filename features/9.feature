@@ -4,8 +4,7 @@ Feature: Add in Expense Table
   I need to be able to input data in the text fields and press the "Add Record" button
 
   Scenario: The user wants to add an Expense record with the supplier autofill feature
-    Given I am logged in
-    And I am on the add Expense record page
+    Given I am on the add Expense record page
     When I click "Chris Paul" from the suggested list
     And I input "PVC Film" in "details/information"
     And I input "200" in "amount"

@@ -4,8 +4,7 @@ Feature: Delete Supplier autofill option
   I need to be able to select the supplier(s) to be delete and press the "Delete Supplier(s)" button
 
   Scenario: The user wants to delete the first Supplier autofill options
-    Given I am logged in
-    And I am on the delete Supplier autofill option
+    Given I am on the delete Supplier autofill option
     When I select the first Supplier autofill option
     And I press on the "Delete" button
     And I press on the "Confirm" button
