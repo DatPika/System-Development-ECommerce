@@ -1,10 +1,10 @@
-Feature: (Name)
-  (Description)
+Feature: View Projects Table
+  In order to view the Projects table
+  As a user
+  I need to be able to select the "Edit/View Projects" button
 
-  Scenario: (Title of Scenario)
-  	Given (Context)
-    And (Optional ...)
-  	When (Condition)
-  	And (Optional ...)
-  	Then (Result)
-    And (Optional ...)
+  Scenario: The user wants to view Projects table
+    Given I am logged in
+    And I am on the home page
+    When I click the "Edit/View Projects" button
+    Then I see the Projecs table
