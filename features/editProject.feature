@@ -1,11 +1,10 @@
-Feature: Editing in Project Table
+Feature: Editing in Projects Table
   In order to edit Project records in the database
   As a user
   I need to be able to update data in the text fields and press the "Edit Record" button
 
   Scenario: Editing a project record
-    Given I am logged in
-    And I am on the edit projects page
+    Given I am on the edit projects page
     When I click on "Edit" next to the "Tarzan" record
     And I change the "name" to "Jane"
     And I change the "details/information" to "Matte,60ft^2,2400$"

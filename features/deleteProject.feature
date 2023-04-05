@@ -4,8 +4,7 @@ Feature: Delete in Projects Table
   I need to be able to select the record(s) to be delete and press the "Delete Record(s)" button
 
   Scenario: The user wants to delete multiple Project records
-    Given I am logged in
-    And I am on the delete Projects record page
+    Given I am on the delete Projects record page
     And I have multiple Project records
     When I select the 2 recent records from the Projects table
     And I press on the "Delete" button

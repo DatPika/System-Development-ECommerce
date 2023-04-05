@@ -1,11 +1,10 @@
-Feature: Adding in Project Table
+Feature: Adding in Projects Table
   In order to add Project records to the database
   As a user
   I need to be able to input data in the text fields and press the "Add Record" button
 
   Scenario: Adding a project record
-    Given I am logged in
-    And I am on the add projects page
+    Given I am on the add projects page
     When I input "Tarzan" in "name"
     And I input "Satin,44ft^2,2000$" in "details/information"
     And I input "07/08/2022" in "date" in "deposit"
@@ -16,4 +15,4 @@ Feature: Adding in Project Table
     And I pick "interac" in "paymentMethod" in "balance"
     And I press on the "Add Record" Button
     Then a new record should be added to the project table
-    And I see the project table
+    And I see the project table with the added information

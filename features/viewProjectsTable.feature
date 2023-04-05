@@ -4,7 +4,6 @@ Feature: View Projects Table
   I need to be able to select the "Edit/View Projects" button
 
   Scenario: The user wants to view Projects table
-    Given I am logged in
-    And I am on the home page
+    Given I am on the home page
     When I click the "Edit/View Projects" button
-    Then I see the Projecs table
+    Then I see the Projects table
