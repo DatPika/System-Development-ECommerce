@@ -7,5 +7,4 @@ Feature: Add Supplier autofill option
     Given I am on the add Supplier page
     When I input "Cam the supplier" in "name"
     And I press the "Add Supplier" button
-    Then a new supplier should be added to the autofill options
-    And I see the the Expense table
+    Then I see supplier "Cam the supplier"

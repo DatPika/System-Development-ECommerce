@@ -9,8 +9,7 @@ Feature: Edit in Expense Table
     And I change the "details/information" value to "White Paint"  
     And I change the "amount" value to "200"
     And I press the "Edit Record" button
-    Then the record should be updated
-    And I see the Expense table
+    Then I see expense "Kevin Durant", "White Paint" and "200"
 
   Scenario: The user wants to edit an Expense record without the supplier autofill feature
     Given I am logged in
@@ -19,6 +18,5 @@ Feature: Edit in Expense Table
     And I change the "details/information" value to "White Paint"  
     And I change the "amount" value to "400"
     And I press the "Edit Record" button
-    Then the record should be updated
-    And I see the Expense table
+    Then I see expense "Deandre Ayton", "White Paint" and "400"
 

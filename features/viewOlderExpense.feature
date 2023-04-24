@@ -5,5 +5,5 @@ Feature: View older Expense records
 
   Scenario: The user wants to view older Expense records
     Given I am on the Expense table page
-    When I press the "Load More Expenses" button
+    When I press the "Load More Expenses"
     Then I see more Expense records
