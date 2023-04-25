@@ -21,6 +21,6 @@ class User extends \app\core\Model{
 
 		$STH->execute(['username'=>$this->username,
 						'password_hash'=>$this->password_hash]);
-		return self::$connection->lastInsertId();// returns the value of the new PK
+		return self::$connection->lastInsertId();
 	}
 }
