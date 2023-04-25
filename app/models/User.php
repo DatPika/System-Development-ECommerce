@@ -7,7 +7,7 @@ class User extends \app\core\Model{
 	public $password_hash;
 
 	public function getByUsername($username){
-		$SQL = 'SELECT * FROM User WHERE username = :username';
+		$SQL = 'SELECT * FROM user WHERE username = :username';
 		$STH = self::$connection->prepare($SQL);
 
 		$STH->execute(['username'=>$username]);
@@ -16,7 +16,7 @@ class User extends \app\core\Model{
 	}
 
 	public function insert(){
-		$SQL = 'INSERT INTO User(username, password_hash) VALUES (:username, :password_hash)';
+		$SQL = 'INSERT INTO user(username, password_hash) VALUES (:username, :password_hash)';
 		$STH = self::$connection->prepare($SQL);
 
 		$STH->execute(['username'=>$this->username,

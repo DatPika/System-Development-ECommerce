@@ -14,10 +14,7 @@ class Expense extends \app\core\Controller{
             $expense->supplierName = $_POST['supplierName'];
             $expense->totalExpense = $_POST['totalExpense'];
             $expense->details = $_POST['details'];
-            //will depend on the view
-            if(isset($_POST['user_id'])) {
-                $expense->user_id = $_SESSION['user_id'];
-            }
+            $expense->user_id = $_SESSION['user_id'];
             $expense->insert();
 
             header('location:/Expense/index');
@@ -29,7 +26,7 @@ class Expense extends \app\core\Controller{
 
     public function edit($expense_id) {
         $expense = new \app\models\Expense();
-        $expense = $expense->getByExpenseId($expense_id);
+        $expense = $expense->get($expense_id);
         // might make this into a filter the not null expense
         if($expense) {
             if(isset($_POST['action'])) {
@@ -55,7 +52,7 @@ class Expense extends \app\core\Controller{
 
     public function delete($expense_id) {
         $expense = new \app\models\Expense();
-        $expense = $expense->getByExpenseId($expense_id);
+        $expense = $expense->get($expense_id);
         // might make this into a filter the not null expense
         if($expense) {
             if(isset($_POST['action'])) {

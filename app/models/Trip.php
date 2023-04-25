@@ -3,7 +3,7 @@ namespace app\models;
 
 class Trip extends \app\core\Model{
 	public $trip_id;
-	public $project_id
+	public $project_id;
 	public $client_id;
 	public $distance;
 
@@ -50,7 +50,10 @@ class Trip extends \app\core\Model{
 	public function getAllByColumnDesc($column){
 		$SQL = "SELECT * FROM trip ORDER BY :column DESC";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute();
+		$data = [
+			'column'=>$column,
+		];
+		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetchAll();
 	}

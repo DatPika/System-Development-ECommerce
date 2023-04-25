@@ -39,6 +39,7 @@ class Expense extends \app\core\Model{
 		$STH = self::$connection->prepare($SQL);
 		$data = ['expense_id'=>$expense_id];
 		$STH->execute($data);
+		return $STH->rowCount();
 	}
 
 	public function getAll(){
@@ -52,8 +53,8 @@ class Expense extends \app\core\Model{
 	public function getAllByColumnDesc($column){
 		$SQL = "SELECT * FROM expense ORDER BY :column DESC";
 		$STH = self::$connection->prepare($SQL);
-		$date = ['data'=>$column]
-		$STH->execute();
+		$date = ['column'=>$column]
+		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');
 		return $STH->fetchAll();
 	}
@@ -61,8 +62,8 @@ class Expense extends \app\core\Model{
 	public function getAllByColumnAsc($column){
 		$SQL = "SELECT * FROM expense ORDER BY :column ASC";
 		$STH = self::$connection->prepare($SQL);
-		$date = ['data'=>$column]
-		$STH->execute();
+		$date = ['column'=>$column]
+		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');
 		return $STH->fetchAll();
 	}
