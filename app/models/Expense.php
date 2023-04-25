@@ -34,10 +34,10 @@ class Expense extends \app\core\Model{
 		return $STH->rowCount();
 	}
  
-	public function delete($expense_id){
+	public function delete(){
 		$SQL = "DELETE FROM expense WHERE expense_id=:expense_id";
 		$STH = self::$connection->prepare($SQL);
-		$data = ['expense_id'=>$expense_id];
+		$data = ['expense_id'=>$this->expense_id];
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
@@ -53,7 +53,6 @@ class Expense extends \app\core\Model{
 	public function getAllByColumnDesc($column){
 		$SQL = "SELECT * FROM expense ORDER BY :column DESC";
 		$STH = self::$connection->prepare($SQL);
-
 		$data = ['column'=>$column];
 		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');
