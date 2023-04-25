@@ -42,7 +42,7 @@ class Expense extends \app\core\Controller{
                 header('location:/Expense/index');
             }
             else {
-                $this->view('Expense/edit/', $expense);
+                $this->view('Expense/edit', $expense);
             }
         }
         else {
