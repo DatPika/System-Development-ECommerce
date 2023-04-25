@@ -38,7 +38,7 @@ class Project extends \app\core\Model{
 	}
 
 	public function update(){
-		$SQL = "UPDATE project SET client_id=:client_id, job=:job, projectCost=:projectCost, startDate=:startDate, endDate=:endDate, done=:done, surfaceArea=:surfaceArea, lights=:lights, spots=:spots, vents=:vents, works=:works, otherInformation=:otherInformation, where project_id=:project_id";
+		$SQL = "UPDATE project SET client_id=:client_id, job=:job, projectCost=:projectCost, startDate=:startDate, endDate=:endDate, done=:done, surfaceArea=:surfaceArea, lights=:lights, spots=:spots, vents=:vents, works=:works, otherInformation=:otherInformation where project_id=:project_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
 			'client_id'=>$this->client_id,
