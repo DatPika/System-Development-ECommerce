@@ -40,7 +40,7 @@ class Expense extends \app\core\Controller{
                 if(isset($_POST['user_id'])) {
                     $expense->user_id = $_SESSION['user_id'];
                 }
-                $expense->edit();
+                $expense->update();
 
                 header('location:/Expense/index');
             }

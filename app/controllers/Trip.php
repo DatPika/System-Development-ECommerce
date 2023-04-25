@@ -40,7 +40,7 @@ class Trip extends \app\core\Controller{
                 //Project
 
 
-                $trip->edit();
+                $trip->update();
                 header('location:/Trip/index');
             }
             else {

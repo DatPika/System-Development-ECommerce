@@ -54,7 +54,7 @@ class Project extends \app\core\Controller{
                 //Client
 
 
-                $project->edit();
+                $project->update();
 
                 header('location:/Project/index');
             }
