@@ -29,10 +29,10 @@ class Client extends \app\core\Model{
 		return $STH->rowCount();
 	}
  
-	public function delete($client_id){
+	public function delete(){
 		$SQL = "DELETE FROM client WHERE client_id=:client_id";
 		$STH = self::$connection->prepare($SQL);
-		$data = ['client_id'=>$client_id];
+		$data = ['client_id'=>$this->client_id];
 		$STH->execute($data);
 	}
 
