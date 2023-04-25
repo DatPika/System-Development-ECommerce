@@ -6,7 +6,7 @@ class User extends \app\core\Model{
 	public $username;
 	public $password_hash;
 
-	public function getByUsername($username){
+	public function get($username){
 		$SQL = 'SELECT * FROM user WHERE username = :username';
 		$STH = self::$connection->prepare($SQL);
 

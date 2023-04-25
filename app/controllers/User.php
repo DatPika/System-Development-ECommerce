@@ -6,7 +6,7 @@ class User extends \app\core\Controller{
 	public function index(){
 		if(isset($_POST['action'])){
 			$user = new \app\models\User();
-			$user = $user->getByUsername($_POST['username']);
+			$user = $user->get($_POST['username']);
 			if($user){
 				if(password_verify($_POST['password'], $user->password_hash)){
 					$_SESSION['user_id'] = $user->user_id;
@@ -25,7 +25,7 @@ class User extends \app\core\Controller{
 	public function register(){
 		if(isset($_POST['action'])){
 			$user = new \app\models\User();
-			$usercheck = $user->getByUsername($_POST['username']);
+			$usercheck = $user->get($_POST['username']);
 			if(!$usercheck){
 				$user->username= $_POST['username'];
 				$user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);

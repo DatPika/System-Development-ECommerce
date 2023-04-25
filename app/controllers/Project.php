@@ -36,7 +36,7 @@ class Project extends \app\core\Controller{
 
     public function edit($project_id) {
         $project = new \app\models\Project();
-        $project = $project->getByProjectId($project_id);
+        $project = $project->get($project_id);
         // might make this into a filter the not null project
         if($project) {
             if(isset($_POST['action'])) {
@@ -59,7 +59,7 @@ class Project extends \app\core\Controller{
                 header('location:/Project/index');
             }
             else {
-                $this->view('Project/edit/', $project);
+                $this->view('Project/edit', $project);
             }
         }
         else {
@@ -69,7 +69,7 @@ class Project extends \app\core\Controller{
 
     public function delete($project_id) {
         $project = new \app\models\Project();
-        $project = $project->getByProjectId($project_id);
+        $project = $project->get($project_id);
         // might make this into a filter the not null project
         if($project) {
             if(isset($_POST['action'])) {
@@ -77,7 +77,7 @@ class Project extends \app\core\Controller{
                 header('location:/Project/index');
             }
             else {
-                $this->view('Project/delete/', $project);
+                $this->view('Project/delete', $project);
             }
         }
         else {

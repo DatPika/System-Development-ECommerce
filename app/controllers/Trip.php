@@ -29,7 +29,7 @@ class Trip extends \app\core\Controller{
 
     public function edit($trip_id) {
         $trip = new \app\models\Trip();
-        $trip = $trip->getByTripId($trip_id);
+        $trip = $trip->get($trip_id);
         // might make this into a filter the not null trip
         if($trip) {
             if(isset($_POST['action'])) {
@@ -44,7 +44,7 @@ class Trip extends \app\core\Controller{
                 header('location:/Trip/index');
             }
             else {
-                $this->view('Trip/edit/', $trip);
+                $this->view('Trip/edit', $trip);
             }
         }
         else {
@@ -54,7 +54,7 @@ class Trip extends \app\core\Controller{
 
     public function delete($trip_id) {
         $trip = new \app\models\Trip();
-        $trip = $trip->getByTripId($trip_id);
+        $trip = $trip->get($trip_id);
         // might make this into a filter the not null trip
         if($trip) {
             if(isset($_POST['action'])) {
@@ -62,7 +62,7 @@ class Trip extends \app\core\Controller{
                 header('location:/Trip/index');
             }
             else {
-                $this->view('Trip/delete/', $trip);
+                $this->view('Trip/delete', $trip);
             }
         }
         else {

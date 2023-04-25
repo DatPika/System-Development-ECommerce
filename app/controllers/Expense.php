@@ -1,4 +1,3 @@
-
 <?php
 namespace app\controllers;
 
@@ -57,7 +56,7 @@ class Expense extends \app\core\Controller{
         // might make this into a filter the not null expense
         if($expense) {
             if(isset($_POST['action'])) {
-                $expense->delete($expense_id);
+                $expense->delete();
                 header('location:/Expense/index');
             }
             else {
