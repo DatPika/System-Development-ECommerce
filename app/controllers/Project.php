@@ -22,7 +22,7 @@ class Project extends \app\core\Controller{
             $project->works = $_POST['works'];
             $project->otherInformation = $_POST['otherInformation'];
             //TODO: Gather the information for both client to determine their id
-            //Client
+            // depends on the view and how we want to fetch the client data
 
 
             $project->insert();
@@ -51,7 +51,7 @@ class Project extends \app\core\Controller{
                 $project->works = $_POST['works'];
                 $project->otherInformation = $_POST['otherInformation'];
                 //TODO: Gather the information for both client to determine their id
-                //Client
+                // depends on the view and how we want to fetch the client data
 
 
                 $project->update();

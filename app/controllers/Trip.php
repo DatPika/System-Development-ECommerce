@@ -13,8 +13,10 @@ class Trip extends \app\core\Controller{
             $trip = new \app\models\Trip();
             $trip->distance = $_POST['distance'];
             //TODO: Gather the information for both client and project to determine their id
+            // depends on the view and how we want to fetch the client data
             //Client
 
+            // depends on the view and how we want to fetch the project data
             //Project
 
 
@@ -35,8 +37,10 @@ class Trip extends \app\core\Controller{
             if(isset($_POST['action'])) {
                 $trip->distance = $_POST['distance'];
                 //TODO: Gather the information for both client and project to determine their id
+                // depends on the view and how we want to fetch the client data
                 //Client
 
+                // depends on the view and how we want to fetch the project data
                 //Project
 
 

@@ -14,7 +14,7 @@ class Expense extends \app\core\Controller{
             $expense->supplierName = $_POST['supplierName'];
             $expense->totalExpense = $_POST['totalExpense'];
             $expense->details = $_POST['details'];
-            $expense->user_id = $_SESSION['user_id'];
+            $expense->user_id = $_POST['user_id'];
             $expense->insert();
 
             header('location:/Expense/index');
@@ -33,10 +33,7 @@ class Expense extends \app\core\Controller{
                 $expense->supplierName = $_POST['supplierName'];
                 $expense->totalExpense = $_POST['totalExpense'];
                 $expense->details = $_POST['details'];
-                //will depend on the view
-                if(isset($_POST['user_id'])) {
-                    $expense->user_id = $_SESSION['user_id'];
-                }
+                $expense->user_id = $_POST['user_id'];
                 $expense->update();
 
                 header('location:/Expense/index');

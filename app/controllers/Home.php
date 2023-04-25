@@ -2,7 +2,6 @@
 namespace app\controllers;
 
 class Home extends \app\core\Controller{
-    // TODO:
     public function index() {
         $expense = new \app\models\Expense();
         $expenses = $expense->getAll();
