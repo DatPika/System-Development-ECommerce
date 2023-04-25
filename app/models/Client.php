@@ -21,7 +21,7 @@ class Client extends \app\core\Model{
 		$SQL = "UPDATE client SET clientName=:clientName, distance=:distance where client_id=:client_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
-			'clientName'=>$this->clientNameclientName,
+			'clientName'=>$this->clientName,
 			'distance'=>$this->distance,
 			'client_id'=>$this->client_id
 		];
@@ -34,6 +34,7 @@ class Client extends \app\core\Model{
 		$STH = self::$connection->prepare($SQL);
 		$data = ['client_id'=>$this->client_id];
 		$STH->execute($data);
+		return $STH->rowCount();
 	}
 
 

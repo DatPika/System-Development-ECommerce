@@ -32,11 +32,12 @@ class Trip extends \app\core\Model{
 		return $STH->rowCount();
 	}
  
-	public function delete($trip_id){
+	public function delete(){
 		$SQL = "DELETE FROM trip WHERE trip_id=:trip_id";
 		$STH = self::$connection->prepare($SQL);
-		$data = ['trip_id'=>$trip_id];
+		$data = ['trip_id'=>$this->trip_id];
 		$STH->execute($data);
+		return $STH->rowCount();
 	}
 
 
@@ -60,7 +61,10 @@ class Trip extends \app\core\Model{
 	public function getAllByColumnAsc($column){
 		$SQL = "SELECT * FROM trip ORDER BY :column ASC";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute();
+		$data = [
+			'column'=>$column,
+		];
+		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetchAll();
 	}

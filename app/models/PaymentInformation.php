@@ -20,7 +20,7 @@ class PaymentInformation extends \app\core\Model {
             'date'=>$this->date
         ];
         $STH->execute($data);
-        return $STH->rowCount();
+        $this->payment_id = self::$connection->lastInsertId();
     }
     public function update() {
         $SQL = "UPDATE `paymentInformation` SET `project_id`=:project_id, 'user_id'=:user_id,`paymentMethod`=:paymentMethod,`amount`=:amount, `date`=:date WHERE payment_id = :payment_id";

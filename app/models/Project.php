@@ -52,17 +52,19 @@ class Project extends \app\core\Model{
 			'spots'=>$this->spots,
 			'vents'=>$this->vents,
 			'works'=>$this->works,
-			'otherInformation'=>$this->otherInformation
+			'otherInformation'=>$this->otherInformation,
+			'project_id'=>$this->project_id,
 		];
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
  
-	public function delete($project_id){
+	public function delete(){
 		$SQL = "DELETE FROM project WHERE project_id=:project_id";
 		$STH = self::$connection->prepare($SQL);
-		$data = ['project_id'=>$project_id];
+		$data = ['project_id'=>$this->project_id];
 		$STH->execute($data);
+		return $STH->rowCount();
 	}
 
 
@@ -76,14 +78,20 @@ class Project extends \app\core\Model{
 	public function getAllByColumnDesc($column){
 		$SQL = "SELECT * FROM project ORDER BY :column DESC";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute();
+		$data = [
+			'column'=>$column,
+		];
+		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
 		return $STH->fetchAll();
 	}
 	public function getAllByColumnAsc($column){
-		$SQL = "SELECT * FROM projectORDER BY :column ASC";
+		$SQL = "SELECT * FROM project ORDER BY :column ASC";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute();
+		$data = [
+			'column'=>$column,
+		];
+		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
 		return $STH->fetchAll();
 	}
