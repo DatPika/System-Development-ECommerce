@@ -9,7 +9,7 @@ class App{
 	function __construct(){
 		$request = $this->parseUrl($_GET['url'] ?? '');
 		$controller = 'User';
-		$method = 'login';
+		$method = 'index';
 		$params = [];
 
 		if(file_exists('app/controllers/' . $request[0] . '.php')) {

@@ -15,4 +15,4 @@ Feature: Adding in Projects Table
     And I pick "interac" in "paymentMethod" in "balance"
     And I press on the "Add Record" Button
     Then a new record should be added to the project table
-    And I see the project table with the added information
+    And I see the project table with the information of "Tarzan" in the "name" column
