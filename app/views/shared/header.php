@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="../../../JavaScript/script.js"></script>
 	<link rel="stylesheet" href="../../../Style/styles.css">
-	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 	<title><?= $data ?></title>
 
 	<style>
@@ -17,6 +16,7 @@
 			border-radius: 5px 5px 0 0;
 			overflow: hidden;
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+			background-color: white;
 		}
 
 		.content-table thead tr {
@@ -45,9 +45,12 @@
 		.container{
 			width: 100%;
 			max-width: 650px;
+			height: 400px;
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 			padding: 28px;
 			margin: 0 28px;
+			background-color: white;
+			border-radius: 7px;
 		}
 
 		.form-title{
@@ -63,6 +66,27 @@
 			justify-content: space-between;
 			padding: 20px 0;
 		}
+
+		.input-box label {
+			font-size: 20px;
+		}
+
+		.form-submit-btn{
+			padding-top: 50px;
+			display: flex;
+			justify-content: center;
+		}
+
+		.form-submit-btn input{
+			font-size: 20px;
+			padding: 10px;
+			border: none;
+			border-radius: 7px;
+			color: white;
+			background-color: red;
+		}
+
+
 	</style>
 
 </head>

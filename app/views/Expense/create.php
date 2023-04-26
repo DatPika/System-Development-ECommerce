@@ -10,13 +10,13 @@
 
 			<div class="expense-info">
 				<div class ="input-box">
-					<label><?= _('Supplier Name') ?></label><input type="text" name="supplierName" id="supplierName">
+					<label><?= _('Supplier Name') ?></label><input type="text" name="supplierName" id="supplierName" required>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Details') ?></label><textarea name="details" id="details"></textarea>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Amount') ?></label><input type="text" name='totalExpense' id="totalExpense">
+					<label><?= _('Amount') ?></label><input type="text" name='totalExpense' id="totalExpense" required>
 				</div>
 			</div>
 			<div class="form-submit-btn">
