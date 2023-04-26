@@ -45,4 +45,6 @@ class User extends \app\core\Controller{
 		session_destroy();
 		header('location:/User/index');
 	}
+
+	//TODO implement verrify 2f1 ans setup2fa and makeQRcode (i have the code i will paste it here later)
 }

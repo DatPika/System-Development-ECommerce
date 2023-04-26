@@ -7,7 +7,7 @@
 		<h1 class="form-title"><?= _('Add project')?></h1>
 		
 		<form method="post" action="">
-
+			<!-- TODO: implement an input box for user id/username-->
 			<div class="project-info">
 				<div class ="input-box">
 					<label><?= _('Start Date') ?></label><input type="text" name="startDate" id="clientName" required>

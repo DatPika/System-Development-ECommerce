@@ -12,9 +12,6 @@
 
 			<div class="info">
 				<div class ="input-box">
-					<label><?= _('Client') ?></label><input type="text" name="client" id="client" value="<?= $data->client_id?>" readonly="readonly">
-				</div>
-				<div class ="input-box">
 					<label><?= _('Project') ?></label><input type="text" name="project" id="project" readonly="readonly"><?= $data->project_id?></textarea>
 				</div>
 				<div class ="input-box">

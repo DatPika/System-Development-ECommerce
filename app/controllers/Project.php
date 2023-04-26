@@ -28,14 +28,16 @@ class Project extends \app\core\Controller{
             $client->address = $_POST['address'];
             $client->insert();
             $project->client_id = $client->client_id;
-            $project->insert();
             $payment = new \app\models\PaymentInformation();
             $payment->project_id = $project->project_id;
             $payment->paymentMethod = $_POST['deposit'];
             $payment->date = $_POST['date'];
             $payment->amount = $_POST['amount'];
             //TODO: 
-            // user_id dropdown list to fetch user for profit
+            // user_id dropdown list to fetch user for profit/payment
+            $payment->insert();
+            $project->payment_id = $payment->payment_id;
+            $project->insert();
 
             header('location:/Project/index');
         }
@@ -65,7 +67,18 @@ class Project extends \app\core\Controller{
                 $client = new \app\models\Client();
                 $client->clientName = $_POST['client'];
                 $client->address = $_POST['address'];
-                $project->client_id = $client-insert();
+                $client->insert();
+                $project->client_id = $client->client_id;
+                $payment = new \app\models\PaymentInformation();
+                $payment->project_id = $project->project_id;
+                $payment->paymentMethod = $_POST['deposit'];
+                $payment->date = $_POST['date'];
+                $payment->amount = $_POST['amount'];
+                // TODO: update or insert Payment Information by implementing user drop down
+                // user_id dropdown list to fetch user for profit/payment
+
+                $payment->insert();
+                $project->payment_id = $payment->payment_id;
                 $project->update();
 
                 header('location:/Project/index');

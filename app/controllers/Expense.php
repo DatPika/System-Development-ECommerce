@@ -69,4 +69,9 @@ class Expense extends \app\core\Controller{
             header('location:/Expense/index?error=The chosen expense does not exist');
         }
     }
+
+    // TODO:
+    public function editSuppliers() {
+        
+    }
 }

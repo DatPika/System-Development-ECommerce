@@ -13,9 +13,6 @@
 					<label><?= _('Project') ?></label><input type="text" name="project" id="project" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Client') ?></label><input type="text" name="client" id="client" required>
-				</div>
-				<div class ="input-box">
 					<label><?= _('Distance') ?></label><input type="text" name='distance' id="distance" required>
 				</div>
 			</div>
