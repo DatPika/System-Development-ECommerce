@@ -25,10 +25,7 @@
 					<label><?= _('Estimation') ?></label><input type="radio" name='job' id="e-transfer"  value="Estimation" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Done') ?></label><input type="radio" name='done' id="done" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Not Done') ?></label><input type="radio" name='done' id="interac" required>
+					<label><?= _('Done') ?></label><input type="checkbox" name='done' id="done" required>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Client Name') ?></label><input type="text" name="client" id="clientName" required>
@@ -38,6 +35,9 @@
 				</div>
 				<div class ="input-box">
 					<label><?= _('Surface Area') ?></label><textarea name="surfaceArea" id="surfaceArea"></textarea>
+				</div>
+				<div class ="input-box">
+					<label><?= _('Project Cost') ?></label><textarea name="projectCost" id="projectCost"></textarea>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Lights') ?></label><input type="text" name='lights' id="lights" required>
