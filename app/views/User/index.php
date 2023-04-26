@@ -6,6 +6,4 @@
 	<label>Password:</label><input type="text" name="password"><br>
 	<input type="submit" name="action" value='Login'>
 </form>
-
-<a href='/User/register'>Register</a>
 <?php $this->view('shared/footer'); ?>

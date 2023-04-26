@@ -1,3 +1,9 @@
+* {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+}
+
 body {
 	background-color: #D9D9D9;
 }
