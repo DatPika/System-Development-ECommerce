@@ -1,0 +1,45 @@
+* {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+}
+
+body {
+	background-color: #D9D9D9;
+}
+
+.topheader {
+	position: relative;
+	background-color: #EE0404;
+	height: 132px;
+	left: 0px;
+	top: 0px;
+}
+
+.content {
+	position: absolute;
+	background-color: #E4E3E3;
+	width: 571px;
+	height: 676px;
+	left: 434px;
+	top: 212px;
+}
+
+.content-table {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	min-width: 400px;
+}
+
+.content-table thead tr {
+	background-color: red;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+	
+}
