@@ -1,0 +1,18 @@
+.content-table {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	min-width: 400px;
+}
+
+.content-table thead tr {
+	background-color: red;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+	
+}
