@@ -1,10 +1,10 @@
-<?php $this->view('shared/header',_('Add Trip')); ?>
+<?php $this->view('shared/header',_('Add Expense')); ?>
 
 <div class="createPage">
 
 	<div class="container">
 
-		<h1 class="form-title"><?= _('Add trip')?></h1>
+		<h1 class="form-title"><?= _('Add expense')?></h1>
 		
 		<form method="post" action="">
 
