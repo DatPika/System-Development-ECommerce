@@ -12,16 +12,9 @@ class Trip extends \app\core\Controller{
         if(isset($_POST['action'])) {
             $trip = new \app\models\Trip();
             $trip->distance = $_POST['distance'];
-            //TODO: Gather the information for both client and project to determine their id
-            // depends on the view and how we want to fetch the client data
-            //Client
-
-            // depends on the view and how we want to fetch the project data
-            //Project
-
-
+            $trip->project_id = $_POST['project'];
+            $trip->client_id = $_POST['client'];
             $trip->insert();
-
             header('location:/Trip/index');
         }
         else {
@@ -36,14 +29,8 @@ class Trip extends \app\core\Controller{
         if($trip) {
             if(isset($_POST['action'])) {
                 $trip->distance = $_POST['distance'];
-                //TODO: Gather the information for both client and project to determine their id
-                // depends on the view and how we want to fetch the client data
-                //Client
-
-                // depends on the view and how we want to fetch the project data
-                //Project
-
-
+                $trip->project_id = $_POST['project'];
+                $trip->client_id = $_POST['client'];
                 $trip->update();
                 header('location:/Trip/index');
             }

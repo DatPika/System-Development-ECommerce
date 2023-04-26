@@ -6,7 +6,7 @@
 	<div class="container">
 
 		<h1 class="form-title"><?= _('Delete expense')?></h1>
-		<h2>Are your sure you want to delete this record?</h2>
+		<h2><?= _("Are your sure you want to delete this record?")?></h2>
 		
 		<form method="post" action="">
 
@@ -23,6 +23,8 @@
 			</div>
 			<div class="form-submit-btn">
 				<a href="/Expense/index"><?= _('Cancel') ?></a>
+			</div>
+			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Delete record') ?>'>
 			</div>
 			

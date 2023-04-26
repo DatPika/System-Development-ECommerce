@@ -1,22 +1,24 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
 
+<div class="createPage">
 <table class="content-table">
 	<thead>
 		<tr>
-			<th><?= _('Supplier name') ?></th>
-			<th><?= _('Details') ?></th>
-			<th><?= _('Expense') ?></th>
+			<th><?= _('Start Date') ?></th>
+			<th><?= _('End Date') ?></th>
+			<th><?= _('Address') ?></th>
+			<th><?= _('Distance') ?></th>
 			<th><?= _('Actions') ?></th>
 		</tr>
 	</thead>
 <?php
-foreach ($data as $expense) { ?>
+foreach ($data as $trip) { ?>
 	<tbody>
 		<tr>
-			<td><?= htmlentities($expense->supplierName) ?></td>
-			<td><?= htmlentities($expense->details) ?></td>
-			<td><?= htmlentities($expense->totalExpense) ?></td>
-			<td><a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('delete') ?></a> | <a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('edit') ?></a>
+			<td><?= htmlentities($trip->project_id) ?></td>
+			<td><?= htmlentities($trip->client_id) ?></td>
+			<td><?= htmlentities($trip->distance) ?></td>
+			<td><a href='/Trip/delete/<?=$trip->trip_id?>'><?= _('delete') ?></a> | <a href='/Trip/edit/<?=$trip->trip_id?>'><?= _('edit') ?></a>
 		</tr>
 	</tbody>
 
@@ -25,5 +27,6 @@ foreach ($data as $expense) { ?>
 ?>
 
 </table>
+</div>
 
 <?php $this->view('shared/footer'); ?>

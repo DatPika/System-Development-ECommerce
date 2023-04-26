@@ -1,5 +1,6 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
 
+<div class="createPage">
 <table class="content-table">
 	<thead>
 		<tr>
@@ -25,5 +26,6 @@ foreach ($data as $expense) { ?>
 ?>
 
 </table>
+</div>
 
 <?php $this->view('shared/footer'); ?>

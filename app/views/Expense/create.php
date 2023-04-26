@@ -22,7 +22,6 @@
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Add record') ?>'>
 			</div>
-			
 		</form>
 
 	</div>

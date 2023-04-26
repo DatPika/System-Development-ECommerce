@@ -77,7 +77,7 @@
 			display: flex;
 			justify-content: space-between;
 			padding: 20px 0;
-		}
+		}	
 
 		.input-box label {
 			font-size: 20px;

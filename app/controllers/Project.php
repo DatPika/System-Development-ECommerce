@@ -21,12 +21,11 @@ class Project extends \app\core\Controller{
             $project->vents = $_POST['vents'];
             $project->works = $_POST['works'];
             $project->otherInformation = $_POST['otherInformation'];
-            //TODO: Gather the information for both client to determine their id
-            // depends on the view and how we want to fetch the client data
-
-
+            $client = new \app\models\Client();
+            $client->clientName = $_POST['client'];
+            $client->address = $_POST['address'];
+            $project->$client_id = $client-insert();
             $project->insert();
-
             header('location:/Project/index');
         }
         else {
