@@ -4,10 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="../../../JavaScript/script.js"></script>
-	<link rel="stylesheet" href="../../../Style/styles.css">
+	<!--<link rel="stylesheet" href="../../../Style/styles.css">-->
 	<title><?= $data ?></title>
 
 	<style>
+		.topheader {
+			position: relative;
+			background-color: #EE0404;
+			height: 132px;
+			left: 0px;
+			top: 0px;
+		}
 		.content-table {
 			border-collapse: collapse;
 			margin: 25px 0;
@@ -66,7 +73,7 @@
 			border-bottom: solid 1px grey;
 		}
 
-		.expense-info{
+		.info{
 			display: flex;
 			justify-content: space-between;
 			padding: 20px 0;
