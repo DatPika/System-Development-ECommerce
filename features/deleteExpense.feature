@@ -7,4 +7,4 @@ Feature: Delete in Expense Table
     Given I am on the view Expense record page
     When I press on the "Delete" button next to the record "Chris Paul", "PVC Film", "200"
     And After I see a confirmation page I press on the "Confirm" button
-    Then I see the Expanse table without the information of "Chris Paul", "PVC Film", "200"
+    Then I don't see "Chris Paul", "PVC Film", "200" in the Expense table

@@ -1,13 +1,11 @@
 Feature: Delete in Projects Table
   In order to delete Project records in the database
   As a user
-  I need to be able to select the record(s) to be delete and press the "Delete Record(s)" button
+  I need to be able to select the record to be deleted and press the "Delete Record" button
 
-  Scenario: The user wants to delete multiple Project records
+  Scenario: The user wants to delete a Project records
     Given I am on the delete Projects record page
-    And I have multiple Project records
-    When I select the 2 recent records from the Projects table
-    And I press on the "Delete" button
+    And I have a Project records
+    When I press on the "Delete" button next to the record "Tarzan", "33","5", "4", "3","electricity", "Client wants more lights", "07/08/2022", "900.00", "cash", "09/08/2022", "920.25" and "interac"
     And I press on the "Confirm" button
-    Then the 2 Project records should be deleted
-    And I see the Expanse table
+    Then I see the Expense table without the record "Tarzan", "33","5", "4", "3","electricity", "Client wants more lights", "07/08/2022", "900.00", "cash", "09/08/2022", "920.25" and "interac"
