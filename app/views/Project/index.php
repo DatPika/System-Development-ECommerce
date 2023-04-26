@@ -1,5 +1,5 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
-
+<div class="createPage">
 <table class="content-table">
 	<thead>
 		<tr>
@@ -19,11 +19,10 @@ foreach ($data as $project) { ?>
 			<td><a href='/Expense/delete/<?=$project->projectproject_id?>'><?= _('delete') ?></a> | <a href='/Expense/edit/<?=$project->expense_id?>'><?= _('edit') ?></a>
 		</tr>
 	</tbody>
-
 <?php
 }
 ?>
-
+</div>
 </table>
 
 <?php $this->view('shared/footer'); ?>

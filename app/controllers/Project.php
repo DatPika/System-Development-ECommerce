@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+#[\app\filters\Login]
 class Project extends \app\core\Controller{
     public function index() {
         $project = new \app\models\Project();
@@ -24,7 +25,8 @@ class Project extends \app\core\Controller{
             $client = new \app\models\Client();
             $client->clientName = $_POST['client'];
             $client->address = $_POST['address'];
-            $project->$client_id = $client-insert();
+            $client->insert();
+            $project->client_id = $client->client_id;
             $project->insert();
             header('location:/Project/index');
         }
@@ -39,6 +41,7 @@ class Project extends \app\core\Controller{
         // might make this into a filter the not null project
         if($project) {
             if(isset($_POST['action'])) {
+                $project = new \app\models\Project();
                 $project->job = $_POST['job'];
                 $project->startDate = $_POST['startDate'];
                 $project->endDate = $_POST['endDate'];
@@ -49,10 +52,10 @@ class Project extends \app\core\Controller{
                 $project->vents = $_POST['vents'];
                 $project->works = $_POST['works'];
                 $project->otherInformation = $_POST['otherInformation'];
-                //TODO: Gather the information for both client to determine their id
-                // depends on the view and how we want to fetch the client data
-
-
+                $client = new \app\models\Client();
+                $client->clientName = $_POST['client'];
+                $client->address = $_POST['address'];
+                $project->client_id = $client-insert();
                 $project->update();
 
                 header('location:/Project/index');

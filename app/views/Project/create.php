@@ -10,10 +10,10 @@
 
 			<div class="project-info">
 				<div class ="input-box">
-					<label><?= _('Start Date') ?></label><input type="text" name="client" id="clientName" required>
+					<label><?= _('Start Date') ?></label><input type="text" name="startDate" id="clientName" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('End Date') ?></label><input type="text" name="client" id="clientName" required>
+					<label><?= _('End Date') ?></label><input type="text" name="endDate" id="clientName" required>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Service') ?></label><input type="radio" name='job' id="cash" value="Service" required>
@@ -52,7 +52,7 @@
 					<label><?= _('Works') ?></label><input type="text" name='works' id="works" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Other') ?></label><input type="text" name='other' id="other" required>
+					<label><?= _('Other') ?></label><input type="text" name='otherInformation' id="other" required>
 				</div>
 				<label>Deposit:</label>
 				<div class ="input-box">

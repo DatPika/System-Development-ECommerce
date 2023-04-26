@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+#[\app\filters\Login]
 class Home extends \app\core\Controller{
     public function index() {
         $expense = new \app\models\Expense();

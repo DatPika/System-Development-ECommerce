@@ -22,17 +22,18 @@ class Expense extends \app\core\Model{
 	}
 
 	public function update(){
-		$SQL = "UPDATE expense SET supplierName=:supplierName, totalExpense=:totalExpense, details=:details where expense_id=:expense_id";
-		$STH = self::$connection->prepare($SQL);
-		$data = [
-			'supplierName'=>$this->supplierName,
-			'totalExpense'=>$this->totalExpense,
-			'details'=>$this->details,
-			'expense_id'=>$this->expense_id
-		];
-		$STH->execute($data);
-		return $STH->rowCount();
-	}
+        $SQL = "UPDATE expense SET supplierName=:supplierName, totalExpense=:totalExpense, details=:details, user_id=:user_id where expense_id=:expense_id";
+        $STH = self::$connection->prepare($SQL);
+        $data = [
+            'supplierName'=>$this->supplierName,
+            'totalExpense'=>$this->totalExpense,
+            'details'=>$this->details,
+            'user_id'=>$this->user_id,
+            'expense_id'=>$this->expense_id
+        ];
+        $STH->execute($data);
+        return $STH->rowCount();
+    }
  
 	public function delete(){
 		$SQL = "DELETE FROM expense WHERE expense_id=:expense_id";

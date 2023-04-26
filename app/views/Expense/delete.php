@@ -10,7 +10,7 @@
 		
 		<form method="post" action="">
 
-			<div class="expense-info">
+			<div class="info">
 				<div class ="input-box">
 					<label><?= _('Supplier Name') ?></label><input type="text" name="supplierName" id="supplierName" value="<?= $data->supplierName?>" readonly="readonly">
 				</div>

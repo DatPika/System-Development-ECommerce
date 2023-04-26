@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+#[\app\filters\Login]
 class Expense extends \app\core\Controller{
     public function index() {
         $expense = new \app\models\Expense();
@@ -20,7 +21,9 @@ class Expense extends \app\core\Controller{
             header('location:/Expense/index');
         }
         else {
-            $this->view('Expense/create');
+            $user = new \app\models\User();
+            $users = $user->getAll();
+            $this->view('Expense/create',$users);
         }
     }
 
@@ -39,7 +42,9 @@ class Expense extends \app\core\Controller{
                 header('location:/Expense/index');
             }
             else {
-                $this->view('Expense/edit', $expense);
+                $user = new \app\models\User();
+                $users = $user->getAll();
+                $this->view('Expense/edit', ['expense'=>$expense, 'users'=>$users]);
             }
         }
         else {

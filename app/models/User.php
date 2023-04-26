@@ -23,4 +23,12 @@ class User extends \app\core\Model{
 						'password_hash'=>$this->password_hash]);
 		$this->user_id = self::$connection->lastInsertId();
 	}
+	
+	public function getAll() {
+        $SQL = "SELECT * FROM user";
+        $STH = self::$connection->prepare($SQL);
+        $STH->execute();
+        $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\User');
+        return $STH->fetchAll();
+	}
 }

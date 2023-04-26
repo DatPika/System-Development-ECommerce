@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+#[\app\filters\Login]
 class Trip extends \app\core\Controller{
     public function index() {
         $trip = new \app\models\Trip();

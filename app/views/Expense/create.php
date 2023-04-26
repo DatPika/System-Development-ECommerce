@@ -18,10 +18,20 @@
 				<div class ="input-box">
 					<label><?= _('Amount') ?></label><input type="text" name='totalExpense' id="totalExpense" required>
 				</div>
+				<div class ="input-box">
+					<label><?= _('Select the user:') ?></label><select name='user_id'>
+					<?php
+					foreach ($data as $user) {
+						echo "<option value='$user->user_id'>$user->username</option>\n";
+					}
+					?>
+					</select><br>
+				</div>
 			</div>
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Add record') ?>'>
 			</div>
+			
 		</form>
 
 	</div>

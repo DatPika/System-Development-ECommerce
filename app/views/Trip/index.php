@@ -1,12 +1,11 @@
-<?php $this->view('shared/header',_('Expense Table')); ?>
+<?php $this->view('shared/header',_('Trip Table')); ?>
 
 <div class="createPage">
 <table class="content-table">
 	<thead>
 		<tr>
-			<th><?= _('Start Date') ?></th>
-			<th><?= _('End Date') ?></th>
-			<th><?= _('Address') ?></th>
+			<th><?= _('Client') ?></th>
+			<th><?= _('Project') ?></th>
 			<th><?= _('Distance') ?></th>
 			<th><?= _('Actions') ?></th>
 		</tr>
@@ -21,7 +20,6 @@ foreach ($data as $trip) { ?>
 			<td><a href='/Trip/delete/<?=$trip->trip_id?>'><?= _('delete') ?></a> | <a href='/Trip/edit/<?=$trip->trip_id?>'><?= _('edit') ?></a>
 		</tr>
 	</tbody>
-
 <?php
 }
 ?>
