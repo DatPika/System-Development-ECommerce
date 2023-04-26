@@ -7,4 +7,4 @@ Feature: Global Search
     Given I am on the home page
     When I input "Tarzan" into the "search" field
     And I click "Search" on my keyboard
-    Then I see the records containing "Tarzan"
+    Then I see the records from all tables containing "Tarzan"

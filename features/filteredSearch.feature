@@ -5,7 +5,7 @@ Feature: Filtered Search
 
   Scenario: The user wants to perform a filtered search
     Given I am on the home page
-    When I choose the "Expenses"
+    When I choose the "Expenses" option in the filter options
     And I input "Tarzan" into the "search" field
     And I click the "Search" button
-    Then I see the records containing "Tarzan" in the Expenses
+    Then I see the records containing "Tarzan" in the Expense table

@@ -3,8 +3,8 @@ Feature: Use Autofill supplier
   As a user
   I need to be able to click on the supplier name
 
-  Scenario: Use a supplier name to autofill the fields
-  	Given I have an expense record with an supplier name of "Hock"
+  Scenario: Use a supplier name to autofill the supplier name field
+  	Given I am on the Add Expense Record page
     And I added "Hock" in the autofill options
     And I am on the add expense record page
   	When I press on the supplier name of "Hock"

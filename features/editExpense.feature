@@ -15,8 +15,8 @@ Feature: Edit in Expense Table
     Given I am logged in
     And I am on the edit Expense record page
     When I change the "name" value to "Deandre Ayton"
-    And I change the "details/information" value to "White Paint"  
+    And I change the "details/information" value to "Blue Paint"  
     And I change the "amount" value to "400"
     And I press the "Edit Record" button
-    Then I see expense "Deandre Ayton", "White Paint" and "400"
+    Then I see expense "Deandre Ayton", "Blue Paint" and "400"
 

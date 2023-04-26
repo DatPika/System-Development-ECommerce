@@ -3,8 +3,7 @@ Feature: View more Trip Records
   As a user
   I need to be able to press the Load more Button
 
-  Scenario: Viewing more trip records
-  	Given I am on the View Trip Table page
-    And I have more records than the maximum amount shown in the current list of records
-  	When I press on the "Load more" Button
-  	Then I should be able to see more trips records
+  Scenario: The user wants to load more trip records
+  Given I am on the trips table page
+  When I click the "Load More" button
+  Then I see more Trip records

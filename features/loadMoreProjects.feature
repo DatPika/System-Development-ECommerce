@@ -5,5 +5,5 @@ Feature: Load More Project Records
 
   Scenario: The user wants to load more Project records
     Given I am on the projects table page
-    When I click the "Load More Projects" button
+    When I click the "Load More" button
     Then I see more Project records

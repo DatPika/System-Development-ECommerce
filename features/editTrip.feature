@@ -8,8 +8,8 @@ Feature: Editing in Trip Table
     And I have a client record 
   	And I added a trip record
     And I am on the Edit Trip Record Page
-  	When I change the "distance" value to "130.75"
-  	And I change the "estimation" value to "Yes"
+  	When I change the "distance" to "130.75"
+  	And I change the "projectId" to "1"
     And I change the "date" value to "4/4/2022"
     And I press on the "Save" Button
   	Then I see the Main page
