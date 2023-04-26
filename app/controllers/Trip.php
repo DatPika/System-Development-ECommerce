@@ -14,7 +14,6 @@ class Trip extends \app\core\Controller{
             $trip = new \app\models\Trip();
             $trip->distance = $_POST['distance'];
             $trip->project_id = $_POST['project'];
-            $trip->client_id = $_POST['client'];
             $trip->insert();
             header('location:/Trip/index');
         }
@@ -31,7 +30,6 @@ class Trip extends \app\core\Controller{
             if(isset($_POST['action'])) {
                 $trip->distance = $_POST['distance'];
                 $trip->project_id = $_POST['project'];
-                $trip->client_id = $_POST['client'];
                 $trip->update();
                 header('location:/Trip/index');
             }

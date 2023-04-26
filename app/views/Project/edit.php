@@ -7,7 +7,7 @@
 		<h1 class="form-title"><?= _('Edit project')?></h1>
 		
 		<form method="post" action="">
-
+			<!-- TODO: implement an input box for user id/username and transfer the values of payment information-->
 			<div class="project-info">
 				<div class ="input-box">
 					<label><?= _('Start Date') ?></label><input type="text" name="startDate" id="clientName" value="<?= $data->startDate?>"required>

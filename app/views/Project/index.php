@@ -3,6 +3,7 @@
 <table class="content-table">
 	<thead>
 		<tr>
+			<!-- Implement info for payment into the table depends on the design-->
 			<th><?= _('Client Name') ?></th>
 			<th><?= _('Start Date') ?></th>
 			<th><?= _('End Date') ?></th>

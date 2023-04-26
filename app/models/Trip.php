@@ -8,11 +8,10 @@ class Trip extends \app\core\Model{
 	public $distance;
 
 	public function insert(){
-		$SQL = "INSERT INTO project (project_id, client_id, distance) value (:project_id, :client_id, :distance)";
+		$SQL = "INSERT INTO project (project_id, distance) value (:project_id, :distance)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
 			'project_id'=>$this->project_id,
-			'client_id'=>$this->client_id,
 			'distance'=>$this->distance
 		];
 		$STH->execute($data);
@@ -20,11 +19,10 @@ class Trip extends \app\core\Model{
 	}
 
 	public function update(){
-		$SQL = "UPDATE project SET project_id=:project_id, client_id=:client_id, distance=:distance where trip_id=:trip_id";
+		$SQL = "UPDATE project SET project_id=:project_id, distance=:distance where trip_id=:trip_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
 			'project_id'=>$this->project_id,
-			'client_id'=>$this->client_id,
 			'distance'=>$this->distance,
 			'trip_id'=>$this->trip_id
 		];
@@ -48,6 +46,7 @@ class Trip extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetchAll();
 	}
+	// TODO: fix the sql statement by joining the tables trip and project
 	public function getAllByColumnDesc($column){
 		$SQL = "SELECT * FROM trip ORDER BY :column DESC";
 		$STH = self::$connection->prepare($SQL);
@@ -58,6 +57,7 @@ class Trip extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetchAll();
 	}
+	// TODO: fix the sql statement by joining the tables trip and project
 	public function getAllByColumnAsc($column){
 		$SQL = "SELECT * FROM trip ORDER BY :column ASC";
 		$STH = self::$connection->prepare($SQL);
@@ -68,7 +68,7 @@ class Trip extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetchAll();
 	}
-
+	
 	public function get($trip_id){
 		$SQL = "SELECT * FROM trip WHERE trip_id=:trip_id";
 		$STH = self::$connection->prepare($SQL);

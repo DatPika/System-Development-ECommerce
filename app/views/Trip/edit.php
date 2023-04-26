@@ -14,9 +14,6 @@
 					<label><?= _('Project') ?></label><input type="text" name="project" id="project" value="<?= $data->project_id?>" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Client') ?></label><input type="text" name="client" id="client" value="<?= $data->client_id?>" required>
-				</div>
-				<div class ="input-box">
 					<label><?= _('Distance') ?></label><input type="text" name='distance' id="distance" value="<?= $data->distance?>" required>
 				</div>
 			</div>
