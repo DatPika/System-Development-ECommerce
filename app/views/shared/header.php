@@ -9,7 +9,6 @@
 	<title><?= $data ?></title>
 
 	<style>
-
 		.content-table {
 			border-collapse: collapse;
 			margin: 25px 0;
@@ -43,19 +42,10 @@
 			justify-content: center;
 			background-color: lightgray;
 		}
-
-		
-
-
 	</style>
 
 </head>
 <body>
-<?php
-if(isset($_GET['success'])){
-	echo '<div class="alert alert-success">'.$_GET['success'].'</div>';
-}
-if(isset($_GET['error'])){
-	echo '<div class="alert alert-danger">'.$_GET['error'].'</div>';
-}
-?>
+	<header class="topheader">
+		<img src="images/logo.png" alt="Favorite Design">
+	</header>
