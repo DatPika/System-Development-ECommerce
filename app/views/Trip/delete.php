@@ -12,7 +12,7 @@
 
 			<div class="info">
 				<div class ="input-box">
-					<label><?= _('Project') ?></label><input type="text" name="project" id="project" readonly="readonly"><?= $data->project_id?></textarea>
+					<label><?= _('Project') ?></label><input type="text" name="project" id="project" readonly="readonly" value="<?= $data->project_id?>">
 				</div>
 				<div class ="input-box">
 					<label><?= _('Distance') ?></label><input type="text" name='distance' id="distance" value="<?= $data->distance?>" readonly="readonly">
