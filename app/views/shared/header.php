@@ -37,11 +37,32 @@
 		}
 
 		.createPage {
-			min-height: 100vh;
 			display: flex;
-			align-items: center;
+			height: 100vh;
 			justify-content: center;
-			background-color: lightgray;
+			align-items: center;
+		}
+
+		.container{
+			width: 100%;
+			max-width: 650px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+			padding: 28px;
+			margin: 0 28px;
+		}
+
+		.form-title{
+			font-size: 26px;
+			font-weight: 600;
+			text-align: center;
+			padding-bottom: 6px;
+			border-bottom: solid 1px grey;
+		}
+
+		.expense-info{
+			display: flex;
+			justify-content: space-between;
+			padding: 20px 0;
 		}
 
 		
