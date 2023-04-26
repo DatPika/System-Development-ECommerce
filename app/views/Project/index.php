@@ -22,8 +22,16 @@ foreach ($data as $project) { ?>
 	<tbody>
 		<tr>
 			<td><?= htmlentities($project->clientName) ?></td>
+			<td><?= htmlentities($project->startDate) ?></td>
+			<td><?= htmlentities($project->endDate) ?></td>
+			<td><?= htmlentities($project->job) ?></td>
+			<td><?= htmlentities($project->surfaceArea) ?></td>
+			<td><?= htmlentities($project->lights) ?></td>
+			<td><?= htmlentities($project->spots) ?></td>
+			<td><?= htmlentities($project->vents) ?></td>
+			<td><?= htmlentities($project->works) ?></td>
+			<td><?= htmlentities($project->projectCost) ?></td>
 			<td><?= htmlentities($project->other) ?></td>
-			<td><?= htmlentities($project->profit) ?></td>
 			<td><a href='/Expense/delete/<?=$project->projectproject_id?>'><?= _('delete') ?></a> | <a href='/Expense/edit/<?=$project->expense_id?>'><?= _('edit') ?></a>
 		</tr>
 	</tbody>
