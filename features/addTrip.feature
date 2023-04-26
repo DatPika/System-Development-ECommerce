@@ -8,10 +8,12 @@ Feature: Adding in Trip Table
     And I have a client record
     And I am on the Add Trip Record page
   	When I input "120.75" in "distance"
-    And I input "No" in "job"
+    And I click "Service" in "job"
     And I input "Bob James" in "client_name"
-    And I input "4/4/2023" in "date"
+    And I input "123 moon street" in "addres
+    And I input "4/4/2023" in "startDate"
+    And I input "4/4/2023" in "endDate"
     And I input "1" in "project_id"
-  	And I press on the "Add" Button
-  	Then I see the Main Page
-    And I should be able to see that the record was created in the trip table when looking in the view trip table page
+  	And I press on the "Add Record" Button
+  	Then I see the view Trip Page
+    And I should be able to see "120.75","Service","Bob James", "123 moon street", "4/4/2023", "4/4/2023", "1" in the view trip page
