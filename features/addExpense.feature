@@ -9,7 +9,7 @@ Feature: Add in Expense Table
     And I input "PVC Film" in "details/information"
     And I input "200" in "amount"
     And I press the "Add Record" button
-    Then I see expense "Chris Paul", "PVC Film" and "200"
+    Then I see expense "Chris Paul", "PVC Film" and "200" in the Expense table
 
   Scenario: The user wants to add an Expense record without the supplier autofill feature
     Given I am logged in
@@ -18,4 +18,4 @@ Feature: Add in Expense Table
     And I input "PVC Film" in "details/information"
     And I input "200" in "amount"
     And I press the "Add Record" button
-    Then I see expense "Devin Booker", "PVC Film" and "200"
+    Then I see expense "Devin Booker", "PVC Film" and "200" in the Expense table
