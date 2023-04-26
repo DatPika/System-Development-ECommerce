@@ -13,7 +13,7 @@
 					<label><?= _('Start Date') ?></label><input type="text" name="startDate" id="clientName" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('End Date') ?></label><input type="text" name="endDate" id="clientName" required>
+					<label><?= _('End Date') ?></label><input type="text" name="endDate" id="clientName">
 				</div>
 				<div class ="input-box">
 					<label><?= _('Service') ?></label><input type="radio" name='job' id="cash" value="Service" required>

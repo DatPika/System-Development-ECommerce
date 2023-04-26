@@ -21,6 +21,7 @@ class Project extends \app\core\Controller{
             $project->spots = $_POST['spots'];
             $project->vents = $_POST['vents'];
             $project->works = $_POST['works'];
+            $project->projectCost = $_POST['projectCost'];
             $project->otherInformation = $_POST['otherInformation'];
             $client = new \app\models\Client();
             $client->clientName = $_POST['client'];
@@ -28,6 +29,14 @@ class Project extends \app\core\Controller{
             $client->insert();
             $project->client_id = $client->client_id;
             $project->insert();
+            $payment = new \app\models\PaymentInformation();
+            $payment->project_id = $project->project_id;
+            $payment->paymentMethod = $_POST['deposit'];
+            $payment->date = $_POST['date'];
+            $payment->amount = $_POST['amount'];
+            //TODO: 
+            // user_id dropdown list to fetch user for profit
+
             header('location:/Project/index');
         }
         else {
@@ -51,6 +60,7 @@ class Project extends \app\core\Controller{
                 $project->spots = $_POST['spots'];
                 $project->vents = $_POST['vents'];
                 $project->works = $_POST['works'];
+                $project->projectCost = $_POST['projectCost'];
                 $project->otherInformation = $_POST['otherInformation'];
                 $client = new \app\models\Client();
                 $client->clientName = $_POST['client'];

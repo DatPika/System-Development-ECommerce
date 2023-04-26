@@ -21,7 +21,7 @@
 foreach ($data as $project) { ?>
 	<tbody>
 		<tr>
-			<td><?= htmlentities($project->clientName) ?></td>
+			<td><?= htmlentities($project->client_id) ?></td>
 			<td><?= htmlentities($project->startDate) ?></td>
 			<td><?= htmlentities($project->endDate) ?></td>
 			<td><?= htmlentities($project->job) ?></td>
@@ -32,7 +32,7 @@ foreach ($data as $project) { ?>
 			<td><?= htmlentities($project->works) ?></td>
 			<td><?= htmlentities($project->projectCost) ?></td>
 			<td><?= htmlentities($project->other) ?></td>
-			<td><a href='/Expense/delete/<?=$project->projectproject_id?>'><?= _('delete') ?></a> | <a href='/Expense/edit/<?=$project->expense_id?>'><?= _('edit') ?></a>
+			<td><a href='/Project/delete/<?=$project->project_id?>'><?= _('delete') ?></a> | <a href='/Project/edit/<?=$project->project_id?>'><?= _('edit') ?></a>
 		</tr>
 	</tbody>
 <?php
