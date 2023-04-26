@@ -53,6 +53,11 @@
 			border-radius: 7px;
 		}
 
+		.container h2{
+			font-size: 20px;
+			text-align: center;
+		}
+
 		.form-title{
 			font-size: 26px;
 			font-weight: 600;
