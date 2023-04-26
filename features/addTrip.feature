@@ -8,7 +8,7 @@ Feature: Adding in Trip Table
     And I have a client record
     And I am on the Add Trip Record page
   	When I input "120.75" in "distance"
-    And I input "No" in "estimation"
+    And I input "No" in "job"
     And I input "Bob James" in "client_name"
     And I input "4/4/2023" in "date"
     And I input "1" in "project_id"
