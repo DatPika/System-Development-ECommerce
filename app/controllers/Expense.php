@@ -69,28 +69,4 @@ class Expense extends \app\core\Controller{
             header('location:/Expense/index?error=The chosen expense does not exist');
         }
     }
-
-    public function addSupplier() {
-        if(isset($_POST['action'])){
-            $fh = fopen('supplierList.txt', 'a');
-            $lineNumber = count(file("supplierList.txt")) + 1;
-            fwrite($fh, "$lineNumber : $_POST[supplierName] \n");
-            fclose($fh);
-            header('location:/Expense/addSupplier');
-        }else{
-            $this->view('Expense/addSupplier');
-        }
-    }
-
-    // TODO:
-    public function editSuppliers() {
-        $this->view('Expense/editSuppliers');
-    }
-
-
-    public function deleteSupplier($lineNumber) {
-
-    }
-
-    
 }
