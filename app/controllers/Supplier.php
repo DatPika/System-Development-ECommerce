@@ -4,11 +4,13 @@ namespace app\controllers;
 #[\app\filters\Login]
 class Supplier extends \app\core\Controller{
     public function index() {
-        $supplier = new \app\models\Supplier();
-        $contents = $supplier->getAll();
+        $expense = new \app\models\Expense();
+        $contents = $expense->getAllSuppliers();
+        // $supplier = new \app\models\Supplier();
+        // $contents = $supplier->getAll();
         $this->view('Supplier/editSuppliers', $contents);
     }
-
+    // i say to remove this method
     public function addSupplier() {
         if(isset($_POST['action'])){
             $supplier = new \app\models\Supplier();
@@ -21,8 +23,10 @@ class Supplier extends \app\core\Controller{
     }
 
     public function editSuppliers() {
-        $supplier = new \app\models\Supplier();
-        $contents = $supplier->getAll();
+        $expense = new \app\models\Expense();
+        $contents = $expense->getAllSuppliers();
+        // $supplier = new \app\models\Supplier();
+        // $contents = $supplier->getAll();
         $this->view('Supplier/editSuppliers', $contents);
     }
 
