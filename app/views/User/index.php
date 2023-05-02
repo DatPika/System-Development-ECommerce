@@ -9,7 +9,7 @@
 		<form method="post" action="">
 
 			<div class="info">
-				<<input type="text" name="username" id="username" placeholder=<?= _('Username') ?> required>
+				<input type="text" name="username" id="username" placeholder=<?= _('Username') ?> required>
 			</div>
 			<div class="info">
 			<input type="password" name='password' id="password" placeholder=<?= _('Password') ?> required>

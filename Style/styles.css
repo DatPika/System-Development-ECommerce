@@ -9,6 +9,46 @@ body {
 	margin: 0px;
 }
 
+figure.back {
+	width: 50px;
+	height: 75px;
+	margin: 20px 0 0 20px;
+	cursor: pointer;
+}
+
+figure.back:hover {
+	border: 1px solid black;
+	background-color: #E0E0E0;
+}
+
+.hover-underline-animation {
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+}
+
+figure.back > figcaption {
+	text-align: center;
+}
+
+figure.back > img {
+	width: inherit;
+}
+
 .topheader {
 	position: relative;
 	background-color: #EE0404;
@@ -20,7 +60,7 @@ body {
 .content-table table,
 .content-table th,
 .content-table td {
-	border: 1px solid black;
+	border: 2px solid black;
 }
 
 .content-table {
@@ -28,7 +68,6 @@ body {
 	margin: 25px 0;
 	font-size: 0.9em;
 	min-width: 400px;
-	border-radius: 5px 5px 0 0;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	background-color: white;
@@ -57,7 +96,6 @@ body {
 
 .createPage {
 	display: flex;
-	height: 80vh;
 	justify-content: center;
 	align-items: center;
 }
