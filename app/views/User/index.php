@@ -9,10 +9,10 @@
 		<form method="post" action="">
 
 			<div class="info">
-				<input type="text" name="username" id="username" placeholder=<?= _('Username') ?> required>
+				<<input type="text" name="username" id="username" placeholder=<?= _('Username') ?> required>
 			</div>
 			<div class="info">
-				<input type="password" name='password' id="password" placeholder=<?= _('Password') ?> required>
+			<input type="password" name='password' id="password" placeholder=<?= _('Password') ?> required>
 			</div>
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Login') ?>'>

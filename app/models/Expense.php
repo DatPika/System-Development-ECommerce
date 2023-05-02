@@ -51,7 +51,7 @@ class Expense extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
-		public function getAllSuppliers(){
+	public function getAllSuppliers(){
 		$SQL = "SELECT DISTINCT supplierName FROM expense";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();

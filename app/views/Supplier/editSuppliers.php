@@ -1,6 +1,24 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
 
+
 <form method="post">
+
+<div class="createPage">
+<table class="content-table">
+	<thead>
+		<tr>
+		<th><?= _('Shown') ?></th>
+		</tr>
+	</thead>
+<?php
+foreach ($data as $supplier) { ?>
+	<tbody>
+		<tr>
+		<td><input type="checkbox" value="$supplier->supplierName"></td>
+			<td><?= htmlentities($supplier->supplierName) ?></td>
+		</tr>
+	</tbody>
+
 
 	<div class="createPage">
 	<table class="content-table">
@@ -19,11 +37,16 @@
 			</tr>
 		</tbody>
 
+
 	<?php
 	}
 	?>
 
 	</table>
+
+</table>
+</div>
+
 
 	</div>
 

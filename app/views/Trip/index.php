@@ -15,7 +15,7 @@ foreach ($data as $trip) { ?>
 		<tr>
 			<td><?= htmlentities($trip->project_id) ?></td>
 			<td><?= htmlentities($trip->distance) ?></td>
-			<td><a href='/Trip/delete/<?=$trip->trip_id?>'><?= _('delete') ?></a> | <a href='/Trip/edit/<?=$trip->trip_id?>'><?= _('edit') ?></a>
+			<td><a href='/Trip/delete/<?=$trip->trip_id?>'><?= _('Delete') ?></a> | <a href='/Trip/edit/<?=$trip->trip_id?>'><?= _('Edit') ?></a>
 		</tr>
 	</tbody>
 <?php
