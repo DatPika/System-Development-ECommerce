@@ -4,8 +4,8 @@ namespace app\controllers;
 #[\app\filters\Login]
 class Supplier extends \app\core\Controller{
     public function index() {
-        $supplier = new \app\models\Supplier();
-        $contents = $supplier->getAll();
+        $expense = new \app\models\Expense();
+        $contents = $expense->getAllSuppliers();
         $this->view('Supplier/editSuppliers', $contents);
     }
 
@@ -19,13 +19,6 @@ class Supplier extends \app\core\Controller{
             $this->view('Supplier/addSupplier');
         }
     }
-
-    public function editSuppliers() {
-        $supplier = new \app\models\Supplier();
-        $contents = $supplier->getAll();
-        $this->view('Supplier/editSuppliers', $contents);
-    }
-
 
     public function deleteSupplier($lineNumber) {
 
