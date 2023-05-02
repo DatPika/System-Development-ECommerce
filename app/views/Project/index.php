@@ -33,7 +33,7 @@ foreach ($data as $project) { ?>
 			<td><?= htmlentities($project->works) ?></td>
 			<td><?= htmlentities($project->projectCost) ?></td>
 			<td><?= htmlentities($project->other) ?></td>
-			<td><a href='/Project/delete/<?=$project->project_id?>'><?= _('delete') ?></a> | <a href='/Project/edit/<?=$project->project_id?>'><?= _('edit') ?></a>
+			<td><a href='/Project/delete/<?=$project->project_id?>'><?= _('Delete') ?></a> | <a href='/Project/edit/<?=$project->project_id?>'><?= _('Edit') ?></a>
 		</tr>
 	</tbody>
 <?php
