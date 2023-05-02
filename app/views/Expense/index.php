@@ -17,7 +17,7 @@ foreach ($data as $expense) { ?>
 			<td><?= htmlentities($expense->supplierName) ?></td>
 			<td><?= htmlentities($expense->details) ?></td>
 			<td><?= htmlentities($expense->totalExpense) ?></td>
-			<td><a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('delete') ?></a> | <a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('edit') ?></a>
+			<td><a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('Delete') ?></a> | <a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('Edit') ?></a>
 		</tr>
 	</tbody>
 

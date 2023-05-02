@@ -16,6 +16,13 @@ body {
 	left: 0px;
 	top: 0px;
 }
+
+.content-table table,
+.content-table th,
+.content-table td {
+	border: 1px solid black;
+}
+
 .content-table {
 	border-collapse: collapse;
 	margin: 25px 0;
@@ -41,6 +48,11 @@ body {
 
 .content-table tbody tr {
 	border-bottom: 1px solid #dddddd;
+}
+
+/*Removing the underline from the "Actions" field */
+.content-table tbody tr:first-child td:nth-child(4) a {
+   text-decoration: none;
 }
 
 .createPage {
