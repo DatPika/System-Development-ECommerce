@@ -45,12 +45,12 @@ body {
 
 .createPage {
 	display: flex;
-	height: 100vh;
+	height: 80vh;
 	justify-content: center;
 	align-items: center;
 }
 
-.container{
+.container {
 	width: 100%;
 	max-width: 650px;
 	height: 400px;
@@ -58,17 +58,18 @@ body {
 	padding: 28px;
 	margin: 0 28px;
 	background-color: white;
-	border-radius: 7px;
+	border-radius: 50px;
 }
 
-.container h2{
+.container h2 {
 	font-size: 20px;
 	text-align: center;
 }
 
 .form-title{
-	font-size: 26px;
+	font-size: 36px;
 	font-weight: 600;
+	line-height: 60px;
 	text-align: center;
 	padding-bottom: 6px;
 	border-bottom: solid 1px grey;
@@ -76,12 +77,19 @@ body {
 
 .info{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 20px 0;
 }	
 
-.input-box label {
-	font-size: 20px;
+.info input{
+	background-color: #D9D9D9;
+	border-radius: 50px;
+	border-style: solid;
+	text-indent: 10px;
+}
+
+input::placeholder {
+    color: #949090;
 }
 
 .form-submit-btn{
@@ -91,10 +99,11 @@ body {
 }
 
 .form-submit-btn input{
+	width: 150px;
 	font-size: 20px;
-	padding: 10px;
+	padding: 3px;
 	border: none;
-	border-radius: 7px;
+	border-radius: 50px;
 	color: white;
 	background-color: red;	
 }
