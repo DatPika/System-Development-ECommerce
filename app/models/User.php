@@ -6,6 +6,8 @@ class User extends \app\core\Model{
 	public $username;
 	public $password_hash;
 
+	public $secretkey;
+
 	public function get($username){
 		$SQL = 'SELECT * FROM user WHERE username = :username';
 		$STH = self::$connection->prepare($SQL);
@@ -30,5 +32,12 @@ class User extends \app\core\Model{
         $STH->execute();
         $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\User');
         return $STH->fetchAll();
+	}
+	public function update2fa() {
+		$SQL = 'UPDATE user set secretkey=:secretkey where user_id=:user_id';
+		$STH = self::$connection->prepare($SQL);
+
+		$STH->execute(['user_id'=>$this->user_id, 'secretkey'=>$this->secretkey]);
+		return $STH->rowCount();
 	}
 }

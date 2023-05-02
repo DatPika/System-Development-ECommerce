@@ -4,16 +4,19 @@
 <table class="content-table">
 	<thead>
 		<tr>
-			<th><?= _('Shown') ?></th>
+			<th><?= _('Display') ?></th>
 			<th><?= _('Supplier name') ?></th>
+			<th><?= _('Actions') ?></th>
 		</tr>
 	</thead>
 <?php
-foreach ($data as $supplier) { ?>
+foreach ($data as $expense) { ?>
 	<tbody>
 		<tr>
-			<td><input type="checkbox" value="$supplier->supplierName"></td>
-			<td><?= htmlentities($supplier->supplierName) ?></td>
+			<td><?= htmlentities($expense->supplierName) ?></td>
+			<td><?= htmlentities($expense->details) ?></td>
+			<td><?= htmlentities($expense->totalExpense) ?></td>
+			<td><a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('delete') ?></a> | <a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('edit') ?></a>
 		</tr>
 	</tbody>
 
@@ -22,11 +25,6 @@ foreach ($data as $supplier) { ?>
 ?>
 
 </table>
-
-</div>
-
-<div class="form-submit-btn">
-	<input type="submit" name="action" value='<?= _('Done') ?>' onclick="UpdateSuppliers()" id="doneButton">
 </div>
 
 <?php $this->view('shared/footer'); ?>

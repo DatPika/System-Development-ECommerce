@@ -10,7 +10,14 @@ class User extends \app\core\Controller{
 			if($user){
 				if(password_verify($_POST['password'], $user->password_hash)){
 					$_SESSION['user_id'] = $user->user_id;
-					header('location:/Home/index');
+					$_SESSION['username'] = $user->username;
+					$_SESSION['secretkey'] = $user->secretkey;
+					if(!$user->secretkey) {
+						header('location:/Home/index');
+					}
+					else {
+						header('location:/User/verify2fa');
+					}
 				}else{
 					header('location:/User/index?error=Bad username/password combination');
 				}
@@ -44,6 +51,63 @@ class User extends \app\core\Controller{
 	public function logout(){
 		session_destroy();
 		header('location:/User/index');
+	}
+
+	public function makeQRCode(){
+		$data = $_GET['data'];
+		\QRcode::png($data);
+	}
+
+	#[\app\filters\Login]
+	public function setup2fa(){
+		if(isset($_POST['action'])) {
+			$currentcode = $_POST['currentCode'];
+			if(\app\core\TokenAuth6238::verify(
+				$_SESSION['secretkey'], $currentcode
+			)) {
+				//the user has verified their proper 2-factor authentication setup
+				$user = new \app\models\User();
+				$user->user_id = $_SESSION['user_id'];
+				$user->secretkey = $_SESSION['secretkey'];
+				$_SESSION['secretkey'] = '';
+				$user->update2fa();
+				header('location:/Home/index');
+			}
+			else {
+				header('location:/User/setup2fa?error=token not verified!'); // reload
+			}		   
+		}
+		else {
+			$secretkey = \app\core\TokenAuth6238::generateRandomClue();
+			$_SESSION['secretkey'] = $secretkey;
+			var_dump($_SESSION);
+			$url = \app\core\TokenAuth6238::getLocalCodeUrl(
+			$_SESSION['username'],
+			'FavoriteDesign.com',
+			$secretkey,
+			'Favorite Design\'s Database App');
+			$this->view('User/twofasetup', $url);
+		}
+	}
+
+	#[\app\filters\Login]
+	public function verify2fa() {
+		var_dump($_SESSION);
+		if(isset($_POST['action'])) {
+			$currentcode = $_POST['currentCode'];
+			if(\app\core\TokenAuth6238::verify(
+				$_SESSION['secretkey'], $currentcode
+			)) {
+				$_SESSION['secretkey'] = '';
+				header('location:/Home/index');
+			}
+			else {
+				header('location:/User/verify2fa?error=token not verified!'); // reload
+			}	
+		}	   
+		else {
+			$this->view('User/verify2fa');
+		}
 	}
 
 	//TODO implement verrify 2f1 ans setup2fa and makeQRcode (i have the code i will paste it here later)
