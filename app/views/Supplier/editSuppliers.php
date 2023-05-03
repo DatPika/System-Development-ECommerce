@@ -15,8 +15,25 @@
 	foreach ($data as $supplier) { ?>
 		<tbody>
 			<tr>
-				<td><input type="checkbox" name="supplierName[]" value="<?=$supplier->supplierName?>"></td>
-				<td><?= htmlentities($supplier->supplierName) ?></td>
+
+				<?php
+
+				$file = fopen("supplierList.txt", "r");
+				$dataFile = fgetcsv($file);
+
+				if (in_array($supplier->supplierName, $dataFile)) {
+				?>
+					<td><input type="checkbox" name="supplierName[]" value="<?=$supplier->supplierName?>" checked></td>
+					<td><?= htmlentities($supplier->supplierName) ?></td>
+				<?php
+				}
+				else{
+				?>
+					<td><input type="checkbox" name="supplierName[]" value="<?=$supplier->supplierName?>"></td>
+					<td><?= htmlentities($supplier->supplierName) ?></td>
+				<?php
+				}
+				?>
 			</tr>
 		</tbody>
 

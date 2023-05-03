@@ -70,6 +70,8 @@
 			  
 			        echo "\n</center></body></html>";
 			        ?>
+
+			        <a href='/Supplier/index'>Edit suppliers</a>
 			    </center>
 
 			</div>
