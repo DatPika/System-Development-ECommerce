@@ -10,7 +10,7 @@
 
 			<div class="info">
 				<div class ="input-box">
-					<label><?= _('Supplier Name') ?></label><input type="text" name="supplierName" id="supplierName" required>
+					<label><?= _('Supplier Name') ?></label><input type="text" name="supplierName" id="supplierName" class="supplierName" required>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Details') ?></label><textarea name="details" id="details"></textarea>
@@ -30,6 +30,48 @@
 			</div>
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Add record') ?>'>
+			</div>
+
+			<div>
+				<!-- Needs to be formatted with proper css -->
+				<!-- Need to format the supplier autofill list -->
+				<center>
+			        <h3>Suppliers</h3>
+			  
+			        <?php
+			        echo "<html><body><center>\n\n";
+			  
+			        // Open a file
+			        $file = fopen("supplierList.txt", "r");
+			  		?>
+			  		<ul>
+			  			
+			  			<?php
+			  				// Fetching data from csv file row by row
+			        		while (($data = fgetcsv($file)) !== false) {
+			  			
+			            		// HTML tag for placing in row format
+			            		foreach ($data as $i) {
+			            ?>
+			            			<li>
+			            				<label class="supplierAuto"><?php echo htmlspecialchars($i) . ' '; ?></label>
+			            			</li>
+			            <?php
+			            		}
+			        		}
+			  			?>
+
+			  		</ul>
+			  		<?php
+			        
+			  
+			        // Closing the file
+			        fclose($file);
+			  
+			        echo "\n</center></body></html>";
+			        ?>
+			    </center>
+
 			</div>
 			
 		</form>
