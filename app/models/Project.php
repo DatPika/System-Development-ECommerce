@@ -108,4 +108,15 @@ class Project extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
 		return $STH->fetch();
 	}
+
+	public function getAllPayments() {
+        $SQL = "SELECT * FROM paymentInformation WHERE project_id = :project_id";
+        $STH = self::$connection->prepare($SQL);
+        $data = [
+            'project_id'=>$this->project_id
+        ];
+        $STH->execute($data);
+        $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\PaymentInformation');
+        return $STH->fetchAll();
+    }
 }

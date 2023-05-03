@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 #[\app\filters\Login]
+#[\app\filters\twofa]
 class Expense extends \app\core\Controller{
     public function index() {
         $expense = new \app\models\Expense();

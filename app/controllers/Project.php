@@ -2,7 +2,9 @@
 namespace app\controllers;
 
 #[\app\filters\Login]
+#[\app\filters\twofa]
 class Project extends \app\core\Controller{
+    const $maxPayments = 10;
     public function index() {
         $project = new \app\models\Project();
         $projects = $project->getAll();
@@ -28,21 +30,16 @@ class Project extends \app\core\Controller{
             $client->address = $_POST['address'];
             $client->insert();
             $project->client_id = $client->client_id;
-            $payment = new \app\models\PaymentInformation();
-            $payment->project_id = $project->project_id;
-            $payment->paymentMethod = $_POST['deposit'];
-            $payment->date = $_POST['date'];
-            $payment->amount = $_POST['amount'];
-            //TODO: 
-            // user_id dropdown list to fetch user for profit/payment
-            $payment->insert();
-            $project->payment_id = $payment->payment_id;
             $project->insert();
-
+            for(var $i = 1; $i <= $maxPayments; $i++) {
+                (isset($_POST['date']))
+            }
             header('location:/Project/index');
         }
         else {
-            $this->view('Project/create');
+            $user = new \app\models\User();
+            $users = $user->getAll();
+            $this->view('Project/create', $users);
         }
     }
 
@@ -52,7 +49,6 @@ class Project extends \app\core\Controller{
         // might make this into a filter the not null project
         if($project) {
             if(isset($_POST['action'])) {
-                $project = new \app\models\Project();
                 $project->job = $_POST['job'];
                 $project->startDate = $_POST['startDate'];
                 $project->endDate = $_POST['endDate'];
@@ -65,26 +61,19 @@ class Project extends \app\core\Controller{
                 $project->projectCost = $_POST['projectCost'];
                 $project->otherInformation = $_POST['otherInformation'];
                 $client = new \app\models\Client();
+                $client = $client->get($project->client_id);
                 $client->clientName = $_POST['client'];
                 $client->address = $_POST['address'];
-                $client->insert();
+                $client->update();
                 $project->client_id = $client->client_id;
-                $payment = new \app\models\PaymentInformation();
-                $payment->project_id = $project->project_id;
-                $payment->paymentMethod = $_POST['deposit'];
-                $payment->date = $_POST['date'];
-                $payment->amount = $_POST['amount'];
-                // TODO: update or insert Payment Information by implementing user drop down
-                // user_id dropdown list to fetch user for profit/payment
-
-                $payment->insert();
-                $project->payment_id = $payment->payment_id;
                 $project->update();
-
                 header('location:/Project/index');
             }
             else {
-                $this->view('Project/edit', $project);
+                $payments = $project->getAll();
+                $user = new \app\models\User();
+                $users = $user->getAll();
+                $this->view('Project/edit', [$project, $payments, $users]);
             }
         }
         else {

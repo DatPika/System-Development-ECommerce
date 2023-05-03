@@ -54,28 +54,37 @@
 				<div class ="input-box">
 					<label><?= _('Other') ?></label><input type="text" name='otherInformation' id="other" required>
 				</div>
-				<label>Deposit:</label>
+				<label><?=_('Deposit')?>:</label>
 				<div class ="input-box">
-					<label><?= _('Date') ?></label><input type="text" name='date' id="date" required>
+					<label><?= _('Date') ?></label><input type="text" name='date1' id="date1" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Amount') ?></label><input type="text" name='amount' id="amonut" required>
+					<label><?= _('Amount') ?></label><input type="text" name='amount1' id="amount1" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Cash') ?></label><input type="radio" name='deposit' id="cash" required>
+					<label><?= _('Cash') ?></label><input type="radio" name='deposit' id="cash1" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Interac') ?></label><input type="radio" name='deposit' id="interac" required>
+					<label><?= _('Interac') ?></label><input type="radio" name='deposit' id="interac1" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('E-Transfer') ?></label><input type="radio" name='deposit' id="e-transfer" required>
-				</div>
-				<!--<label>Balance:</label>
-				<div class ="input-box">
-					<label></label><input type="text" name='date' id="date" required>
+					<label><?= _('E-Transfer') ?></label><input type="radio" name='deposit' id="e-transfer1" required>
 				</div>
 				<div class ="input-box">
-					<label></label><input type="text" name='amount' id="amonut" required>
+					<label><?= _('Select the user:') ?></label><select name='user_id1'>
+					<?php
+					foreach ($data as $user) {
+						echo "<option value='$user->user_id'>$user->username</option>\n";
+					}
+					?>
+					</select><br>
+				</div>
+				<label><?=_('Balance')?>:</label>
+				<div class ="input-box">
+					<label></label><input type="text" name='date2' id="date2" required>
+				</div>
+				<div class ="input-box">
+					<label></label><input type="text" name='amount2' id="amount2" required>
 				</div>
 				<div class ="input-box">
 					<label></label><input type="radio" name='balance' id="cash2" required>
@@ -86,8 +95,17 @@
 				<div class ="input-box">
 					<label></label><input type="radio" name='balance' id="e-transfer2" required>
 				</div>
+				<div class ="input-box">
+					<label><?= _('Select the user:') ?></label><select name='user_id2'>
+					<?php
+					foreach ($data as $user) {
+						echo "<option value='$user->user_id'>$user->username</option>\n";
+					}
+					?>
+					</select><br>
+				</div>
 			</div>
--->
+
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Add record') ?>'>
 			</div>
