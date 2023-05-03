@@ -15,7 +15,7 @@ class Supplier extends \app\core\Controller{
                 fwrite($fh, "$supplierList");
                 fclose($fh);
             }
-            header('location:/Supplier/editSuppliers');
+            header('location:/Expense/create');
         }else{
             $expense = new \app\models\Expense();
             $contents = $expense->getAllSuppliers();
