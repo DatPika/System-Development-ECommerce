@@ -14,7 +14,12 @@
 foreach ($data as $trip) { ?>
 	<tbody>
 		<tr>
-			<td><?= htmlentities($trip->project_id) ?></td>
+			<td><?= htmlentities($trip->getProject()->startDate)?><?php 
+				if(!($trip->getProject()->job == "Estimation")) {
+					echo ",".htmlentities($trip->getProject()->endDate);
+				}
+			?></td>
+			<td><?= htmlentities($trip->getProject()->getClient()->address) ?></td>
 			<td><?= htmlentities($trip->distance) ?></td>
 			<td><a href='/Trip/edit/<?=$trip->trip_id?>'><?= _('Edit') ?></a> | <a href='/Trip/delete/<?=$trip->trip_id?>'><?= _('Delete') ?></a>
 		</tr>

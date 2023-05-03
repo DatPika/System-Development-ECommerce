@@ -4,7 +4,7 @@ namespace app\controllers;
 #[\app\filters\Login]
 #[\app\filters\twofa]
 class Project extends \app\core\Controller{
-    const $maxPayments = 10;
+    private $maxPayments = 10;
     public function index() {
         $project = new \app\models\Project();
         $projects = $project->getAll();
@@ -31,8 +31,8 @@ class Project extends \app\core\Controller{
             $client->insert();
             $project->client_id = $client->client_id;
             $project->insert();
-            for(var $i = 1; $i <= $maxPayments; $i++) {
-                (isset($_POST['date']))
+            for($i = 1; $i <= $maxPayments; $i++) {
+                
             }
             header('location:/Project/index');
         }

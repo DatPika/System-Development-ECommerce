@@ -119,4 +119,15 @@ class Project extends \app\core\Model{
         $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\PaymentInformation');
         return $STH->fetchAll();
     }
+
+    public function getClient() {
+		$SQL = "SELECT client.* FROM project JOIN client ON project.client_id=client.client_id WHERE project.client_id=:client_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute([
+				'client_id' => $this->client_id
+			]
+		);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Client');
+		return $STH->fetch();
+	}
 }
