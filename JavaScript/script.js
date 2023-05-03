@@ -6,7 +6,6 @@
 
 $("document").ready(function() {
 	$(".supplierAuto").on('click', function() {
-		console.log("hello");
 		$("#supplierName").val($(this).html());
 	});
 });
