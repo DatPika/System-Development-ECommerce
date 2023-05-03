@@ -8,14 +8,15 @@ class Supplier{
 	public $supplierName;
 
 	public function getAll(){
-		$contents =  file(SUPPLIER_FILE);
-		return $contents;
-	}
 
-	public function insert(){
-		$fh = fopen('supplierList.txt', 'a');
-        fwrite($fh, "$this->supplierName,");
-        fclose($fh);
+		$file = fopen('supplierList.txt', 'r');
+		while (($line = fgetcsv($file)) !== FALSE) {
+  			//$line is an array of the csv elements
+  			print_r($line);
+		}
+		fclose($file);
+		// $contents =  file(SUPPLIER_FILE);
+		// return $contents;
 	}
 
 }
