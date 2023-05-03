@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2023 at 10:15 PM
+-- Generation Time: May 03, 2023 at 03:08 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -152,18 +152,18 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password_hash` varchar(72) NOT NULL
+  `password_hash` varchar(72) NOT NULL,
+  `secretkey` varchar(72) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `password_hash`) VALUES
-(2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G'),
-(3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK'),
-(4, '123', '$2y$10$1GFjm5bs70XKoYmJHGMAM.E/ASGmtJ0aqJtEoKBXTEtFskqwBqOOa'),
-(5, '45', '$2y$10$H0CatVFSbTP0ULHGXmRIOuuXhb4ienwaWKkdBzj9wC25N8d3Ku/FW');
+INSERT INTO `user` (`user_id`, `username`, `password_hash`, `secretkey`) VALUES
+(2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G', NULL),
+(3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK', NULL),
+(6, 'user2', '$2y$10$aNoPglw.jRG5MCGOWRbWBe763CNjH2kwciziKKowY4vAZmudl5FHG', NULL);
 
 --
 -- Indexes for dumped tables
@@ -247,7 +247,7 @@ ALTER TABLE `trip`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
