@@ -3,7 +3,10 @@
 <div class="createPage">
 	<div class="pageHeader">
 		<h2 class="title">Expense Table</h2>
-		<input type="text" name="search" placeholder=<?= _('Search') ?>>
+		<div class="headerSearch">
+			<input type="text" name="searchField" placeholder=<?= _('Search') ?>>
+			<input type="submit" name="searchButton" value="Search">
+		</div>
 	</div>
 	<table class="content-table">
 		<thead>
