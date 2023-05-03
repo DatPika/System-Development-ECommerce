@@ -1,31 +1,35 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
 
 <div class="createPage">
-<table class="content-table">
-	<thead>
-		<tr>
-			<th><?= _('Supplier name') ?></th>
-			<th><?= _('Details') ?></th>
-			<th><?= _('Expense') ?></th>
-			<th><?= _('Actions') ?></th>
-		</tr>
-	</thead>
-<?php
-foreach ($data as $expense) { ?>
-	<tbody>
-		<tr>
-			<td><?= htmlentities($expense->supplierName) ?></td>
-			<td><?= htmlentities($expense->details) ?></td>
-			<td><?= htmlentities($expense->totalExpense) ?></td>
-			<td><a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('Delete') ?></a> | <a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('Edit') ?></a>
-		</tr>
-	</tbody>
+	<div class="pageHeader">
+		<h2 class="title">Expense Table</h2>
+		<input type="text" name="search" placeholder=<?= _('Search') ?>>
+	</div>
+	<table class="content-table">
+		<thead>
+			<tr>
+				<th><?= _('Supplier name') ?></th>
+				<th><?= _('Details') ?></th>
+				<th><?= _('Expense') ?></th>
+				<th><?= _('Actions') ?></th>
+			</tr>
+		</thead>
+	<?php
+	foreach ($data as $expense) { ?>
+		<tbody>
+			<tr>
+				<td><?= htmlentities($expense->supplierName) ?></td>
+				<td><?= htmlentities($expense->details) ?></td>
+				<td><?= htmlentities($expense->totalExpense) ?></td>
+				<td><a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('Edit') ?></a> | <a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('Delete') ?></a>
+			</tr>
+		</tbody>
 
-<?php
-}
-?>
+	<?php
+	}
+	?>
 
-</table>
+	</table>
 </div>
 
 <?php $this->view('shared/footer'); ?>
