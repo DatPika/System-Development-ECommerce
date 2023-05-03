@@ -22,7 +22,7 @@
 foreach ($data as $project) { ?>
 	<tbody>
 		<tr>
-			<td><?= htmlentities($project->client_id) ?></td>
+			<td><?= htmlentities($project->getClient()->clientName) ?></td>
 			<td><?= htmlentities($project->startDate) ?></td>
 			<td><?= htmlentities($project->endDate) ?></td>
 			<td><?= htmlentities($project->job) ?></td>
