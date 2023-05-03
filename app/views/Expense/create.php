@@ -42,7 +42,7 @@
 			        echo "<html><body><center>\n\n";
 			  
 			        // Open a file
-			        $file = fopen("supplierList.txt", "r");
+			        $file = fopen("resources/supplierList.txt", "r");
 			  		?>
 			  		<ul>
 			  			

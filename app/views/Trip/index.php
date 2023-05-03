@@ -4,7 +4,8 @@
 <table class="content-table">
 	<thead>
 		<tr>
-			<th><?= _('Project') ?></th>
+			<th><?= _('Date') ?></th>
+			<th><?= _('Address') ?></th>
 			<th><?= _('Distance') ?></th>
 			<th><?= _('Actions') ?></th>
 		</tr>
