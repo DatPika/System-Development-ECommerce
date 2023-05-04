@@ -1,1 +1,0 @@
-\findutils\bin\find.exe %*
