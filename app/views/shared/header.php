@@ -12,10 +12,3 @@
 
 </head>
 <body>
-	<header class="topheader">
-		<img src="/images/logo.png" alt="Favorite Design">
-	</header>
-	 <figure class="back hover-underline-animation" onclick="history.back()">
-		 <img src="/images/back-arrow.png" alt="Go Back">
-		 <figcaption>Back</figcaption>
-	</figure>

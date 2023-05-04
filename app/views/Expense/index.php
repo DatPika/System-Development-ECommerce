@@ -1,5 +1,11 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
-
+<header class="topheader">
+	<img src="/images/logo.png" alt="Favorite Design">
+</header>
+ <figure class="back hover-underline-animation" onclick="history.back()">
+	 <img src="/images/back-arrow.png" alt="Go Back">
+	 <figcaption>Back</figcaption>
+</figure>
 <div class="createPage">
 	<div class="pageHeader">
 		<h2 class="title">Expense Table</h2>

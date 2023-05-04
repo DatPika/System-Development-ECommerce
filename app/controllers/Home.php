@@ -6,11 +6,12 @@ namespace app\controllers;
 class Home extends \app\core\Controller{
     public function index() {
         $expense = new \app\models\Expense();
-        $expenses = $expense->getAll();
+        $expenses = $expense->getAllByColumnDesc($timestamp);
         $project = new \app\models\Project();
-        $projects = $project->getAll();
+        $projects = $project->getAllByColumnDesc($endDate);
         $data = [
-            $expenses,$projects
+            'expenses'=>$expenses,
+            'projects'=>$projects
         ];
         $this->view('Home/index', $data);
     }

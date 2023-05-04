@@ -14,8 +14,8 @@
 foreach ($data as $trip) { ?>
 	<tbody>
 		<tr>
-			<td><?= htmlentities($trip->getProject()->startDate)?><?php 
-				if(!($trip->getProject()->job == "Estimation")) {
+			<td><?= htmlentities($trip->getProject()->startDate)?><?php
+				if($trip->getProject()->endDate && $trip->getProject()->job != "Estimation") {
 					echo ",".htmlentities($trip->getProject()->endDate);
 				}
 			?></td>
