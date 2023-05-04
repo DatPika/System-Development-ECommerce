@@ -51,6 +51,11 @@ figure.back > img {
 	width: inherit;
 }
 
+div.break {
+	height: 0;
+	flex-basis: 100%;
+}
+
 .topheader {
 	position: relative;
 	background-color: #EE0404;
@@ -94,6 +99,10 @@ figure.back > img {
 /*Removing the underline from the "Actions" field */
 .content-table tbody tr:first-child td:nth-child(4) a {
    text-decoration: none;
+}
+
+input[name="loadMore"] {
+	width: 300px;
 }
 
 .createPage {
@@ -174,11 +183,11 @@ figure.back > img {
 	flex-grow: 1;
 }
 
-.pageHeader input[name="searchField"]::placeholder{
+input[class="redButton"]::placeholder{
 	color: #626262;
 }
 
-.pageHeader input[name="searchButton"]{
+input[class="redButton"]{
 	color: white;
 	height: 40px;
 	padding: 0 20px 0 20px;

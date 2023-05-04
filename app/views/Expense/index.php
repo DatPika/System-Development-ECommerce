@@ -11,7 +11,7 @@
 		<h2 class="title">Expense Table</h2>
 		<div class="headerSearch">
 			<input type="text" name="searchField" placeholder=<?= _('Search') ?>>
-			<input type="submit" name="searchButton" value="Search">
+			<input type="submit" name="searchButton" class="redButton" value="Search">
 		</div>
 	</div>
 	<table class="content-table">
@@ -39,6 +39,8 @@
 	?>
 
 	</table>
+	<div class="break"></div>
+	<input type="submit" class="redButton" name="loadMore" value="Load More">
 </div>
 
 <?php $this->view('shared/footer'); ?>
