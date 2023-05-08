@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 16:05-0400\n"
-"PO-Revision-Date: 2023-05-08 17:50-0400\n"
+"PO-Revision-Date: 2023-05-08 18:07-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -47,12 +47,12 @@ msgstr "Montant"
 #: app/views/Expense/edit.php:27 app/views/Project/create.php:86
 #: app/views/Project/create.php:113
 msgid "Select the user:"
-msgstr "Sélectionnez l'utilisateur :"
+msgstr "Sélectionnez un utilisateur :"
 
 #: app/views/Expense/create.php:32 app/views/Project/delete.php:95
 #: app/views/Project/create.php:126
 msgid "Add record"
-msgstr "Ajouter l'enregistrement"
+msgstr "Ajouter"
 
 #: app/views/Expense/create.php:39 app/views/Expense/edit.php:46
 msgid "Suppliers"
@@ -80,7 +80,7 @@ msgstr "Annuler"
 
 #: app/views/Expense/delete.php:31 app/views/Trip/delete.php:25
 msgid "Delete record"
-msgstr "Supprimer l'enregistrement"
+msgstr "Supprimer"
 
 #: app/views/Expense/edit.php:1
 msgid "Edit Expense"
@@ -88,7 +88,7 @@ msgstr "Modifier la dépense"
 
 #: app/views/Expense/edit.php:39 app/views/Project/edit.php:92
 msgid "Edit record"
-msgstr "Modifier l'enregistrement"
+msgstr "Modifier"
 
 #: app/views/Expense/index.php:1 app/views/Home/index.php:1
 #: app/views/Project/index.php:1
@@ -140,7 +140,7 @@ msgstr "Dépense/Profit"
 
 #: app/views/Project/delete.php:1
 msgid "Delete Project Record"
-msgstr "Supprimer l'enregistrement du Projet"
+msgstr "Supprimer le Projet"
 
 #: app/views/Project/delete.php:8
 msgid "Delete Project"
@@ -350,11 +350,11 @@ msgstr "Distance"
 
 #: app/views/Trip/create.php:25
 msgid "Add Record"
-msgstr "Ajouter l'enregistrement"
+msgstr "Ajouter "
 
 #: app/views/Trip/delete.php:1
 msgid "Delete Trip Record"
-msgstr "Supprimer l'enregistrement de Voyage"
+msgstr "Supprimer le Voyage"
 
 #: app/views/Trip/delete.php:8
 msgid "Delete Trip"
@@ -370,7 +370,7 @@ msgstr "Modifier le voyage"
 
 #: app/views/Trip/edit.php:21
 msgid "Edit Record"
-msgstr "Modifier l'enregistrement"
+msgstr "Modifier"
 
 #: app/views/Trip/index.php:1
 msgid "Trip Table"

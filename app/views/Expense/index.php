@@ -5,10 +5,10 @@
 </figure>
 <div class="createPage">
 	<div class="pageHeader">
-		<h2 class="title">Expense Table</h2>
+		<h2 class="title"><?=_('Expense Table')?></h2>
 		<div class="headerSearch">
 			<input type="text" name="searchField" placeholder="<?= _('Search') ?>">
-			<input type="submit" name="searchButton" class="redButton" value="Search">
+			<input type="submit" name="searchButton" class="redButton" value="<?= _('Search') ?>">
 		</div>
 	</div>
 	<table class="content-table">
