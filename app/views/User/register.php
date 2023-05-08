@@ -1,4 +1,4 @@
-<?php $this->view('shared/header','Register your account'); ?>
+<?php $this->view('shared/header',_('Register your account')); ?>
 
 <div class="createPage">
 

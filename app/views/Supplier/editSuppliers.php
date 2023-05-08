@@ -1,4 +1,4 @@
-<?php $this->view('shared/header',_('Expense Table')); ?>
+<?php $this->view('shared/header',_('Edit Supplier List')); ?>
 
 
 <form method="post">

@@ -1,4 +1,4 @@
-<?php $this->view('shared/header',('Edit Expense')); ?>
+<?php $this->view('shared/header',_('Edit Expense')); ?>
 
 <?php
     $expense = $data['expense'];
@@ -15,16 +15,16 @@
 
             <div class="expense-info">
                 <div class ="input-box">
-                    <label><?= ('Supplier Name') ?></label><input type="text" name="supplierName" id="supplierName" value="<?= $expense->supplierName?>" class="supplierName" required>
+                    <label><?= _('Supplier Name') ?></label><input type="text" name="supplierName" id="supplierName" value="<?= $expense->supplierName?>" class="supplierName" required>
                 </div>
                 <div class ="input-box">
-                    <label><?= ('Details') ?></label><textarea name="details" id="details"><?= $expense->details?></textarea>
+                    <label><?= _('Details') ?></label><textarea name="details" id="details"><?= $expense->details?></textarea>
                 </div>
                 <div class ="input-box">
-                    <label><?= ('Amount') ?></label><input type="text" name='totalExpense' id="totalExpense" value="<?= $expense->totalExpense?>" required>
+                    <label><?= _('Amount') ?></label><input type="text" name='totalExpense' id="totalExpense" value="<?= $expense->totalExpense?>" required>
                 </div>
                 <div class ="input-box">
-                    <label><?= ('Select the user:') ?></label><select name='user_id'>
+                    <label><?= _('Select the user:') ?></label><select name='user_id'>
                     <?php
                         foreach ($users as $user) {
                             echo "<option value='$user->user_id' ";
@@ -36,20 +36,20 @@
                 </div>
             </div>
             <div class="form-submit-btn">
-                <input type="submit" name="action" value='<?= ('Edit record') ?>'>
+                <input type="submit" name="action" value='<?= _('Edit record') ?>'>
             </div>
 
             <div>
                 <!-- Needs to be formatted with proper css -->
                 <!-- Need to format the supplier autofill list -->
                 <center>
-                    <h3>Suppliers</h3>
+                    <h3><?=_('Suppliers')?></h3>
               
                     <?php
                     echo "<html><body><center>\n\n";
               
                     // Open a file
-                    $file = fopen("supplierList.txt", "r");
+                    $file = fopen("resources/supplierList.txt", "r");
                     ?>
                     <ul>
                         

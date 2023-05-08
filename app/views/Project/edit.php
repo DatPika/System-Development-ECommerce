@@ -89,7 +89,7 @@
 			</div>
 -->
 			<div class="form-submit-btn">
-				<input type="submit" name="action" value='<?= _('Add record') ?>'>
+				<input type="submit" name="action" value='<?= _('Edit record') ?>'>
 			</div>
 			
 		</form>

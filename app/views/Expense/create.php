@@ -36,7 +36,7 @@
 				<!-- Needs to be formatted with proper css -->
 				<!-- Need to format the supplier autofill list -->
 				<center>
-			        <h3>Suppliers</h3>
+			        <h3><?=_('Suppliers')?></h3>
 			  
 			        <?php
 			        echo "<html><body><center>\n\n";
@@ -71,7 +71,7 @@
 			        echo "\n</center></body></html>";
 			        ?>
 
-			        <a href='/Supplier/index'>Edit suppliers</a>
+			        <a href='/Supplier/index'><?=_('Edit suppliers')?></a>
 			    </center>
 
 			</div>

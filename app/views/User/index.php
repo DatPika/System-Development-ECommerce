@@ -1,4 +1,4 @@
-<?php $this->view('shared/header','Log into your account'); ?>
+<?php $this->view('shared/header',_('Log into your account')); ?>
 
 <div class="createPage">
 

@@ -1,7 +1,7 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
  <figure class="back hover-underline-animation" onclick="history.back()">
 	 <img src="/images/back-arrow.png" alt="Go Back">
-	 <figcaption>Back</figcaption>
+	 <figcaption><?=_('Back')?></figcaption>
 </figure>
 <div class="createPage">
 	<div class="pageHeader">
@@ -37,7 +37,7 @@
 
 	</table>
 	<div class="break"></div>
-	<input type="submit" class="redButton" name="loadMore" value="Load More">
+	<input type="submit" class="redButton" name="loadMore" value="<?=_('Load More')?>">
 </div>
 
 <?php $this->view('shared/footer'); ?>
