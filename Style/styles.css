@@ -116,7 +116,7 @@ input[name="loadMore"] {
 	width: 900px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	padding: 28px;
-	margin: 50px 28px 0px 28px;
+	margin: 50px 28px;
 	background-color: white;
 	border-radius: 50px;
 }
@@ -146,6 +146,11 @@ input.text-field{
 	border-radius: 50px;
 	border-style: solid;
 	text-indent: 10px;
+}
+
+div.input-box {
+	display: grid;
+	justify-items: center;
 }
 
 .pageHeader {
@@ -255,8 +260,24 @@ input::placeholder {
 	grid-template-rows: [start] 1fr [row2] 1fr [row3] 1fr [end];
 }
 
+.project-info .payment-info .payment > div[class="bottom"] > div[class="right"]{
+	display: grid;
+	grid-template-rows: [start] 20px [row2] 1fr [row3] 1fr [row4] 1fr [end];
+}
+
+.project-info .payment-info .payment > div[class="bottom"] > div[class="right"] .input-box{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+
+.project-info .payment-info .payment > div[class="bottom"] > div[class="right"] .input-box label{
+	justify-self: left;	
+	margin-left: 30px;
+}
+
 .form-submit-btn{
-	padding-top: 50px;
+	padding-top: 20px;
 	display: flex;
 	justify-content: center;
 }
