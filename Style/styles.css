@@ -201,7 +201,7 @@ input::placeholder {
 
 .project-info {
 	display: grid;
-	grid-template-rows: repeat(auto-fill, 500px);
+	grid-template-rows: repeat(auto-fill, 300px);
 }
 
 .project-info .general-info {
@@ -210,10 +210,29 @@ input::placeholder {
 	align-items: center;
 	grid-template-columns: 200px 200px 200px 200px;
   grid-template-rows: 100px 100px 100px;
-  grid-template-areas:
-    "clientName surfaceArea lights spots"
-    "vents works projectCost serviceType"
-    "startDate endDate isDone other";
+}
+
+.project-info .general-info div {
+	text-align: center;
+}
+
+.project-info .general-info .renovation-type {
+	text-align: center;
+}
+
+.project-info .general-info .renovation-type label{
+	margin-bottom: 5px;
+}
+
+.project-info .general-info .is-done label{
+	margin-right: 15px;
+}
+
+.project-info .payment-info {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
 }
 
 .form-submit-btn{
