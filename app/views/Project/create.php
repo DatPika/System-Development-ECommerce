@@ -1,6 +1,9 @@
 <?php $this->view('shared/header',_('Add Project')); ?>
-
-	<div class="createPage">
+<figure class="back hover-underline-animation" onclick="history.back()">
+	 <img src="/images/back-arrow.png" alt="Go Back">
+	 <figcaption>Back</figcaption>
+</figure>
+<div class="createPage">
 
 	<div class="container">
 
@@ -9,50 +12,22 @@
 		<form method="post" action="">
 			<!-- TODO: implement an input box for user id/username-->
 			<div class="project-info">
-				<div class ="input-box">
-					<label><?= _('Start Date') ?></label><input type="text" name="startDate" id="clientName" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('End Date') ?></label><input type="text" name="endDate" id="clientName">
-				</div>
-				<div class ="input-box">
-					<label><?= _('Service') ?></label><input type="radio" name='job' id="cash" value="Service" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Installation') ?></label><input type="radio" name='job' id="interac"  value="Installation" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Estimation') ?></label><input type="radio" name='job' id="e-transfer"  value="Estimation" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Done') ?></label><input type="checkbox" name='done' id="done" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Client Name') ?></label><input type="text" name="client" id="clientName" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Address') ?></label><input type="text" name="address" id="address" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Surface Area') ?></label><textarea name="surfaceArea" id="surfaceArea"></textarea>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Project Cost') ?></label><textarea name="projectCost" id="projectCost"></textarea>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Lights') ?></label><input type="text" name='lights' id="lights" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Spots') ?></label><input type="text" name='spots' id="spots" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Vents') ?></label><input type="text" name='vents' id="vents" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Works') ?></label><input type="text" name='works' id="works" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Other') ?></label><input type="text" name='otherInformation' id="other" required>
+				<div class="general-info">
+					<input type="text" name="client-name" class="text-field" placeholder="<?= _('Client Name') ?>">
+					<input type="text" name="surface-area" class="text-field" placeholder="<?= _('Surface Area') ?>">
+					<input type="text" name="lights" class="text-field" placeholder="<?= _('Lights') ?>">
+					<input type="text" name="spots" class="text-field" placeholder="<?= _('Spots') ?>">
+					<input type="text" name="vents" class="text-field" placeholder="<?= _('Vents') ?>">
+					<input type="text" name="works" class="text-field" placeholder="<?= _('Works') ?>">
+					<input type="text" name="project-cost" class="text-field" placeholder="<?= _('Project Cost') ?>">
+					<div style="text-align: center;">
+						<label style="margin-bottom: 5px;"><?= _('Renovation Type:') ?></label>
+						<select name='renovation-type'>
+							<option value='Installation'>Installation</option>
+							<option value='Service'>Service</option>
+						</select>
+					</div>
+
 				</div>
 				<label><?=_('Deposit')?>:</label>
 				<div class ="input-box">

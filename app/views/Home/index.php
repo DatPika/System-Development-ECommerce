@@ -4,7 +4,7 @@
 	<div class="pageHeader">
 		<h2 class="title">Home</h2>
 		<div class="headerSearch">
-			<input type="text" name="searchField" placeholder=<?= _('Search') ?>>
+			<input type="text" name="searchField" placeholder="<?= _('Search') ?>">
 			<input type="submit" name="searchButton" value="Search">
 		</div>
 	</div>

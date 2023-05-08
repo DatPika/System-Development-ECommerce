@@ -113,12 +113,10 @@ input[name="loadMore"] {
 }
 
 .container {
-	width: 100%;
-	max-width: 650px;
-	height: 400px;
+	width: 900px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	padding: 28px;
-	margin: 0 28px;
+	margin: 50px 28px 0px 28px;
 	background-color: white;
 	border-radius: 50px;
 }
@@ -137,13 +135,13 @@ input[name="loadMore"] {
 	border-bottom: solid 1px grey;
 }
 
-.info{
+.login-info{
 	display: flex;
 	justify-content: center;
 	padding: 20px 0;
 }	
 
-.info input{
+input.text-field{
 	background-color: #D9D9D9;
 	border-radius: 50px;
 	border-style: solid;
@@ -199,6 +197,23 @@ input[class="redButton"]{
 
 input::placeholder {
     color: #949090;
+}
+
+.project-info {
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 500px);
+}
+
+.project-info .general-info {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas:
+    "clientName surfaceArea lights spots"
+    "vents works projectCost serviceType"
+    "startDate endDate isDone other";
 }
 
 .form-submit-btn{

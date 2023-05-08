@@ -8,11 +8,11 @@
 			
 		<form method="post" action="">
 
-			<div class="info">
-				<input type="text" name="username" id="username" placeholder=<?= _('Username') ?> required>
+			<div class="login-info">
+				<input type="text" name="username" class="text-field" placeholder="<?= _('Username') ?>" required>
 			</div>
-			<div class="info">
-			<input type="password" name='password' id="password" placeholder=<?= _('Password') ?> required>
+			<div class="login-info">
+			<input type="password" name='password' class="text-field" placeholder="<?= _('Password') ?>" required>
 			</div>
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Login') ?>'>

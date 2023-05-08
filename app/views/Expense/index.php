@@ -1,7 +1,4 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
-<header class="topheader">
-	<img src="/images/logo.png" alt="Favorite Design">
-</header>
  <figure class="back hover-underline-animation" onclick="history.back()">
 	 <img src="/images/back-arrow.png" alt="Go Back">
 	 <figcaption>Back</figcaption>
@@ -10,7 +7,7 @@
 	<div class="pageHeader">
 		<h2 class="title">Expense Table</h2>
 		<div class="headerSearch">
-			<input type="text" name="searchField" placeholder=<?= _('Search') ?>>
+			<input type="text" name="searchField" placeholder="<?= _('Search') ?>">
 			<input type="submit" name="searchButton" class="redButton" value="Search">
 		</div>
 	</div>
