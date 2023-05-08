@@ -1,5 +1,4 @@
 <?php $this->view('shared/header',_('Add Expense')); ?>
-
 <div class="createPage">
 
 	<div class="container">

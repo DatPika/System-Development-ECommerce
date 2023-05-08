@@ -3,410 +3,408 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 16:05-0400\n"
-"PO-Revision-Date: 2023-05-08 17:50-0400\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: fr_CA\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
 
 #: app/views/Expense/create.php:1
 msgid "Add Expense"
-msgstr "Ajouter une dépense"
+msgstr ""
 
 #: app/views/Expense/create.php:7
 msgid "Add expense"
-msgstr "Ajouter une dépense"
+msgstr ""
 
 #: app/views/Expense/create.php:13 app/views/Expense/delete.php:15
 #: app/views/Expense/edit.php:18 app/views/Supplier/addSupplier.php:13
 msgid "Supplier Name"
-msgstr "Nom du fournisseur"
+msgstr ""
 
 #: app/views/Expense/create.php:16 app/views/Expense/delete.php:18
 #: app/views/Expense/edit.php:21 app/views/Expense/index.php:18
 #: app/views/Home/index.php:15
 msgid "Details"
-msgstr "Détails"
+msgstr ""
 
 #: app/views/Expense/create.php:19 app/views/Expense/delete.php:21
 #: app/views/Expense/edit.php:24 app/views/Project/delete.php:65
 #: app/views/Project/edit.php:62 app/views/Project/create.php:74
 msgid "Amount"
-msgstr "Montant"
+msgstr ""
 
 #: app/views/Expense/create.php:22 app/views/Expense/delete.php:24
 #: app/views/Expense/edit.php:27 app/views/Project/create.php:86
 #: app/views/Project/create.php:113
 msgid "Select the user:"
-msgstr "Sélectionnez l'utilisateur :"
+msgstr ""
 
 #: app/views/Expense/create.php:32 app/views/Project/delete.php:95
 #: app/views/Project/create.php:126
 msgid "Add record"
-msgstr "Ajouter l'enregistrement"
+msgstr ""
 
 #: app/views/Expense/create.php:39 app/views/Expense/edit.php:46
 msgid "Suppliers"
-msgstr "Fournisseurs"
+msgstr ""
 
 #: app/views/Expense/create.php:74
 msgid "Edit suppliers"
-msgstr "Modifier les fournisseurs"
+msgstr ""
 
 #: app/views/Expense/delete.php:1
 msgid "Delete Expense Record"
-msgstr "Supprimer un enregistrement de dépense"
+msgstr ""
 
 #: app/views/Expense/delete.php:8
 msgid "Delete expense"
-msgstr "Supprimer la dépense"
+msgstr ""
 
 #: app/views/Expense/delete.php:9 app/views/Project/delete.php:9
 msgid "Are your sure you want to delete this record?"
-msgstr "Êtes-vous sûr de vouloir supprimer cet enregistrement?"
+msgstr ""
 
 #: app/views/Expense/delete.php:28 app/views/Trip/delete.php:22
 msgid "Cancel"
-msgstr "Annuler"
+msgstr ""
 
 #: app/views/Expense/delete.php:31 app/views/Trip/delete.php:25
 msgid "Delete record"
-msgstr "Supprimer l'enregistrement"
+msgstr ""
 
 #: app/views/Expense/edit.php:1
 msgid "Edit Expense"
-msgstr "Modifier la dépense"
+msgstr ""
 
 #: app/views/Expense/edit.php:39 app/views/Project/edit.php:92
 msgid "Edit record"
-msgstr "Modifier l'enregistrement"
+msgstr ""
 
 #: app/views/Expense/index.php:1 app/views/Home/index.php:1
 #: app/views/Project/index.php:1
 msgid "Expense Table"
-msgstr "Table de dépense"
+msgstr ""
 
 #: app/views/Expense/index.php:4 app/views/Project/create.php:4
 msgid "Back"
-msgstr "Retourner"
+msgstr ""
 
 #: app/views/Expense/index.php:10 app/views/Home/index.php:7
 msgid "Search"
-msgstr "Chercher"
+msgstr ""
 
 #: app/views/Expense/index.php:17 app/views/Supplier/editSuppliers.php:11
 msgid "Supplier name"
-msgstr "Nom du fournisseur"
+msgstr ""
 
 #: app/views/Expense/index.php:19
 msgid "Expense"
-msgstr "Dépense"
+msgstr ""
 
 #: app/views/Expense/index.php:20 app/views/Home/index.php:17
 #: app/views/Project/index.php:18 app/views/Trip/index.php:10
 msgid "Actions"
-msgstr "Actions"
+msgstr ""
 
 #: app/views/Expense/index.php:30 app/views/Home/index.php:27
 #: app/views/Project/index.php:36 app/views/Trip/index.php:24
 msgid "Edit"
-msgstr "Modifier"
+msgstr ""
 
 #: app/views/Expense/index.php:30 app/views/Home/index.php:27
 #: app/views/Project/index.php:36 app/views/Trip/index.php:24
 msgid "Delete"
-msgstr "Supprimer"
+msgstr ""
 
 #: app/views/Expense/index.php:40
 msgid "Load More"
-msgstr "Voir Plus"
+msgstr ""
 
 #: app/views/Home/index.php:14
 msgid "Supplier/Client Name"
-msgstr "Fournisseur/Nom Du Client"
+msgstr ""
 
 #: app/views/Home/index.php:16
 msgid "Expense/Profit"
-msgstr "Dépense/Profit"
+msgstr ""
 
 #: app/views/Project/delete.php:1
 msgid "Delete Project Record"
-msgstr "Supprimer l'enregistrement du Projet"
+msgstr ""
 
 #: app/views/Project/delete.php:8
 msgid "Delete Project"
-msgstr "Supprimer le projet"
+msgstr ""
 
 #: app/views/Project/delete.php:16 app/views/Project/edit.php:13
 #: app/views/Project/index.php:8 app/views/Project/create.php:52
 msgid "Start Date"
-msgstr "Date de début"
+msgstr ""
 
 #: app/views/Project/delete.php:19 app/views/Project/edit.php:16
 #: app/views/Project/index.php:9 app/views/Project/create.php:56
 msgid "End Date"
-msgstr "Date de fin"
+msgstr ""
 
 #: app/views/Project/delete.php:22 app/views/Project/edit.php:19
 msgid "Service"
-msgstr "Service"
+msgstr ""
 
 #: app/views/Project/delete.php:25 app/views/Project/edit.php:22
 msgid "Installation"
-msgstr "Installation"
+msgstr ""
 
 #: app/views/Project/delete.php:28 app/views/Project/edit.php:25
 msgid "Estimation"
-msgstr "Estimation"
+msgstr ""
 
 #: app/views/Project/delete.php:31 app/views/Project/edit.php:28
 #: app/views/Supplier/editSuppliers.php:48
 msgid "Done"
-msgstr "Finit"
+msgstr ""
 
 #: app/views/Project/delete.php:34 app/views/Project/edit.php:31
 #: app/views/Project/index.php:7 app/views/Project/create.php:17
 msgid "Client Name"
-msgstr "Nom du Client"
+msgstr ""
 
 #: app/views/Project/delete.php:37 app/views/Project/edit.php:34
 #: app/views/Trip/index.php:8
 msgid "Address"
-msgstr "Addresss"
+msgstr ""
 
 #: app/views/Project/delete.php:40 app/views/Project/edit.php:37
 #: app/views/Project/index.php:11 app/views/Project/create.php:21
 msgid "Surface Area"
-msgstr "Superficie"
+msgstr ""
 
 #: app/views/Project/delete.php:43 app/views/Project/edit.php:40
 #: app/views/Project/index.php:16 app/views/Project/create.php:41
 msgid "Project Cost"
-msgstr "Cout du projet"
+msgstr ""
 
 #: app/views/Project/delete.php:46 app/views/Project/edit.php:43
 #: app/views/Project/index.php:12 app/views/Project/create.php:25
 msgid "Lights"
-msgstr "Lumières"
+msgstr ""
 
 #: app/views/Project/delete.php:49 app/views/Project/edit.php:46
 #: app/views/Project/index.php:13 app/views/Project/create.php:29
 msgid "Spots"
-msgstr "Projecteurs"
+msgstr ""
 
 #: app/views/Project/delete.php:52 app/views/Project/edit.php:49
 #: app/views/Project/index.php:14 app/views/Project/create.php:33
 msgid "Vents"
-msgstr "Évents"
+msgstr ""
 
 #: app/views/Project/delete.php:55 app/views/Project/edit.php:52
 #: app/views/Project/index.php:15 app/views/Project/create.php:37
 msgid "Works"
-msgstr "Travaux"
+msgstr ""
 
 #: app/views/Project/delete.php:58 app/views/Project/edit.php:55
 #: app/views/Project/index.php:17 app/views/Project/create.php:64
 msgid "Other"
-msgstr "Autres"
+msgstr ""
 
 #: app/views/Project/delete.php:62 app/views/Project/edit.php:59
 #: app/views/Project/create.php:71 app/views/Trip/index.php:7
 msgid "Date"
-msgstr "Date"
+msgstr ""
 
 #: app/views/Project/delete.php:68 app/views/Project/edit.php:65
 #: app/views/Project/create.php:77
 msgid "Cash"
-msgstr "Argent comptant"
+msgstr ""
 
 #: app/views/Project/delete.php:71 app/views/Project/edit.php:68
 #: app/views/Project/create.php:80
 msgid "Interac"
-msgstr "Interac"
+msgstr ""
 
 #: app/views/Project/delete.php:74 app/views/Project/edit.php:71
 #: app/views/Project/create.php:83
 msgid "E-Transfer"
-msgstr "E-Transfer"
+msgstr ""
 
 #: app/views/Project/edit.php:1
 msgid "Edit Project"
-msgstr "Modifier le projet"
+msgstr ""
 
 #: app/views/Project/edit.php:7
 msgid "Edit project"
-msgstr "Modifier le projet"
+msgstr ""
 
 #: app/views/Project/index.php:10
 msgid "Job"
-msgstr "Travail"
+msgstr ""
 
 #: app/views/Project/create.php:1
 msgid "Add Project"
-msgstr "Ajouter un projet"
+msgstr ""
 
 #: app/views/Project/create.php:10
 msgid "Add project"
-msgstr "Ajouter le projet"
+msgstr ""
 
 #: app/views/Project/create.php:16
 msgid "Client Name:"
-msgstr "Nom du client:"
+msgstr ""
 
 #: app/views/Project/create.php:20
 msgid "Surface Area:"
-msgstr "Superficie:"
+msgstr ""
 
 #: app/views/Project/create.php:24
 msgid "Lights:"
-msgstr "Lumières:"
+msgstr ""
 
 #: app/views/Project/create.php:28
 msgid "Spots:"
-msgstr "Projecteurs:"
+msgstr ""
 
 #: app/views/Project/create.php:32
 msgid "Vents:"
-msgstr "Évents:"
+msgstr ""
 
 #: app/views/Project/create.php:36
 msgid "Works:"
-msgstr "Travaux:"
+msgstr ""
 
 #: app/views/Project/create.php:40
 msgid "Project Cost:"
-msgstr "Cout du projet:"
+msgstr ""
 
 #: app/views/Project/create.php:44
 msgid "Renovation Type:"
-msgstr "Type de renovation:"
+msgstr ""
 
 #: app/views/Project/create.php:51
 msgid "Start Date:"
-msgstr "Date de début:"
+msgstr ""
 
 #: app/views/Project/create.php:55
 msgid "End Date:"
-msgstr "Date de fin:"
+msgstr ""
 
 #: app/views/Project/create.php:59
 msgid "Done?"
-msgstr "Finit?"
+msgstr ""
 
 #: app/views/Project/create.php:63
 msgid "Other:"
-msgstr "Autres:"
+msgstr ""
 
 #: app/views/Project/create.php:69
 msgid "Deposit"
-msgstr "Dépôt"
+msgstr ""
 
 #: app/views/Project/create.php:96
 msgid "Balance"
-msgstr "Balance"
+msgstr ""
 
 #: app/views/Supplier/addSupplier.php:1 app/views/Supplier/addSupplier.php:7
 msgid "Add Supplier"
-msgstr "Ajouter un fournisseur"
+msgstr ""
 
 #: app/views/Supplier/addSupplier.php:17
 msgid "Add supplier"
-msgstr "Ajouter le fournisseur"
+msgstr ""
 
 #: app/views/Supplier/editSuppliers.php:1
 msgid "Edit Supplier List"
-msgstr "Modifier la liste des fournisseurs"
+msgstr ""
 
 #: app/views/Supplier/editSuppliers.php:10
 msgid "Shown"
-msgstr "Montré"
+msgstr ""
 
 #: app/views/Trip/create.php:1 app/views/Trip/create.php:9
 msgid "Add Trip"
-msgstr "Ajouter un voyage"
+msgstr ""
 
 #: app/views/Trip/create.php:15
 msgid "Project ID"
-msgstr "Identifiant du Projet"
+msgstr ""
 
 #: app/views/Trip/create.php:18 app/views/Trip/delete.php:15
 #: app/views/Trip/edit.php:14
 msgid "Project"
-msgstr "Projet"
+msgstr ""
 
 #: app/views/Trip/create.php:21 app/views/Trip/delete.php:18
 #: app/views/Trip/edit.php:17 app/views/Trip/index.php:9
 msgid "Distance"
-msgstr "Distance"
+msgstr ""
 
 #: app/views/Trip/create.php:25
 msgid "Add Record"
-msgstr "Ajouter l'enregistrement"
+msgstr ""
 
 #: app/views/Trip/delete.php:1
 msgid "Delete Trip Record"
-msgstr "Supprimer l'enregistrement de Voyage"
+msgstr ""
 
 #: app/views/Trip/delete.php:8
 msgid "Delete Trip"
-msgstr "Supprimer le voyage"
+msgstr ""
 
 #: app/views/Trip/delete.php:9
 msgid "Are you sure you want to delete this record?"
-msgstr "Êtes-vous sûr de vouloir supprimer cet enregistrement ?"
+msgstr ""
 
 #: app/views/Trip/edit.php:1 app/views/Trip/edit.php:8
 msgid "Edit Trip"
-msgstr "Modifier le voyage"
+msgstr ""
 
 #: app/views/Trip/edit.php:21
 msgid "Edit Record"
-msgstr "Modifier l'enregistrement"
+msgstr ""
 
 #: app/views/Trip/index.php:1
 msgid "Trip Table"
-msgstr "Table de voyage"
+msgstr ""
 
 #: app/views/Trip/selectProject.php:1 app/views/Trip/selectProject.php:13
 msgid "Select Project"
-msgstr "Sélectionnez un projet"
+msgstr ""
 
 #: app/views/User/index.php:1
 msgid "Log into your account"
-msgstr "Connectez-vous à votre compte"
+msgstr ""
 
 #: app/views/User/index.php:7 app/views/User/index.php:18
 msgid "Login"
-msgstr "Connecter"
+msgstr ""
 
 #: app/views/User/index.php:12 app/views/User/register.php:14
 msgid "Username"
-msgstr "Nom d'utilisateur"
+msgstr ""
 
 #: app/views/User/index.php:15 app/views/User/register.php:21
 msgid "Password"
-msgstr "Mot de passe"
+msgstr ""
 
 #: app/views/User/register.php:1
 msgid "Register your account"
-msgstr "Enregistrer votre compte"
+msgstr ""
 
 #: app/views/User/register.php:7 app/views/User/register.php:26
 msgid "Register"
-msgstr "Enregistrer"
+msgstr ""
 
 #: app/views/User/twofasetup.php:3
 msgid "2FA set up"
-msgstr "Configuration de 2FA"
+msgstr ""
 
 #: app/views/User/twofasetup.php:7
 msgid ""
@@ -421,34 +419,23 @@ msgid ""
 "authentication can be\n"
 "                                    applied to your account."
 msgstr ""
-"Veuillez scanner le code QR à l'écran avec votre Logiciel "
-"d'authentification\n"
-"                                    favori, tel que Google Authenticator. "
-"Le\n"
-"                                    le logiciel d'authentification générera "
-"des codes valables pour 30\n"
-"                                    secondes seulement. Entrez le code "
-"pendant qu'il est\n"
-"                                    toujours valable pour confirmer que "
-"l'authentification à 2 facteurs soit\n"
-"                                    appliqué à votre compte."
 
 #: app/views/User/twofasetup.php:14 app/views/User/verify2fa.php:7
 msgid "Current code:"
-msgstr "Code actuel:"
+msgstr ""
 
 #: app/views/User/twofasetup.php:15 app/views/User/verify2fa.php:8
 msgid "Verify code"
-msgstr "Vérifier le code"
+msgstr ""
 
 #: app/views/User/verify2fa.php:3
 msgid "2FA verificaion"
-msgstr "Verification 2FA"
+msgstr ""
 
 #: app/views/shared/header.php:2
 msgid "ltr"
-msgstr "ltr"
+msgstr ""
 
 #: app/views/shared/header.php:2
 msgid "en"
-msgstr "fr_CA"
+msgstr ""
