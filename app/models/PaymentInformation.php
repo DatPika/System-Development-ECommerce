@@ -42,10 +42,9 @@ class PaymentInformation extends \app\core\Model {
         $this->payment_id = self::$connection->lastInsertId();
     }
     protected function update() {
-        $SQL = "UPDATE `payment_information` SET `project_id`=:project_id, 'user_id'=:user_id,`paymentMethod`=:paymentMethod,`amount`=:amount, `date`=:date WHERE payment_id = :payment_id";
+        $SQL = "UPDATE payment_information SET user_id=:user_id, paymentMethod=:paymentMethod, amount=:amount, date=:date WHERE payment_id = :payment_id";
         $STH = self::$connection->prepare($SQL);
         $data = [
-            'project_id'=>$this->project_id,
             'user_id'=>$this->user_id,
             'paymentMethod'=>$this->paymentMethod,
             'amount'=>$this->amount,
@@ -70,6 +69,14 @@ class PaymentInformation extends \app\core\Model {
         $STH->execute($data);
         $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\PaymentInformation');
         return $STH->fetch();
+    }
+
+    public function delete(){
+        $SQL = "DELETE FROM payment_information WHERE payment_id=:payment_id";
+        $STH = self::$connection->prepare($SQL);
+        $data = ['payment_id'=>$this->payment_id];
+        $STH->execute($data);
+        return $STH->rowCount();
     }
 
 }

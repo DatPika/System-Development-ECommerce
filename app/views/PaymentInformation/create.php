@@ -8,14 +8,29 @@
 		<form method="post" action="">
 
 			<div class="info">
-				<div class ="input-box">
-					<label><?= _('Payment Method') ?></label><input type="text" name="paymentMethod" id="paymentMethod" class="text-field" required>
-				</div>
+				
 				<div class ="input-box">
 					<label><?= _('Amount') ?></label><input type="text" name='amount' id="amount" class="text-field" required>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Date') ?></label><input type="text" name="date" class="text-field">
+				</div>
+				<div class ="input-box">
+					<div class="right">
+						<label><?= _('Payment Method:') ?></label>
+						<div class="input-box">
+							<label><?= _('Cash') ?></label>
+							<input type="radio" name="payment1" value="cash">
+						</div>
+						<div class="input-box">
+							<label><?= _('Interac') ?></label>
+							<input type="radio" name="payment1" value="interac">
+						</div>
+						<div class="input-box">
+							<label><?= _('E-Transfer') ?></label>
+							<input type="radio" name="payment1" value="e-transfer">
+						</div>
+					</div>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Select the user:') ?></label><select name='user_id'>
