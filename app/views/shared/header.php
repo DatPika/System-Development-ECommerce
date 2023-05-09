@@ -12,6 +12,6 @@
 
 </head>
 <header class="topheader">
-	<img src="/images/logo.png" alt="Favorite Design">
+	<a href="/Home/index"><img src="/images/logo.png" alt="Favorite Design"></a>
 </header>
 <body>

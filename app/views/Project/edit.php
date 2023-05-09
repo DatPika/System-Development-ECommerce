@@ -72,6 +72,7 @@
 				</div>
 			</div>
 			<div class="form-submit-btn">
+				<a style="margin-right: 100px;" class="redButton" href='/PaymentInformation/index/<?=$data->project_id?>'><?= _('View Payments') ?></a>
 				<input type="submit" name="action" value='<?= _('Edit record') ?>'>
 			</div>
 		</form>

@@ -64,6 +64,10 @@ div.break {
 	top: 0px;
 }
 
+/*.topheader > img{
+	background: url(/Home/index);
+}*/
+
 .content-table table,
 .content-table th,
 .content-table td {
@@ -167,6 +171,7 @@ div.input-box {
 	position: relative;
 	margin-top: 50px;
 	justify-content: center;
+	align-items: center;
 	z-index: 0;
 }
 
@@ -193,17 +198,26 @@ div.input-box {
 	flex-grow: 1;
 }
 
-input[class="redButton"]::placeholder{
+input.redButton::placeholder{
 	color: #626262;
 }
 
-input[class="redButton"]{
+input.redButton{
 	color: white;
 	height: 40px;
-	padding: 0 20px 0 20px;
+	padding: 0 20px;
 	background-color: #EE0404;
 	border-radius: 50px;
 	border-style: solid;
+}
+
+a.redButton{
+	color: white;
+	height: 40px;
+	padding: 8px 15px;
+	background-color: #EE0404;
+	border-radius: 50px;	
+	text-decoration: none;
 }
 
 input::placeholder {
@@ -250,45 +264,45 @@ input::placeholder {
 	width: 80px;
 }
 
-.project-info .payment-info {
+.payment-info {
 	display: grid;
 	justify-items: center;
 	align-items: center;
 	grid-template-columns: [start] 1fr [middle] 1fr [end];
 }
 
-.project-info .payment-info .payment{
+.payment{
 	justify-self: stretch;
 	display: grid;
 	grid-template-rows: 30px auto;
 }
 
-.project-info .payment-info .payment label{
+.payment label{
 	justify-self: center;
 }
 
-.project-info .payment-info .payment > div.bottom{
+.payment > div.bottom{
 	display: grid;
 	grid-template-columns: [start] 1fr [middle] 1fr [end];
 }
 
-.project-info .payment-info .payment > div.bottom > div.left{
+.payment > div.bottom > div.left{
 	display: grid;
 	grid-template-rows: [start] 1fr [row2] 1fr [row3] 1fr [end];
 }
 
-.project-info .payment-info .payment > div.bottom > div.right{
+.payment > div.bottom > div.right{
 	display: grid;
 	grid-template-rows: [start] 20px [row2] 1fr [row3] 1fr [row4] 1fr [end];
 }
 
-.project-info .payment-info .payment > div.bottom > div.right .input-box{
+.payment > div.bottom > div.right .input-box{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
 }
 
-.project-info .payment-info .payment > div.bottom > div.right .input-box label{
+.payment > div.bottom > div.right .input-box label{
 	justify-self: left;	
 	margin-left: 30px;
 }

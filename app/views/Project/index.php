@@ -42,7 +42,7 @@
 								$profit += $payment->amount;
 							}
 						?>
-						<?= htmlentities($profit) ?>
+						<?= htmlentities($profit) ?>$
 					</td>
 					<td><a href='/Project/Edit/<?=$project->project_id?>'><?= _('Edit') ?></a> | <a href='/Project/Delete/<?=$project->project_id?>'><?= _('Delete') ?></a> | <a href='/PaymentInformation/index/<?=$project->project_id?>'><?= _('View Payments') ?></a>
 				</tr>
