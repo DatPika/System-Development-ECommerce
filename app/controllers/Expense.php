@@ -20,7 +20,7 @@ class Expense extends \app\core\Controller{
             $expense->insert();
             $home = new \app\models\Home();
             $home->expense_id = $expense->expense_id;
-
+            $home->insert();
             header('location:/Expense/index');
         }
         else {

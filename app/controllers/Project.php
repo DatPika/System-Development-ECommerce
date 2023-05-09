@@ -44,6 +44,9 @@ class Project extends \app\core\Controller{
             $payment2->amount = $_POST['amount2'];
             $payment2->date = $_POST['date2'];
             $payment2->insert();
+            $home = new \app\models\Home();
+            $home->project_id = $project->project_id;
+            $home->insert();
             header('location:/Project/index');
         }
         else {
