@@ -131,28 +131,6 @@ class Project extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
 		return $STH->fetchAll();
 	}
-	// TODO: fix the sql statement by joining the tables client and project
-	public function getAllByColumnDesc($column){
-		$SQL = "SELECT * FROM project ORDER BY :column DESC";
-		$STH = self::$connection->prepare($SQL);
-		$data = [
-			'column'=>$column,
-		];
-		$STH->execute($data);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
-		return $STH->fetchAll();
-	}
-	// TODO: fix the sql statement by joining the tables client and project
-	public function getAllByColumnAsc($column){
-		$SQL = "SELECT * FROM project ORDER BY :column ASC";
-		$STH = self::$connection->prepare($SQL);
-		$data = [
-			'column'=>$column,
-		];
-		$STH->execute($data);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
-		return $STH->fetchAll();
-	}
 
 	public function get($project_id){
 		$SQL = "SELECT * FROM project WHERE project_id=:project_id";
@@ -166,7 +144,7 @@ class Project extends \app\core\Model{
 	}
 
 	public function getAllPayments() {
-        $SQL = "SELECT * FROM paymentInformation WHERE project_id = :project_id";
+        $SQL = "SELECT * FROM payment_information WHERE project_id = :project_id";
         $STH = self::$connection->prepare($SQL);
         $data = [
             'project_id'=>$this->project_id
