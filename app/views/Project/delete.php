@@ -9,7 +9,7 @@
 	<div class="container">
 
 		<h1 class="form-title"><?= _('Delete project')?></h1>
-		<h2>Are you sure you want to delete the following record?</h2>
+		<h2><?= _('Are you sure you want to delete the following record?') ?></h2>
 		<form method="post" action="">
 			<div class="project-info">
 				<div class="general-info">
