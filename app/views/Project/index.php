@@ -1,4 +1,4 @@
-<?php $this->view('shared/header',_('Expense Table')); ?>
+<?php $this->view('shared/header',_('Project Table')); ?>
 <div class="createPage">
 <table class="content-table">
 	<thead>

@@ -17,9 +17,11 @@
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Login') ?>'>
 			</div>
+			<div class="languages">
+				<a href='?lang=en'>English</a><br>
+				<a href='?lang=fr_CA'>Français (Canada)</a>
+			</div>
 		</form>
 	</div>
-	<a href='?lang=fr_CA'>Français (Canada)</a>
-	<a href='?lang=en'>English</a>
 </div>
 <?php $this->view('shared/footer'); ?>	
