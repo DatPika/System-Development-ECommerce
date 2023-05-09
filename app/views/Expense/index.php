@@ -21,7 +21,8 @@
 			</tr>
 		</thead>
 	<?php
-	foreach ($data as $expense) { ?>
+	for ($i = 0; i < 10; $i++)) { 
+		$expense = $data[$i]?>
 		<tbody>
 			<tr>
 				<td><?= htmlentities($expense->supplierName) ?></td>
@@ -37,7 +38,7 @@
 
 	</table>
 	<div class="break"></div>
-	<input type="submit" class="redButton" name="loadMore" value="<?=_('Load More')?>">
+	<a class="redButton" name="loadMore" id="loadMore" onclick="loadMore(<?=?>)"><?=_('Load More')?><a>
 </div>
 
 <?php $this->view('shared/footer'); ?>
