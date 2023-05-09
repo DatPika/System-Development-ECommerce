@@ -16,7 +16,7 @@ class PaymentInformation extends \app\core\Controller{
             $payment = new \app\models\PaymentInformation();
             $payment->project_id = $project_id;
             $payment->user_id = $_POST['user_id'];
-            $payment->paymentMethod = $_POST['paymentMethod'];
+            $payment->paymentMethod = $_POST['payment1'];
             $payment->amount = $_POST['amount'];
             $payment->date = $_POST['date'];
             $payment->insert();
@@ -30,24 +30,26 @@ class PaymentInformation extends \app\core\Controller{
         }
     }
 
-    public function edit($expense_id) {
-        $expense = new \app\models\Expense();
-        $expense = $expense->get($expense_id);
+    public function edit($payment_id) {
+        $payment = new \app\models\PaymentInformation();
+        $payment = $payment->get($payment_id);
         // might make this into a filter the not null expense
-        if($expense) {
+        if($payment) {
             if(isset($_POST['action'])) {
-                $expense->supplierName = $_POST['supplierName'];
-                $expense->totalExpense = $_POST['totalExpense'];
-                $expense->details = $_POST['details'];
-                $expense->user_id = $_POST['user_id'];
-                $expense->update();
+                $payment->user_id = $_POST['user_id'];
+                $payment->paymentMethod = $_POST['payment1'];
+                $payment->amount = $_POST['amount'];
+                $payment->date = $_POST['date'];
+                $payment->update();
 
-                header('location:/Expense/index');
+                header('location:/PaymentInformation/index/' . $payment->project_id);
             }
             else {
                 $user = new \app\models\User();
                 $users = $user->getAll();
-                $this->view('Expense/edit', ['expense'=>$expense, 'users'=>$users]);
+                $payment = new \app\models\PaymentInformation();
+                $payment = $payment->get($payment_id);
+                $this->view('PaymentInformation/edit', [$users, $payment]);
             }
         }
         else {
@@ -55,17 +57,17 @@ class PaymentInformation extends \app\core\Controller{
         }
     }
 
-    public function delete($expense_id) {
-        $expense = new \app\models\Expense();
-        $expense = $expense->get($expense_id);
+    public function delete($payment_id) {
+        $payment = new \app\models\PaymentInformation();
+        $payment = $payment->get($payment_id);
         // might make this into a filter the not null expense
-        if($expense) {
+        if($payment) {
             if(isset($_POST['action'])) {
-                $expense->delete();
-                header('location:/Expense/index');
+                $payment->delete();
+                header('location:/PaymentInformation/index/' . $payment->project_id);
             }
             else {
-                $this->view('Expense/delete', $expense);
+                $this->view('PaymentInformation/delete', $payment);
             }
         }
         else {

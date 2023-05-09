@@ -21,7 +21,7 @@
 					<label><?= _('Amount') ?></label><input type="text" name='totalExpense' id="totalExpense" value="<?= $data->totalExpense?>" readonly="readonly">
 				</div>
 				<div class ="input-box">
-					<label><?= _('Select the user:') ?></label><input type="text" name='username' id="username" value="<?= $data->user_id?>" readonly="readonly"><br>
+					<label><?= _('User') ?></label><input type="text" name='username' id="username" value="<?= $data->user_id?>" readonly="readonly"><br>
 				</div>
 			</div>
 			<div class="form-submit-btn">
