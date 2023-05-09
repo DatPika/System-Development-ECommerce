@@ -4,7 +4,6 @@ namespace app\controllers;
 #[\app\filters\Login]
 #[\app\filters\twofa]
 class Project extends \app\core\Controller{
-    const $maxPayments = 10;
     public function index() {
         $project = new \app\models\Project();
         $projects = $project->getAll();
@@ -31,6 +30,20 @@ class Project extends \app\core\Controller{
             $client->insert();
             $project->client_id = $client->client_id;
             $project->insert();
+            $payment = new \app\models\PaymentInformation();
+            $payment->project_id = $project->project_id;
+            $payment->user_id = $_POST['user_id1'];
+            $payment->paymentMethod = $_POST['deposit'];
+            $payment->amount = $_POST['amount1'];
+            $payment->date = $_POST['date1'];
+            $payment->insert();
+            $payment2 = new \app\models\PaymentInformation();
+            $payment2->project_id = $project->project_id;
+            $payment2->user_id = $_POST['user_id2'];
+            $payment2->paymentMethod = $_POST['balance'];
+            $payment2->amount = $_POST['amount2'];
+            $payment2->date = $_POST['date2'];
+            $payment2->insert();
             header('location:/Project/index');
         }
         else {
