@@ -1,5 +1,6 @@
 <?php
 namespace app\models;
+use app\core\TimeHelper;
 
 class Project extends \app\core\Model{
 	public $project_id;
@@ -7,7 +8,6 @@ class Project extends \app\core\Model{
 	#[\app\validators\NonNull]
 	#[\app\validators\Job]
 	protected $job;
-	#[\app\validators\NonNull]
 	#[\app\validators\DoubleLength]
 	protected $projectCost;
 	#[\app\validators\NonNull]
@@ -15,19 +15,14 @@ class Project extends \app\core\Model{
 	protected $startDate;
 	#[\app\validators\DateTime]
 	protected $endDate;
-	#[\app\validators\NonNull]
 	#[\app\validators\Done]
 	protected $done;
-	#[\app\validators\NonNull]
 	#[\app\validators\IntLength]
 	protected $surfaceArea;
-	#[\app\validators\NonNull]
 	#[\app\validators\IntLength]
 	protected $lights;
-	#[\app\validators\NonNull]
 	#[\app\validators\IntLength]
 	protected $spots;
-	#[\app\validators\NonNull]
 	#[\app\validators\IntLength]
 	protected $vents;
 	protected $works;
@@ -43,14 +38,12 @@ class Project extends \app\core\Model{
 	protected function setprojectCost($val) {
 		$this->projectCost = htmlentities($val, ENT_QUOTES);
 	}
-	// TODO: add DAteTime Input method and change its format
 	protected function setstartDate($val) {
-		$this->startDate = htmlentities($val, ENT_QUOTES);
+		$this->startDate = TimeHelper::DTInput($val);
 	}
 	
-	// TODO: add DAteTime Input method and change its format
 	protected function setendDate($val) {
-		$this->endDate = htmlentities($val, ENT_QUOTES);
+		$this->endDate = TimeHelper::DTInput($val);
 	}
 
 	protected function setsurfaceArea($val) {
@@ -144,7 +137,7 @@ class Project extends \app\core\Model{
 	}
 
 	public function getAllPayments() {
-        $SQL = "SELECT * FROM payment_information WHERE project_id = :project_id";
+        $SQL = "SELECT * FROM paymentInformation WHERE project_id = :project_id";
         $STH = self::$connection->prepare($SQL);
         $data = [
             'project_id'=>$this->project_id

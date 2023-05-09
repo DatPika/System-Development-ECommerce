@@ -18,6 +18,8 @@ class Expense extends \app\core\Controller{
             $expense->details = $_POST['details'];
             $expense->user_id = $_POST['user_id'];
             $expense->insert();
+            $home = new \app\models\Home();
+            $home->expense_id = $expense->expense_id;
 
             header('location:/Expense/index');
         }
@@ -56,7 +58,6 @@ class Expense extends \app\core\Controller{
     public function delete($expense_id) {
         $expense = new \app\models\Expense();
         $expense = $expense->get($expense_id);
-        // might make this into a filter the not null expense
         if($expense) {
             if(isset($_POST['action'])) {
                 $expense->delete();
