@@ -84,4 +84,14 @@ class Trip extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetch();
 	}
+	public function getProject() {
+		$SQL = "SELECT project.* FROM trip JOIN project ON trip.project_id=project.project_id WHERE trip.project_id=:project_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute([
+				'project_id' => $this->project_id
+			]
+		);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
+		return $STH->fetch();
+	}
 }
