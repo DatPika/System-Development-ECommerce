@@ -75,7 +75,7 @@ class Project extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
 		return $STH->fetchAll();
 	}
-	
+	// TODO: fix the sql statement by joining the tables client and project
 	public function getAllByColumnDesc($column){
 		$SQL = "SELECT * FROM project ORDER BY :column DESC";
 		$STH = self::$connection->prepare($SQL);
@@ -86,7 +86,7 @@ class Project extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
 		return $STH->fetchAll();
 	}
-	
+	// TODO: fix the sql statement by joining the tables client and project
 	public function getAllByColumnAsc($column){
 		$SQL = "SELECT * FROM project ORDER BY :column ASC";
 		$STH = self::$connection->prepare($SQL);
@@ -119,15 +119,4 @@ class Project extends \app\core\Model{
         $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\PaymentInformation');
         return $STH->fetchAll();
     }
-
-    public function getClient() {
-		$SQL = "SELECT client.* FROM project JOIN client ON project.client_id=client.client_id WHERE project.client_id=:client_id";
-		$STH = self::$connection->prepare($SQL);
-		$STH->execute([
-				'client_id' => $this->client_id
-			]
-		);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Client');
-		return $STH->fetch();
-	}
 }

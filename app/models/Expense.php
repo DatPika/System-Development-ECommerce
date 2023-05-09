@@ -3,12 +3,30 @@ namespace app\models;
 
 class Expense extends \app\core\Model{
 	public $expense_id;
-	public $supplierName;
-	public $totalExpense;
-	public $details;
+	#[\app\validators\NonNull]
+	#[\app\validators\NonEmpty]
+	protected $supplierName;
+	#[\app\validators\NonNull]
+	#[\app\validators\DoubleLength]
+	protected $totalExpense;
+	#[\app\validators\NonNull]
+	#[\app\validators\NonEmpty]
+	protected $details;
 	public $user_id;
 
-	public function insert(){
+	protected function setsupplierName($val) {
+		$this->supplierName = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function settotalExpense($val) {
+		$this->totalExpense = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function setdetails($val) {
+		$this->details = htmlentities($val, ENT_QUOTES);
+	}
+	
+	protected function insert(){
 		$SQL = "INSERT INTO expense (supplierName, totalExpense, details, user_id) value (:supplierName, :totalExpense, :details, :user_id)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
@@ -21,7 +39,7 @@ class Expense extends \app\core\Model{
 		$this->expense_id = self::$connection->lastInsertId();
 	}
 
-	public function update(){
+	protected function update(){
         $SQL = "UPDATE expense SET supplierName=:supplierName, totalExpense=:totalExpense, details=:details, user_id=:user_id where expense_id=:expense_id";
         $STH = self::$connection->prepare($SQL);
         $data = [
@@ -59,6 +77,7 @@ class Expense extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
+	// TODO: fix the sql statement by joining the tables user(depends on the view) and expense
 	public function getAllByColumnDesc($column){
 		$SQL = "SELECT * FROM expense ORDER BY :column DESC";
 		$STH = self::$connection->prepare($SQL);
@@ -68,6 +87,7 @@ class Expense extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
+	// TODO: fix the sql statement by joining the tables user (depends on the view) and expense
 	public function getAllByColumnAsc($column){
 		$SQL = "SELECT * FROM expense ORDER BY :column ASC";
 		$STH = self::$connection->prepare($SQL);

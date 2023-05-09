@@ -40,27 +40,4 @@ class User extends \app\core\Model{
 		$STH->execute(['user_id'=>$this->user_id, 'secretkey'=>$this->secretkey]);
 		return $STH->rowCount();
 	}
-
-	public function getExpenses() {
-		$SQL = "SELECT expense.* FROM user JOIN expense ON user.user_id = expense.user_id WHERE user.user_id = :user_id";
-		$STH = self::$connection->prepare($SQL);
-		$data = [
-			'user_id' => $this->user_id
-		];
-		$STH->execute($data);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');
-		return $STH->fetchAll();
-	}
-
-	public function getPayments() {
-		$SQL = "SELECT pi.* FROM user JOIN payment_information AS pi ON user.user_id = pi.user_id WHERE user.user_id = :user_id";
-		$STH = self::$connection->prepare($SQL);
-		$data = [
-			'user_id' => $this->user_id
-		];
-		$STH->execute($data);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\PaymentInformation');
-		return $STH->fetchAll();
-	}
-
 }

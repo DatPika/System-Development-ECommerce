@@ -3,10 +3,22 @@ namespace app\models;
 
 class Client extends \app\core\Model{
 	public $client_id;
-	public $clientName;
-	public $address;
+	#[\app\validators\NonNull]
+	#[\app\validators\NonEmpty]
+	protected $clientName;
+	#[\app\validators\NonNull]
+	#[\app\validators\NonEmpty]
+	protected $address;
 
-	public function insert(){
+	protected function setclientName($val) {
+		$this->clientName = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function setaddress($val) {
+		$this->address = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function insert(){
 		$SQL = "INSERT INTO client (clientName, address) value (:clientName, :address)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
@@ -17,7 +29,7 @@ class Client extends \app\core\Model{
 		$this->client_id = self::$connection->lastInsertId();
 	}
 
-	public function update(){
+	protected function update(){
 		$SQL = "UPDATE client SET clientName=:clientName, address=:address where client_id=:client_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [

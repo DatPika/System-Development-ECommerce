@@ -5,11 +5,20 @@ class PaymentInformation extends \app\core\Model {
     public $payment_id;
     public $project_id;
     public $user_id;
-    public $paymentMethod;
-    public $amount;
-    public $date;
+    #[\app\validators\NonNull]
+    protected $paymentMethod;
+    #[\app\validators\NonNull]
+    #[\app\validators\DoubleLength]
+    protected $amount;
+    #[\app\validators\NonNull]
+    //#[\app\validators\DateTime]
+    protected $date;
 
-    public function insert() {
+    protected function setpaymentMethod($val) {
+        $this->paymentMethod = htmlentities($val, ENT_QUOTES);
+    }
+
+    protected function insert() {
         $SQL = "INSERT INTO paymentInformation(project_id, user_id, paymentMethod, amount, date) value (:project_id, :user_id, :paymentMethod, :amount, :date)";
         $STH = self::$connection->prepare($SQL);
         $data = [
@@ -22,7 +31,7 @@ class PaymentInformation extends \app\core\Model {
         $STH->execute($data);
         $this->payment_id = self::$connection->lastInsertId();
     }
-    public function update() {
+    protected function update() {
         $SQL = "UPDATE `paymentInformation` SET `project_id`=:project_id, 'user_id'=:user_id,`paymentMethod`=:paymentMethod,`amount`=:amount, `date`=:date WHERE payment_id = :payment_id";
         $STH = self::$connection->prepare($SQL);
         $data = [

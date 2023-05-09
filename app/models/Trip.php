@@ -4,10 +4,11 @@ namespace app\models;
 class Trip extends \app\core\Model{
 	public $trip_id;
 	public $project_id;
+	public $client_id;
 	public $distance;
 
 	public function insert(){
-		$SQL = "INSERT INTO trip (project_id, distance) value (:project_id, :distance)";
+		$SQL = "INSERT INTO project (project_id, distance) value (:project_id, :distance)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
 			'project_id'=>$this->project_id,
@@ -18,7 +19,7 @@ class Trip extends \app\core\Model{
 	}
 
 	public function update(){
-		$SQL = "UPDATE trip SET project_id=:project_id, distance=:distance where trip_id=:trip_id";
+		$SQL = "UPDATE project SET project_id=:project_id, distance=:distance where trip_id=:trip_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
 			'project_id'=>$this->project_id,
@@ -36,6 +37,7 @@ class Trip extends \app\core\Model{
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
+
 
 	public function getAll(){
 		$SQL = "SELECT * FROM trip";
@@ -77,16 +79,4 @@ class Trip extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetch();
 	}
-
-	public function getProject() {
-		$SQL = "SELECT project.* FROM trip JOIN project ON trip.project_id=project.project_id WHERE trip.project_id=:project_id";
-		$STH = self::$connection->prepare($SQL);
-		$STH->execute([
-				'project_id' => $this->project_id
-			]
-		);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
-		return $STH->fetch();
-	}
-
 }
