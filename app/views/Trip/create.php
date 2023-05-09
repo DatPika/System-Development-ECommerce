@@ -12,10 +12,10 @@
 
 				<div class="info">
 					<div class ="input-box">
-						<label><?= _('Project ID') ?></label><input type="text" name="project_id" id="project_id" value="<?= $data->project_id?>">
+						<label><?= _('Project ID') ?></label><input type="text" name="project_id" id="project_id" value="<?= $data->project_id?>" readonly>
 					</div>
 					<div class ="input-box">
-						<label><?= _('Project') ?></label><input type="text" name="project" id="projectDetails" value="<?= $data->getClient()->clientName?>, <?= $data->getClient()->address?>, <?= $data->job?>">
+						<label><?= _('Project') ?></label><input type="text" name="project" id="projectDetails" value="<?= $data->getClient()->clientName?>, <?= $data->getClient()->address?>, <?= $data->job?>" readonly>
 					</div>
 					<div class ="input-box">
 						<label><?= _('Distance') ?></label><input type="text" name='distance' id="distance" required>

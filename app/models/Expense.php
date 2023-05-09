@@ -61,7 +61,7 @@ class Expense extends \app\core\Model{
 	}
 
 	public function getAll(){
-		$SQL = "SELECT * FROM expense";
+		$SQL = "SELECT * FROM expense ORDER BY expense_id DESC";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');

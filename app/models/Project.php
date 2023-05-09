@@ -118,7 +118,7 @@ class Project extends \app\core\Model{
 
 
 	public function getAll(){
-		$SQL = "SELECT * FROM project";
+		$SQL = "SELECT * FROM project ORDER BY project_id DESC";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
@@ -137,7 +137,7 @@ class Project extends \app\core\Model{
 	}
 
 	public function getAllPayments() {
-        $SQL = "SELECT * FROM payment_information WHERE project_id = :project_id";
+        $SQL = "SELECT * FROM payment_information WHERE project_id = :project_id ORDER BY date DESC";
         $STH = self::$connection->prepare($SQL);
         $data = [
             'project_id'=>$this->project_id

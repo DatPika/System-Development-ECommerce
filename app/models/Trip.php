@@ -12,7 +12,7 @@ class Trip extends \app\core\Model{
 	}
 
 	protected function insert(){
-		$SQL = "INSERT INTO project (project_id, distance) value (:project_id, :distance)";
+		$SQL = "INSERT INTO trip (project_id, distance) value (:project_id, :distance)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
 			'project_id'=>$this->project_id,
@@ -23,7 +23,7 @@ class Trip extends \app\core\Model{
 	}
 
 	protected function update(){
-		$SQL = "UPDATE project SET project_id=:project_id, distance=:distance where trip_id=:trip_id";
+		$SQL = "UPDATE trip SET project_id=:project_id, distance=:distance where trip_id=:trip_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
 			'project_id'=>$this->project_id,
@@ -44,7 +44,7 @@ class Trip extends \app\core\Model{
 
 
 	public function getAll(){
-		$SQL = "SELECT * FROM trip";
+		$SQL = "SELECT * FROM trip ORDER BY trip_id DESC LIMIT 10";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
