@@ -1,4 +1,5 @@
 <?php $this->view('shared/header',_('Edit Project')); ?>
+
 <figure class="back hover-underline-animation" onclick="history.back()">
 	 <img src="/images/back-arrow.png" alt="Go Back">
 	 <figcaption><?=_('Back')?></figcaption>
