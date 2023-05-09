@@ -15,7 +15,7 @@
 					<label><?= _('Amount') ?></label><input type="text" name="amount" id="amount" value="<?= $data->amount?>" readonly="readonly">
 				</div>
 				<div class ="input-box">
-					<label><?= _('Date') ?></label><textarea name="date" id="date" readonly="readonly"><?= $data->date?></textarea>
+					<label><?= _('Date') ?></label><input name="date" value="<?=\app\core\TimeHelper::DTOutBrowser($data->date)?>"id="date" readonly>
 				</div>
 				<div class ="input-box">
 					<label><?= _('Payment Method') ?></label><input type="text" name='paymentMethod' id="paymentMethod" value="<?= $data->paymentMethod?>" readonly="readonly">

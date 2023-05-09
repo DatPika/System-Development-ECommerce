@@ -20,7 +20,7 @@
                     <label><?= _('Amount') ?></label><textarea name="amount" id="amount"><?= $payment->amount?></textarea>
                 </div>
                 <div class ="input-box">
-                    <label><?= _('Date') ?></label><input type="text" name='date' id="date" value="<?= $payment->date?>" required>
+                    <label><?= _('Date') ?></label><input type="text" name='date' id="date" value="<?= \app\core\TimeHelper::DTOutBrowser($payment->date)?>" required>
                 </div>
                 <div class ="input-box">
                     <div class="right">

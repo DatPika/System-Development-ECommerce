@@ -26,7 +26,7 @@
 			<tr>
 				<td><?= htmlentities($payment->paymentMethod) ?></td>
 				<td><?= htmlentities($payment->amount) ?></td>
-				<td><?= htmlentities($payment->date) ?></td>
+				<td><?= \app\core\TimeHelper::DTOutBrowser($payment->date) ?></td>
 				<td><a href='/PaymentInformation/edit/<?=$payment->payment_id?>'><?= _('Edit') ?></a> | <a href='/PaymentInformation/delete/<?=$payment->payment_id?>'><?= _('Delete') ?></a>
 			</tr>
 		</tbody>

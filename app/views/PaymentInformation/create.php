@@ -13,7 +13,7 @@
 					<label><?= _('Amount') ?></label><input type="text" name='amount' id="amount" class="text-field" required>
 				</div>
 				<div class ="input-box">
-					<label><?= _('Date') ?></label><input type="text" name="date" class="text-field">
+					<label><?= _('Date') ?></label><input type="text" placeholder="DD/MM/YYYY" name="date" class="text-field">
 				</div>
 				<div class ="input-box">
 					<div class="right">
