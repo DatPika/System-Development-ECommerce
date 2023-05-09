@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2023 at 03:08 PM
+-- Generation Time: May 09, 2023 at 05:37 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `favoritedesign`
 --
-CREATE DATABASE IF NOT EXISTS `favoritedesign` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `favoritedesign`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `favoritedesign`;
 -- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `client`;
 CREATE TABLE `client` (
   `client_id` int(11) NOT NULL,
   `clientName` varchar(50) NOT NULL,
@@ -51,12 +48,11 @@ INSERT INTO `client` (`client_id`, `clientName`, `address`) VALUES
 -- Table structure for table `expense`
 --
 
-DROP TABLE IF EXISTS `expense`;
 CREATE TABLE `expense` (
   `expense_id` int(11) NOT NULL,
   `supplierName` varchar(50) NOT NULL,
   `totalExpense` decimal(7,2) NOT NULL,
-  `details` text NOT NULL,
+  `details` text DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -72,14 +68,25 @@ INSERT INTO `expense` (`expense_id`, `supplierName`, `totalExpense`, `details`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `home`
+--
+
+CREATE TABLE `home` (
+  `home_id` int(11) NOT NULL,
+  `expense_id` int(11) DEFAULT NULL,
+  `project_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payment_information`
 --
 
-DROP TABLE IF EXISTS `payment_information`;
 CREATE TABLE `payment_information` (
   `payment_id` int(11) NOT NULL,
-  `paymentMethod` varchar(30) NOT NULL,
-  `amount` decimal(7,2) NOT NULL,
+  `paymentMethod` varchar(30) DEFAULT NULL,
+  `amount` decimal(7,2) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `project_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
@@ -90,7 +97,8 @@ CREATE TABLE `payment_information` (
 --
 
 INSERT INTO `payment_information` (`payment_id`, `paymentMethod`, `amount`, `date`, `project_id`, `user_id`) VALUES
-(1, 'cash', '2000.00', '2023-04-27', 4, 2);
+(1, 'cash', '2000.00', '2023-04-27', 4, 2),
+(2, 'cash', '4000.00', '2023-05-11', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -98,18 +106,17 @@ INSERT INTO `payment_information` (`payment_id`, `paymentMethod`, `amount`, `dat
 -- Table structure for table `project`
 --
 
-DROP TABLE IF EXISTS `project`;
 CREATE TABLE `project` (
   `project_id` int(11) NOT NULL,
   `job` enum('Service','Installation','Estimation') NOT NULL,
-  `projectCost` decimal(7,2) NOT NULL,
+  `projectCost` decimal(7,2) DEFAULT NULL,
   `startDate` date NOT NULL,
   `endDate` date DEFAULT NULL,
-  `done` enum('Done','Not Done') NOT NULL,
-  `surfaceArea` int(3) NOT NULL,
-  `lights` int(3) NOT NULL,
-  `spots` int(3) NOT NULL,
-  `vents` int(3) NOT NULL,
+  `done` enum('Done','Not Done') DEFAULT NULL,
+  `surfaceArea` int(3) DEFAULT NULL,
+  `lights` int(3) DEFAULT NULL,
+  `spots` int(3) DEFAULT NULL,
+  `vents` int(3) DEFAULT NULL,
   `works` text DEFAULT NULL,
   `otherInformation` text DEFAULT NULL,
   `client_id` int(11) NOT NULL
@@ -128,11 +135,10 @@ INSERT INTO `project` (`project_id`, `job`, `projectCost`, `startDate`, `endDate
 -- Table structure for table `trip`
 --
 
-DROP TABLE IF EXISTS `trip`;
 CREATE TABLE `trip` (
   `trip_id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
-  `distance` int(11) NOT NULL
+  `distance` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -148,22 +154,21 @@ INSERT INTO `trip` (`trip_id`, `project_id`, `distance`) VALUES
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password_hash` varchar(72) NOT NULL,
-  `secretkey` varchar(72) DEFAULT NULL
+  `password_hash` varchar(72) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `password_hash`, `secretkey`) VALUES
-(2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G', NULL),
-(3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK', NULL),
-(6, 'user2', '$2y$10$aNoPglw.jRG5MCGOWRbWBe763CNjH2kwciziKKowY4vAZmudl5FHG', NULL);
+INSERT INTO `user` (`user_id`, `username`, `password_hash`) VALUES
+(2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G'),
+(3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK'),
+(4, '123', '$2y$10$1GFjm5bs70XKoYmJHGMAM.E/ASGmtJ0aqJtEoKBXTEtFskqwBqOOa'),
+(5, '45', '$2y$10$H0CatVFSbTP0ULHGXmRIOuuXhb4ienwaWKkdBzj9wC25N8d3Ku/FW');
 
 --
 -- Indexes for dumped tables
@@ -181,6 +186,12 @@ ALTER TABLE `client`
 ALTER TABLE `expense`
   ADD PRIMARY KEY (`expense_id`),
   ADD KEY `expense_to_user` (`user_id`);
+
+--
+-- Indexes for table `home`
+--
+ALTER TABLE `home`
+  ADD PRIMARY KEY (`home_id`);
 
 --
 -- Indexes for table `payment_information`
@@ -226,10 +237,16 @@ ALTER TABLE `expense`
   MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
+-- AUTO_INCREMENT for table `home`
+--
+ALTER TABLE `home`
+  MODIFY `home_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `payment_information`
 --
 ALTER TABLE `payment_information`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `project`
@@ -247,7 +264,7 @@ ALTER TABLE `trip`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
