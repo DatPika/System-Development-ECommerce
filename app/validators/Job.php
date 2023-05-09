@@ -5,8 +5,8 @@ use Attribute;
 use app\core\Validator;
 
 #[Attribute]
-class NonEmpty implements Validator{
+class Job implements Validator{
     public function isValid($data) : bool {
-        return !empty($data);
+        return ($data == "Installation" || $data == "Service" || $data == "Estimation");
     }
 }

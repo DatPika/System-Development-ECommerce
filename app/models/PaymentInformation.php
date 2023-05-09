@@ -6,16 +6,26 @@ class PaymentInformation extends \app\core\Model {
     public $project_id;
     public $user_id;
     #[\app\validators\NonNull]
+    #[\app\validators\NonEmpty]
     protected $paymentMethod;
     #[\app\validators\NonNull]
     #[\app\validators\DoubleLength]
     protected $amount;
     #[\app\validators\NonNull]
-    //#[\app\validators\DateTime]
+    #[\app\validators\DateTime]
     protected $date;
 
     protected function setpaymentMethod($val) {
         $this->paymentMethod = htmlentities($val, ENT_QUOTES);
+    }
+
+    protected function setamount($val) {
+        $this->amount = htmlentities($val, ENT_QUOTES);
+    }
+
+    // TODO: add DAteTime Input method and change its format
+    protected function setdate($val) {
+        $this->date = htmlentities($val, ENT_QUOTES);
     }
 
     protected function insert() {

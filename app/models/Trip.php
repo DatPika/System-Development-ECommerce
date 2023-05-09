@@ -4,10 +4,15 @@ namespace app\models;
 class Trip extends \app\core\Model{
 	public $trip_id;
 	public $project_id;
-	public $client_id;
-	public $distance;
+	#[\app\validators\NonNull]
+	#[\app\validators\DistanceLength]
+	protected $distance;
 
-	public function insert(){
+	protected function setdistance($val) {
+		$this->distance = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function insert(){
 		$SQL = "INSERT INTO project (project_id, distance) value (:project_id, :distance)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
@@ -18,7 +23,7 @@ class Trip extends \app\core\Model{
 		$this->trip_id = self::$connection->lastInsertId();
 	}
 
-	public function update(){
+	protected function update(){
 		$SQL = "UPDATE project SET project_id=:project_id, distance=:distance where trip_id=:trip_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [

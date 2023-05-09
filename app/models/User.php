@@ -3,10 +3,21 @@ namespace app\models;
 
 class User extends \app\core\Model{
 	public $user_id;
-	public $username;
-	public $password_hash;
-
+	#[\app\validators\NonNull] 
+	#[\app\validators\NonEmpty]
+	protected $username;
+	#[\app\validators\NonNull]
+	#[\app\validators\NonEmpty]
+	protected $password_hash;
 	public $secretkey;
+
+	protected function setusername($val) {
+		$this->username = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function setpassword_hash($val) {
+		$this->password_hash = $val;
+	}
 
 	public function get($username){
 		$SQL = 'SELECT * FROM user WHERE username = :username';
@@ -17,7 +28,7 @@ class User extends \app\core\Model{
 		return $STH->fetch();
 	}
 
-	public function insert(){
+	protected function insert(){
 		$SQL = 'INSERT INTO user(username, password_hash) VALUES (:username, :password_hash)';
 		$STH = self::$connection->prepare($SQL);
 

@@ -4,19 +4,75 @@ namespace app\models;
 class Project extends \app\core\Model{
 	public $project_id;
 	public $client_id;
-	public $job;
-	public $projectCost;
-	public $startDate;
-	public $endDate;
-	public $done;
-	public $surfaceArea;
-	public $lights;
-	public $spots;
-	public $vents;
-	public $works;
-	public $otherInformation;
+	#[\app\validators\NonNull]
+	#[\app\validators\Job]
+	protected $job;
+	#[\app\validators\NonNull]
+	#[\app\validators\DoubleLength]
+	protected $projectCost;
+	#[\app\validators\NonNull]
+	#[\app\validators\DateTime]
+	protected $startDate;
+	#[\app\validators\DateTime]
+	protected $endDate;
+	#[\app\validators\NonNull]
+	#[\app\validators\Done]
+	protected $done;
+	#[\app\validators\NonNull]
+	#[\app\validators\IntLength]
+	protected $surfaceArea;
+	#[\app\validators\NonNull]
+	#[\app\validators\IntLength]
+	protected $lights;
+	#[\app\validators\NonNull]
+	#[\app\validators\IntLength]
+	protected $spots;
+	#[\app\validators\NonNull]
+	#[\app\validators\IntLength]
+	protected $vents;
+	protected $works;
+	protected $otherInformation;
 
-	public function insert(){
+	protected function setjob($val) {
+		$this->job = $val;
+	}
+	protected function setdone($val) {
+		$this->done = $val;
+	}
+
+	protected function setprojectCost($val) {
+		$this->projectCost = htmlentities($val, ENT_QUOTES);
+	}
+	// TODO: add DAteTime Input method and change its format
+	protected function setstartDate($val) {
+		$this->startDate = htmlentities($val, ENT_QUOTES);
+	}
+	
+	// TODO: add DAteTime Input method and change its format
+	protected function setendDate($val) {
+		$this->endDate = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function setsurfaceArea($val) {
+		$this->surfaceArea = htmlentities($val, ENT_QUOTES);
+	}
+	protected function setlights($val) {
+		$this->lights = htmlentities($val, ENT_QUOTES);
+	}
+	protected function setspots($val) {
+		$this->spots = htmlentities($val, ENT_QUOTES);
+	}
+	protected function setvents($val) {
+		$this->vents = htmlentities($val, ENT_QUOTES);
+	}
+	protected function setworks($val) {
+		$this->works = htmlentities($val, ENT_QUOTES);
+	}
+	protected function setotherInformation($val) {
+		$this->otherInformation = htmlentities($val, ENT_QUOTES);
+	}
+
+	protected function insert(){
 		$SQL = "INSERT INTO project (client_id, job, projectCost, startDate, endDate, done, surfaceArea, lights, spots, vents, works, otherInformation) value (:client_id, :job, :projectCost, :startDate, :endDate, :done, :surfaceArea, :lights, :spots, :vents, :works, :otherInformation)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
@@ -37,7 +93,7 @@ class Project extends \app\core\Model{
 		$this->project_id = self::$connection->lastInsertId();
 	}
 
-	public function update(){
+	protected function update(){
 		$SQL = "UPDATE project SET client_id=:client_id, job=:job, projectCost=:projectCost, startDate=:startDate, endDate=:endDate, done=:done, surfaceArea=:surfaceArea, lights=:lights, spots=:spots, vents=:vents, works=:works, otherInformation=:otherInformation where project_id=:project_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
