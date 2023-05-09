@@ -15,7 +15,7 @@ class Home extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
-	public function create() {
+	public function insert() {
 		$SQL = "INSERT INTO home (project_id, expense_id) value (:project_id, :expense_id)";
 		$STH = self::$connection->prepare($SQL);
 		$data = [

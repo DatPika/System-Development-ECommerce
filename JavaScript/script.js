@@ -8,4 +8,7 @@ $("document").ready(function() {
 	$(".supplierAuto").on('click', function() {
 		$("#supplierName").val($(this).html());
 	});
+	function loadMore(data) {
+		
+	}
 });

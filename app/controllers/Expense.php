@@ -71,4 +71,7 @@ class Expense extends \app\core\Controller{
             header('location:/Expense/index?error=The chosen expense does not exist');
         }
     }
+    public function loadMore() {
+        header('location:/Expense/index');
+    }
 }
