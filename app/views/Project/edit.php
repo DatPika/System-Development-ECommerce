@@ -1,101 +1,81 @@
 <?php $this->view('shared/header',_('Edit Project')); ?>
-
-	<div class="createPage">
+<figure class="back hover-underline-animation" onclick="history.back()">
+	 <img src="/images/back-arrow.png" alt="Go Back">
+	 <figcaption><?=_('Back')?></figcaption>
+</figure>
+<div class="createPage">
 
 	<div class="container">
 
 		<h1 class="form-title"><?= _('Edit project')?></h1>
-		
 		<form method="post" action="">
-			<!-- TODO: implement an input box for user id/username and transfer the values of payment information-->
 			<div class="project-info">
-				<div class ="input-box">
-					<label><?= _('Start Date') ?></label><input type="text" name="startDate" id="clientName" value="<?= $data->startDate?>"required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('End Date') ?></label><input type="text" name="endDate" id="clientName" value="<?= $data->endDate?>">
-				</div>
-				<div class ="input-box">
-					<label><?= _('Service') ?></label><input type="radio" name='job' id="cash" value="Service" required <?= ($data->job == 'Service') ? "checked" : "" ?>>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Installation') ?></label><input type="radio" name='job' id="interac"  value="Installation" required <?= ($data->job == 'Installation') ? "checked" : "" ?>>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Estimation') ?></label><input type="radio" name='job' id="e-transfer"  value="Estimation" required <?= ($data->job == 'Estimation') ? "checked" : "" ?>>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Done') ?></label><input type="checkbox" name='done' id="done" required <?= ($data->job == 'Done') ? "checked" : "" ?>>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Client Name') ?></label><input type="text" name="client" id="clientName" value="<?= $data->client_id?>" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Address') ?></label><input type="text" name="address" id="address" value="<?= $data->client_id?>" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Surface Area') ?></label><textarea name="surfaceArea" id="surfaceArea"><?= $data->surfaceArea?></textarea>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Project Cost') ?></label><input type="text" name="projectCost" id="projectCost" value="<?= $data->projectCost?>">
-				</div>
-				<div class ="input-box">
-					<label><?= _('Lights') ?></label><input type="text" name='lights' id="lights" value="<?= $data->lights?>" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Spots') ?></label><input type="text" name='spots' id="spots" value="<?= $data->spots?>" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Vents') ?></label><input type="text" name='vents' id="vents" value="<?= $data->vents?>"required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Works') ?></label><input type="text" name='works' id="works" value="<?= $data->works?>"required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Other') ?></label><input type="text" name='otherInformation' id="other" value="<?= $data->otherInformation?>" required>
-				</div>
-				<label>Deposit:</label>
-				<div class ="input-box">
-					<label><?= _('Date') ?></label><input type="text" name='date' id="date" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Amount') ?></label><input type="text" name='amount' id="amonut" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Cash') ?></label><input type="radio" name='deposit' id="cash" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('Interac') ?></label><input type="radio" name='deposit' id="interac" required>
-				</div>
-				<div class ="input-box">
-					<label><?= _('E-Transfer') ?></label><input type="radio" name='deposit' id="e-transfer" required>
-				</div>
-				<!--<label>Balance:</label>
-				<div class ="input-box">
-					<label></label><input type="text" name='date' id="date" required>
-				</div>
-				<div class ="input-box">
-					<label></label><input type="text" name='amount' id="amonut" required>
-				</div>
-				<div class ="input-box">
-					<label></label><input type="radio" name='balance' id="cash2" required>
-				</div>
-				<div class ="input-box">
-					<label></label><input type="radio" name='balance' id="interac2" required>
-				</div>
-				<div class ="input-box">
-					<label></label><input type="radio" name='balance' id="e-transfer2" required>
+				<div class="general-info">
+					<div>
+						<label><?= _('Client Name:') ?></label>
+						<input type="text" name="client" class="text-field" value="<?= $data->getClient()->clientName ?>">
+					</div>
+					<div class="renovation-type">
+						<label><?= _('Job:') ?></label>
+						<select name='job' class="job-type">
+							<option value='Installation'>Installation</option>
+							<option value='Service'>Service</option>
+							<option value='Estimation'>Estimation</option>
+						</select>
+					</div>
+					<div>
+						<label><?= _('Address:') ?></label>
+						<input type="text" name="address" class="text-field" placeholder="<?= _('Address') ?>" value="<?= $data->getClient()->address ?>">
+					</div>
+					<div>
+						<label><?= _('Start Date:') ?></label>
+						<input type="text" name="startDate" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>" value="<?= \app\core\TimeHelper::DTOutBrowser($data->startDate)?>">
+					</div>
+					<div>
+						<label><?= _('End Date:') ?></label>
+						<input type="text" name="endDate" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>" value="<?= ($data->endDate) ? \app\core\TimeHelper::DTOutBrowser($data->endDate) : "" ?>">
+					</div>
+					<div>
+						<label><?= _('Surface Area:') ?></label>
+						<input type="text" name="surfaceArea" class="text-field" placeholder="<?= _('Surface Area') ?>" value="<?= $data->surfaceArea ?>">
+					</div>
+					<div class="lights-spots">
+						<div>
+							<label><?= _('Lights:') ?></label>
+							<input type="text" name="lights" class="text-field" placeholder="<?= _('Lights') ?>" value="<?= $data->lights ?>">
+						</div>
+						<div>
+							<label><?= _('Spots:') ?></label>
+							<input type="text" name="spots" class="text-field" placeholder="<?= _('Spots') ?>" value="<?= $data->spots ?>">
+						</div>
+					</div>
+					<div>
+						<label><?= _('Vents:') ?></label>
+						<input type="text" name="vents" class="text-field" placeholder="<?= _('Vents') ?>" value="<?= $data->vents ?>">
+					</div>
+					<div>
+						<label><?= _('Works:') ?></label>
+						<input type="text" name="works" class="text-field" placeholder="<?= _('Works') ?>" value="<?= $data->works ?>">
+					</div>
+					<div>
+						<label><?= _('Project Cost:') ?></label>
+						<input type="text" name="projectCost" class="text-field" placeholder="<?= _('Project Cost') ?>" value="<?= $data->projectCost ?>">
+					</div>
+					<div class="is-done">
+						<label><?= _('Done?') ?></label>
+						<input type="radio" name="done">
+					</div>
+					<div>
+						<label><?= _('Other:') ?></label>
+						<input type="text" name="otherInformation" class="text-field" placeholder="<?= _('Other') ?>" value="<?= $data->otherInformation ?>">
+					</div>
 				</div>
 			</div>
--->
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Edit record') ?>'>
 			</div>
-			
 		</form>
-
 	</div>
-
 </div>
 
 <?php $this->view('shared/footer'); ?>
