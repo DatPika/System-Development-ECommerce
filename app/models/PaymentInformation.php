@@ -39,11 +39,8 @@ class PaymentInformation extends \app\core\Model {
         $this->payment_id = self::$connection->lastInsertId();
     }
     protected function update() {
-<<<<<<< HEAD
         $SQL = "UPDATE payment_information SET user_id=:user_id, paymentMethod=:paymentMethod, amount=:amount, date=:date WHERE payment_id = :payment_id";
-=======
-        $SQL = "UPDATE `paymentInformation` SET `project_id`=:project_id, 'user_id'=:user_id,`paymentMethod`=:paymentMethod,`amount`=:amount, `date`=:date WHERE payment_id = :payment_id";
->>>>>>> 4353b419e6bdb45ef2e092c44326dbf8fd7a079c
+
         $STH = self::$connection->prepare($SQL);
         $data = [
             'user_id'=>$this->user_id,
@@ -60,6 +57,7 @@ class PaymentInformation extends \app\core\Model {
             return -1;
         }
     }
+
     public function get($payment_id) {
         $SQL = "SELECT * FROM paymentInformation WHERE payment_id = :payment_id";
         $STH = self::$connection->prepare($SQL);
@@ -70,7 +68,6 @@ class PaymentInformation extends \app\core\Model {
         $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\PaymentInformation');
         return $STH->fetch();
     }
-<<<<<<< HEAD
 
     public function delete(){
         $SQL = "DELETE FROM payment_information WHERE payment_id=:payment_id";
@@ -79,7 +76,4 @@ class PaymentInformation extends \app\core\Model {
         $STH->execute($data);
         return $STH->rowCount();
     }
-
-=======
->>>>>>> 4353b419e6bdb45ef2e092c44326dbf8fd7a079c
 }
