@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div class="form-submit-btn">
-				<a href="/PaymentInformation/index/<?= $data->payment_id ?>"><?= _('Cancel') ?></a>
+				<a href="/PaymentInformation/index/<?= $data->project_id ?>"><?= _('Cancel') ?></a>
 			</div>
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Delete record') ?>'>

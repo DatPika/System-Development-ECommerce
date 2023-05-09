@@ -52,6 +52,9 @@
                 </div>
             </div>
             <div class="form-submit-btn">
+                <a href="/PaymentInformation/index/<?= $payment->project_id ?>"><?= _('Cancel') ?></a>
+            </div>
+            <div class="form-submit-btn">
                 <input type="submit" name="action" value='<?= _('Edit record') ?>'>
             </div>
 
