@@ -1,8 +1,8 @@
 <?php $this->view('shared/header',_('Edit Expense')); ?>
 
 <?php
-    $payment = $data[1];
     $users = $data[0];
+    $payment = $data[1];
 ?>
 <figure class="back hover-underline-animation" onclick="history.back()">
      <img src="/images/back-arrow.png" alt="Go Back">
@@ -12,8 +12,7 @@
 
     <div class="container">
 
-        <h1 class="form-title"><?= _('Add New Payment')?></h1>
-
+        <h1 class="form-title"><?= _('Edit Payment')?></h1>
         <form method="post" action="">
             <div class="payment">
             <label><?=_('Payment Information')?>:</label>
@@ -21,11 +20,11 @@
                     <div class="left">
                         <div class="input-box">
                             <label><?= _('Date:') ?></label>
-                            <input type="text" name="date1" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+                            <input type="text" name="date1" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>" value="<?= $payment->date ?>">
                         </div>
                         <div class="input-box">
                             <label><?= _('Amount:') ?></label>
-                            <input type="text" name="amount1" class="text-field" placeholder="<?= _('Amount') ?>">
+                            <input type="text" name="amount1" class="text-field" placeholder="<?= _('Amount') ?>" value="<?= $payment->amount ?>">
                         </div>
                         <div class="input-box">
                             <label><?= _('Select the user:') ?></label>
@@ -58,7 +57,7 @@
                 </div>
             </div>
             <div class="form-submit-btn">
-                <input type="submit" name="action" value='<?= _('Add record') ?>'>
+                <input type="submit" name="action" value='<?= _('Edit Payment') ?>'>
             </div>
 
             

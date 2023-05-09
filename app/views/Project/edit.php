@@ -13,7 +13,7 @@
 				<div class="general-info">
 					<div>
 						<label><?= _('Client Name:') ?></label>
-						<input type="text" name="client" class="text-field" value="<?= $data->getClient()->clientName ?>">
+						<input type="text" name="client" class="text-field" placeholder="<?= _('Client Name') ?>" value="<?= $data->getClient()->clientName ?>">
 					</div>
 					<div class="renovation-type">
 						<label><?= _('Job:') ?></label>
