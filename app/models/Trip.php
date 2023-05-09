@@ -4,7 +4,6 @@ namespace app\models;
 class Trip extends \app\core\Model{
 	public $trip_id;
 	public $project_id;
-	#[\app\validators\NonNull]
 	#[\app\validators\DistanceLength]
 	protected $distance;
 
@@ -48,28 +47,6 @@ class Trip extends \app\core\Model{
 		$SQL = "SELECT * FROM trip";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
-		return $STH->fetchAll();
-	}
-	// TODO: fix the sql statement by joining the tables trip and project
-	public function getAllByColumnDesc($column){
-		$SQL = "SELECT * FROM trip ORDER BY :column DESC";
-		$STH = self::$connection->prepare($SQL);
-		$data = [
-			'column'=>$column,
-		];
-		$STH->execute($data);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
-		return $STH->fetchAll();
-	}
-	// TODO: fix the sql statement by joining the tables trip and project
-	public function getAllByColumnAsc($column){
-		$SQL = "SELECT * FROM trip ORDER BY :column ASC";
-		$STH = self::$connection->prepare($SQL);
-		$data = [
-			'column'=>$column,
-		];
-		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
 		return $STH->fetchAll();
 	}

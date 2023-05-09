@@ -28,7 +28,7 @@ class TimeHelper {
 			// change the timezone
 			$datetime->setTimezone(new DateTimeZone('UTC'));
 			//output to standard string format
-			return $datetime->format('Y-m-d H:i:s');
+			return $datetime->format('d/m/Y');
 		}
 		catch (\Exception $e) {
 			return "";
@@ -42,6 +42,6 @@ class TimeHelper {
 		// change the timezone
 		$datetime->setTimezone(new DateTimeZone($tz));
 		//output to standard string format
-		return $datetime->format('Y-m-d H:i:s');
+		return $datetime->format('d/m/Y');
 	}
 }

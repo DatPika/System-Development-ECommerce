@@ -16,17 +16,39 @@
 						<label><?= _('Client Name:') ?></label>
 						<input type="text" name="client-name" class="text-field" placeholder="<?= _('Client Name') ?>">
 					</div>
+					<div class="renovation-type">
+						<label><?= _('Job:') ?></label>
+						<select name='job-type'>
+							<option value='Installation'>Installation</option>
+							<option value='Service'>Service</option>
+							<option value='Estimation'>Estimation</option>
+						</select>
+					</div>
+					<div>
+						<label><?= _('Address:') ?></label>
+						<input type="text" name="address" class="text-field" placeholder="<?= _('Address') ?>">
+					</div>
+					<div>
+						<label><?= _('Start Date:') ?></label>
+						<input type="text" name="start-date" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+					</div>
+					<div>
+						<label><?= _('End Date:') ?></label>
+						<input type="text" name="end-date" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+					</div>
 					<div>
 						<label><?= _('Surface Area:') ?></label>
 						<input type="text" name="surface-area" class="text-field" placeholder="<?= _('Surface Area') ?>">
 					</div>
-					<div>
-						<label><?= _('Lights:') ?></label>
-						<input type="text" name="lights" class="text-field" placeholder="<?= _('Lights') ?>">
-					</div>
-					<div>
-						<label><?= _('Spots:') ?></label>
-						<input type="text" name="spots" class="text-field" placeholder="<?= _('Spots') ?>">
+					<div class="lights-spots">
+						<div>
+							<label><?= _('Lights:') ?></label>
+							<input type="text" name="lights" class="text-field" placeholder="<?= _('Lights') ?>">
+						</div>
+						<div>
+							<label><?= _('Spots:') ?></label>
+							<input type="text" name="spots" class="text-field" placeholder="<?= _('Spots') ?>">
+						</div>
 					</div>
 					<div>
 						<label><?= _('Vents:') ?></label>
@@ -39,21 +61,6 @@
 					<div>
 						<label><?= _('Project Cost:') ?></label>
 						<input type="text" name="project-cost" class="text-field" placeholder="<?= _('Project Cost') ?>">
-					</div>
-					<div class="renovation-type">
-						<label><?= _('Renovation Type:') ?></label>
-						<select name='renovation-type'>
-							<option value='Installation'>Installation</option>
-							<option value='Service'>Service</option>
-						</select>
-					</div>
-					<div>
-						<label><?= _('Start Date:') ?></label>
-						<input type="text" name="start-date" class="text-field" placeholder="<?= _('Start Date') ?>">
-					</div>
-					<div>
-						<label><?= _('End Date:') ?></label>
-						<input type="text" name="end-date" class="text-field" placeholder="<?= _('End Date') ?>">
 					</div>
 					<div class="is-done">
 						<label><?= _('Done?') ?></label>
@@ -71,7 +78,7 @@
 							<div class="left">
 								<div class="input-box">
 									<label><?= _('Date:') ?></label>
-									<input type="text" name="deposit" class="text-field" placeholder="<?= _('Date') ?>">
+									<input type="text" name="deposit" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
 								</div>
 								<div class="input-box">
 									<label><?= _('Amount:') ?></label>
@@ -94,15 +101,15 @@
 								<label><?= _('Payment Method:') ?></label>
 								<div class="input-box">
 									<label><?= _('Cash') ?></label>
-									<input type="radio" name="payment1">
+									<input type="radio" name="payment1" value="cash">
 								</div>
 								<div class="input-box">
 									<label><?= _('Interac') ?></label>
-									<input type="radio" name="payment1">
+									<input type="radio" name="payment1" value="interac">
 								</div>
 								<div class="input-box">
 									<label><?= _('E-Transfer') ?></label>
-									<input type="radio" name="payment1">
+									<input type="radio" name="payment1" value="e-transfer">
 								</div>
 							</div>
 						</div>
@@ -113,7 +120,7 @@
 							<div class="left">
 								<div class="input-box">
 									<label><?= _('Date:') ?></label>
-									<input type="text" name="deposit" class="text-field" placeholder="<?= _('Date') ?>">
+									<input type="text" name="deposit" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
 								</div>
 								<div class="input-box">
 									<label><?= _('Amount:') ?></label>
@@ -136,15 +143,15 @@
 								<label><?= _('Payment Method:') ?></label>
 								<div class="input-box">
 									<label><?= _('Cash') ?></label>
-									<input type="radio" name="payment2">
+									<input type="radio" name="payment2" value="cash">
 								</div>
 								<div class="input-box">
 									<label><?= _('Interac') ?></label>
-									<input type="radio" name="payment2">
+									<input type="radio" name="payment2" value="interac">
 								</div>
 								<div class="input-box">
 									<label><?= _('E-Transfer') ?></label>
-									<input type="radio" name="payment2">
+									<input type="radio" name="payment2" value="e-transfer">
 								</div>
 							</div>
 						</div>

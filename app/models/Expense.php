@@ -9,7 +9,6 @@ class Expense extends \app\core\Model{
 	#[\app\validators\NonNull]
 	#[\app\validators\DoubleLength]
 	protected $totalExpense;
-	#[\app\validators\NonNull]
 	#[\app\validators\NonEmpty]
 	protected $details;
 	public $user_id;
@@ -73,26 +72,6 @@ class Expense extends \app\core\Model{
 		$SQL = "SELECT DISTINCT supplierName FROM expense";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');
-		return $STH->fetchAll();
-	}
-
-	// TODO: fix the sql statement by joining the tables user(depends on the view) and expense
-	public function getAllByColumnDesc($column){
-		$SQL = "SELECT * FROM expense ORDER BY :column DESC";
-		$STH = self::$connection->prepare($SQL);
-		$data = ['column'=>$column];
-		$STH->execute($data);
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');
-		return $STH->fetchAll();
-	}
-
-	// TODO: fix the sql statement by joining the tables user (depends on the view) and expense
-	public function getAllByColumnAsc($column){
-		$SQL = "SELECT * FROM expense ORDER BY :column ASC";
-		$STH = self::$connection->prepare($SQL);
-		$data = ['column'=>$column];
-		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Expense');
 		return $STH->fetchAll();
 	}

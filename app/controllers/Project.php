@@ -75,15 +75,11 @@ class Project extends \app\core\Controller{
                 $client->clientName = $_POST['client'];
                 $client->address = $_POST['address'];
                 $client->update();
-                $project->client_id = $client->client_id;
                 $project->update();
                 header('location:/Project/index');
             }
             else {
-                $payments = $project->getAll();
-                $user = new \app\models\User();
-                $users = $user->getAll();
-                $this->view('Project/edit', [$project, $payments, $users]);
+                $this->view('Project/edit', $project);
             }
         }
         else {
