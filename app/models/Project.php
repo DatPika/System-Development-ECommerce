@@ -137,7 +137,7 @@ class Project extends \app\core\Model{
 	}
 
 	public function getAllPayments() {
-        $SQL = "SELECT * FROM paymentInformation WHERE project_id = :project_id";
+        $SQL = "SELECT * FROM payment_information WHERE project_id = :project_id";
         $STH = self::$connection->prepare($SQL);
         $data = [
             'project_id'=>$this->project_id

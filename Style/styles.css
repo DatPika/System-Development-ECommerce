@@ -90,6 +90,7 @@ div.break {
 .content-table th,
 .content-table td {
 	padding: 12px 15px;
+	text-align: center;
 }
 
 .content-table tbody tr {
