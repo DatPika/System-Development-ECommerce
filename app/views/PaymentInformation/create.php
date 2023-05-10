@@ -16,11 +16,11 @@
 					<div class="left">
 						<div class="input-box">
 							<label><?= _('Date:') ?></label>
-							<input type="text" name="date1" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+							<input type="text" name="date" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
 						</div>
 						<div class="input-box">
 							<label><?= _('Amount:') ?></label>
-							<input type="text" name="amount1" class="text-field" placeholder="<?= _('Amount') ?>">
+							<input type="text" name="amount" class="text-field" placeholder="<?= _('Amount') ?>">
 						</div>
 						<div class="input-box">
 							<label><?= _('Select the user:') ?></label>
