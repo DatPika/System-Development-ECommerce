@@ -350,6 +350,16 @@ input::placeholder {
 	margin-right: 20px;
 }
 
+.trip-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.trip-info input {
+	padding: 5px 15px;
+}
+
 .form-submit-btn{
 	padding-top: 20px;
 	display: flex;

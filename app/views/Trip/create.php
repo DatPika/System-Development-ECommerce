@@ -1,7 +1,9 @@
 <?php $this->view('shared/header',_('Add Trip')); ?>
 
-
-
+<figure class="back hover-underline-animation" onclick="history.back()">
+	<img src="/images/back-arrow.png" alt="Go Back">
+	<figcaption><?=_('Back')?></figcaption>
+</figure>
 	<div class="createPage">
 
 		<div class="container">
@@ -10,15 +12,18 @@
 			
 			<form method="post" action="">
 
-				<div class="info">
+				<div class="trip-info">
 					<div class ="input-box">
-						<label><?= _('Project ID') ?></label><input type="text" name="project_id" id="project_id" value="<?= $data->project_id?>" readonly>
+						<label><?= _('Project ID') ?></label>
+						<input type="text" name="project_id" class="text-field" value="<?= $data->project_id?>"readonly>
 					</div>
 					<div class ="input-box">
-						<label><?= _('Project') ?></label><input type="text" name="project" id="projectDetails" value="<?= $data->getClient()->clientName?>, <?= $data->getClient()->address?>, <?= $data->job?>" readonly>
+						<label><?= _('Project') ?></label>
+						<input type="text" name="project" class="text-field" value="<?= $data->getClient()->clientName?>, <?= $data->getClient()->address?>, <?= $data->job?>" readonly>
 					</div>
 					<div class ="input-box">
-						<label><?= _('Distance') ?></label><input type="text" name='distance' id="distance" required>
+						<label><?= _('Distance') ?></label>
+						<input type="text" name='distance' class="text-field" placeholder="<?=_('Distance')?>">
 					</div>
 				</div>
 				<div class="form-submit-btn">

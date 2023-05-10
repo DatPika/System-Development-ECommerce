@@ -1,8 +1,8 @@
 <?php $this->view('shared/header',_('Add Expense')); ?>
 
 <figure class="back hover-underline-animation" onclick="history.back()">
-	 <img src="/images/back-arrow.png" alt="Go Back">
-	 <figcaption><?=_('Back')?></figcaption>
+	<img src="/images/back-arrow.png" alt="Go Back">
+<figcaption><?=_('Back')?></figcaption>
 </figure>
 <div class="createPage">
 

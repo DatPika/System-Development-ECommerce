@@ -31,7 +31,7 @@
 					}
 				?></td>
 				<td><?= htmlentities($trip->getProject()->getClient()->address) ?></td>
-				<td><?= htmlentities($trip->distance) ?></td>
+				<td><?= htmlentities($trip->distance) ?> km</td>
 				<td><a href='/Trip/edit/<?=$trip->trip_id?>'><?= _('Edit') ?></a> | <a href='/Trip/delete/<?=$trip->trip_id?>'><?= _('Delete') ?></a>
 			</tr>
 		</tbody>
