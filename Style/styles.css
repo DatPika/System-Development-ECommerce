@@ -64,10 +64,6 @@ div.break {
 	top: 0px;
 }
 
-/*.topheader > img{
-	background: url(/Home/index);
-}*/
-
 .content-table table,
 .content-table th,
 .content-table td {
@@ -337,6 +333,21 @@ input::placeholder {
 .supplierAuto {
 	cursor: pointer;
 	margin: 0 30px;
+}
+
+.suppliers-edit {
+	display: flex;
+	justify-content: center;
+}
+
+.project-select {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.project-select input{
+	margin-right: 20px;
 }
 
 .form-submit-btn{

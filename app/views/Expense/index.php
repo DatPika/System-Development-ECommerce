@@ -37,7 +37,6 @@
 	?>
 
 	</table>
-	<div class="break"></div>
 </div>
 
 <?php $this->view('shared/footer'); ?>
