@@ -57,7 +57,7 @@ class AcceptanceTester extends \Codeception\Actor
     */
     public function iAmLoggedIn()
     {
-        
+    }    
 
    /**
     * @Given I am on the add projects page
@@ -194,13 +194,6 @@ class AcceptanceTester extends \Codeception\Actor
     * @When I press on the :arg1 button next to the record :arg2, :arg3,:arg4, :arg5, :arg6,:arg7, :arg8, :arg9, :arg10, :arg11, :arg12, :arg13 and :arg14
     */
     public function iPressOnTheButtonNextToTheRecordAnd($arg1, $arg2, $arg3, $arg4, $arg5, $arg6, $arg7, $arg8, $arg9, $arg10, $arg11, $arg12, $arg13, $arg14)
-    {
-    }
-
-   /**
-    * @When I press on the :arg1 button
-    */
-    public function iPressOnTheButton($arg1)
     {
     }
 

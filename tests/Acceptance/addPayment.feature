@@ -10,4 +10,5 @@ Feature: Add Payment record to Project record
     And I click "user1" in "user_id"
     And I click "Cash" in "paymentMethod"
     And I press the "Add Record" button
-    Then I see "21/12/2002", "500" and "cash" in the Expense table
+    Then the new PaymentInformation should be added
+    And I see the record "21/12/2002", "500" and "cash" in the PaymentInformation table
