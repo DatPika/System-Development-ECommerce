@@ -41,15 +41,33 @@
 		?>
 		<tbody>
 			<tr>
-				<td><?= htmlentities($record->getExpense()->supplierName) ?></td>
-				<td><?= htmlentities($record->getExpense()->details) ?></td>
-				<td><?= htmlentities($record->getExpense()->totalExpense) ?></td>
+				<td><?= $record->getExpense()->supplierName ?></td>
+				<td><?= $record->getExpense()->details ?></td>
+				<td><?= $record->getExpense()->totalExpense ?></td>
 				<td><a href='/Expense/edit/<?=$record->getExpense()->expense_id?>'><?= _('Edit') ?></a> | <a href='/Expense/delete/<?=$record->getExpense()->expense_id?>'><?= _('Delete') ?></a>
 			</tr>
 		</tbody>
 
 	<?php
 		}
+		else if($record->expense_id == null) { ?>
+			<tbody>
+				<tr>
+					<td><?= $record->getProject()->getClient()->clientName ?></td>
+					<td><?= _('Project Cost: ') ?><?= $record->getProject()->projectCost ?> / 
+						<?= $record->getProject()->surfaceArea ?> ft^2 / 
+						<?= $record->getProject()->lights ?> <?= _('lights')?> / 
+						<?= $record->getProject()->spots ?> <?= _('spots') / 
+						<?= $record->getProject()->vents ?> vents / 
+						<?= $record->getProject()->works ?> work / 
+						<?= $record->getProject()->otherInformation ?>
+					</td>
+					<td><?= $record->getExpense()->totalExpense ?></td>
+					<td><a href='/Expense/edit/<?=$record->getExpense()->expense_id?>'><?= _('Edit') ?></a> | <a href='/Expense/delete/<?=$record->getExpense()->expense_id?>'><?= _('Delete') ?></a>
+				</tr>
+			</tbody>
+
+		<?php }
 	}
 	?>
 

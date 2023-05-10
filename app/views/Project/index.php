@@ -25,14 +25,14 @@
 		foreach ($data as $project) { ?>
 			<tbody>
 				<tr>
-					<td><?= htmlentities($project->getClient()->clientName) ?></td>
-					<td>Project Cost: <?= htmlentities($project->projectCost) ?> / 
-						<?= htmlentities($project->surfaceArea) ?> ft^2 / 
-						<?= htmlentities($project->lights) ?> lights / 
-						<?= htmlentities($project->spots) ?> spots / 
-						<?= htmlentities($project->vents) ?> vents / 
-						<?= htmlentities($project->works) ?> work / 
-						<?= htmlentities($project->otherInformation) ?>
+					<td><?= $project->getClient()->clientName ?></td>
+					<td>Project Cost: <?= $project->projectCost ?> / 
+						<?= $project->surfaceArea ?> ft^2 / 
+						<?= $project->lights ?> lights / 
+						<?= $project->spots ?> spots / 
+						<?= $project->vents ?> vents / 
+						<?= $project->works ?> work / 
+						<?= $project->otherInformation ?>
 					</td>
 					<td>
 						<?php
