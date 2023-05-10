@@ -47,8 +47,6 @@ class PaymentInformation extends \app\core\Controller{
             else {
                 $user = new \app\models\User();
                 $users = $user->getAll();
-                $payment = new \app\models\PaymentInformation();
-                $payment = $payment->get($payment_id);
                 $this->view('PaymentInformation/edit', [$users, $payment]);
             }
         }
@@ -67,7 +65,9 @@ class PaymentInformation extends \app\core\Controller{
                 header('location:/PaymentInformation/index/' . $payment->project_id);
             }
             else {
-                $this->view('PaymentInformation/delete', $payment);
+                $user = new \app\models\User();
+                $user = $user->getByUserId($payment->user_id);
+                $this->view('PaymentInformation/delete', [$user, $payment]);
             }
         }
         else {

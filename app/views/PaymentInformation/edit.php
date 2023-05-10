@@ -4,6 +4,7 @@
     $users = $data[0];
     $payment = $data[1];
 ?>
+
 <figure class="back hover-underline-animation" onclick="history.back()">
      <img src="/images/back-arrow.png" alt="Go Back">
      <figcaption><?=_('Back')?></figcaption>
@@ -43,15 +44,15 @@
                         <label><?= _('Payment Method:') ?></label>
                         <div class="input-box">
                             <label style="margin-left: 140px;"><?= _('Cash') ?></label>
-                            <input style="margin-right: 140px;" type="radio" name="payment1" value="cash">
+                            <input style="margin-right: 140px;" type="radio" name="payment1" value="cash" <?=($payment->paymentMethod == "cash") ? "checked" : ""?>>
                         </div>
                         <div class="input-box">
                             <label style="margin-left: 140px;"><?= _('Interac') ?></label>
-                            <input style="margin-right: 140px;" type="radio" name="payment1" value="interac">
+                            <input style="margin-right: 140px;" type="radio" name="payment1" value="interac" <?=($payment->paymentMethod == "interac") ? "checked" : ""?>>
                         </div>
                         <div class="input-box">
                             <label style="margin-left: 140px;"><?= _('E-Transfer') ?></label>
-                            <input style="margin-right: 140px;" type="radio" name="payment1" value="e-transfer">
+                            <input style="margin-right: 140px;" type="radio" name="payment1" value="e-transfer" <?=($payment->paymentMethod == "interac") ? "checked" : ""?>>
                         </div>
                     </div>
                 </div>
