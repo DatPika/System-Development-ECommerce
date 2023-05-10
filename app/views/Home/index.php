@@ -36,17 +36,20 @@
 			</tr>
 		</thead>
 	<?php
-	foreach ($data as $expense) { ?>
+	foreach ($data as $record) {
+		if($record->project_id == null) {
+		?>
 		<tbody>
 			<tr>
-				<td><?= htmlentities($expense->supplierName) ?></td>
-				<td><?= htmlentities($expense->details) ?></td>
-				<td><?= htmlentities($expense->totalExpense) ?></td>
-				<td><a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('Edit') ?></a> | <a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('Delete') ?></a>
+				<td><?= htmlentities($record->getExpense()->supplierName) ?></td>
+				<td><?= htmlentities($record->getExpense()->details) ?></td>
+				<td><?= htmlentities($record->getExpense()->totalExpense) ?></td>
+				<td><a href='/Expense/edit/<?=$record->getExpense()->expense_id?>'><?= _('Edit') ?></a> | <a href='/Expense/delete/<?=$record->getExpense()->expense_id?>'><?= _('Delete') ?></a>
 			</tr>
 		</tbody>
 
 	<?php
+		}
 	}
 	?>
 

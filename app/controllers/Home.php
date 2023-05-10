@@ -5,14 +5,8 @@ namespace app\controllers;
 #[\app\filters\twofa]
 class Home extends \app\core\Controller{
     public function index() {
-        $expense = new \app\models\Expense();
-        $expenses = $expense->getAll();
-        $project = new \app\models\Project();
-        $projects = $project->getAll();
-        $data = [
-            'expenses'=>$expenses,
-            'projects'=>$projects
-        ];
-        $this->view('Home/index', $data);
+        $home = new \app\models\Home();
+        $home = $home->getAll();
+        $this->view('Home/index', $home);
     }
 }
