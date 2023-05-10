@@ -307,6 +307,38 @@ input::placeholder {
 	margin-left: 30px;
 }
 
+.expense-full {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.expense-full .info{
+	display: grid;
+	grid-template-columns: [start] 1fr [column2] 1fr [column3] 1fr [column4] 1fr [end];
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.suppliers {
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+	border-radius: 50px;
+	margin-bottom: 30px;
+}
+
+.supplierAuto {
+	cursor: pointer;
+	padding: 0 30px;
+}
+
 .form-submit-btn{
 	padding-top: 20px;
 	display: flex;

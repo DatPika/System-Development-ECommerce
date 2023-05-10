@@ -6,7 +6,6 @@
 <div class="createPage">
 
 	<div class="container">
-
 		<h1 class="form-title"><?= _('Add New Payment')?></h1>
 
 		<form method="post" action="">
@@ -24,12 +23,10 @@
 						</div>
 						<div class="input-box">
 							<label><?= _('Select the user:') ?></label>
-							<select>
+							<select  name="user_id">
 								<?php
 									foreach ($data as $user) {
-										echo "<option value='$user->user_id'";
-										echo ($user->user_id == $_SESSION['user_id']?'selected':''); 
-										echo ">$user->username</option>\n";
+										echo "<option value='$user->user_id'>$user->username</option>";
 									}
 								?>
 							</select>
