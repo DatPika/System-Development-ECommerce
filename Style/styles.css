@@ -336,7 +336,7 @@ input::placeholder {
 
 .supplierAuto {
 	cursor: pointer;
-	padding: 0 30px;
+	margin: 0 30px;
 }
 
 .form-submit-btn{
