@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2023 at 02:54 PM
+-- Generation Time: May 10, 2023 at 10:10 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -43,7 +43,7 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`client_id`, `clientName`, `address`) VALUES
 (11, 'Daniel', '789 earth street'),
 (12, 'Jericho', '456 sun street'),
-(13, 'Phil', '123 moon streets'),
+(13, 'Philip', '123 moon streets'),
 (14, 'Daniel', '44 Province'),
 (15, 'Daniel', '144 Mars Street'),
 (16, 'Daniel', '144 Mars Street');
@@ -69,8 +69,7 @@ CREATE TABLE `expense` (
 
 INSERT INTO `expense` (`expense_id`, `supplierName`, `totalExpense`, `details`, `user_id`) VALUES
 (15, 'Rona', '1275.00', 'Spruce wood 2x4x2', 2),
-(16, 'HomeDepot', '60.00', '3 hammer', 3),
-(21, 'FedEx', '30.00', 'Hammer 3 wood', 5);
+(16, 'HomeDepot', '60.00', '3 hammer', 3);
 
 -- --------------------------------------------------------
 
@@ -118,7 +117,7 @@ CREATE TABLE `payment_information` (
 
 INSERT INTO `payment_information` (`payment_id`, `paymentMethod`, `amount`, `date`, `project_id`, `user_id`) VALUES
 (2, 'cash', '4000.00', '2023-05-11', 4, 3),
-(12, 'e-transfer', '500.00', '2023-05-15', 4, 3),
+(12, 'interac', '550.00', '2021-11-23', 4, 3),
 (13, 'cash', '600.00', '2003-04-17', 4, 5),
 (14, 'e-transfer', '800.00', '0000-00-00', 4, 3);
 
@@ -150,7 +149,7 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`project_id`, `job`, `projectCost`, `startDate`, `endDate`, `done`, `surfaceArea`, `lights`, `spots`, `vents`, `works`, `otherInformation`, `client_id`) VALUES
-(4, 'Service', '2400.00', '2023-04-27', NULL, 'Not Done', 78, 5, 6, 3, 'Electricity', 'Extra lamps', 13);
+(4, 'Service', '2400.00', '2023-04-27', '2023-05-10', 'Not Done', 78, 5, 6, 3, 'Electricity', 'Extra lamps', 13);
 
 -- --------------------------------------------------------
 
@@ -171,7 +170,8 @@ CREATE TABLE `trip` (
 
 INSERT INTO `trip` (`trip_id`, `project_id`, `distance`) VALUES
 (1, 4, 100),
-(2, 4, 50);
+(2, 0, 100),
+(3, 4, 150);
 
 -- --------------------------------------------------------
 
@@ -183,18 +183,19 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password_hash` varchar(72) NOT NULL
+  `password_hash` varchar(72) NOT NULL,
+  `secretkey` varchar(72) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `password_hash`) VALUES
-(2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G'),
-(3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK'),
-(4, '123', '$2y$10$1GFjm5bs70XKoYmJHGMAM.E/ASGmtJ0aqJtEoKBXTEtFskqwBqOOa'),
-(5, '45', '$2y$10$H0CatVFSbTP0ULHGXmRIOuuXhb4ienwaWKkdBzj9wC25N8d3Ku/FW');
+INSERT INTO `user` (`user_id`, `username`, `password_hash`, `secretkey`) VALUES
+(2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G', NULL),
+(3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK', NULL),
+(4, '123', '$2y$10$1GFjm5bs70XKoYmJHGMAM.E/ASGmtJ0aqJtEoKBXTEtFskqwBqOOa', NULL),
+(5, '45', '$2y$10$H0CatVFSbTP0ULHGXmRIOuuXhb4ienwaWKkdBzj9wC25N8d3Ku/FW', NULL);
 
 --
 -- Indexes for dumped tables
@@ -284,7 +285,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `trip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `trip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
