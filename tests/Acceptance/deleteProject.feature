@@ -1,7 +1,7 @@
 Feature: Delete in Projects Table
   In order to delete Project records in the database
   As a user
-  I need to be able to select the record to be deleted and press the "Delete Record" button
+  I need to be able to press the corresponding Delete Button
 
   Scenario: The user wants to delete a Project records
     Given I am on the delete Projects record page

@@ -6,7 +6,6 @@
 <div class="createPage">
 
 	<div class="container">
-
 		<h1 class="form-title"><?= _('Add New Payment')?></h1>
 
 		<form method="post" action="">
