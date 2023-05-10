@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2023 at 05:37 PM
+-- Generation Time: May 10, 2023 at 02:54 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `favoritedesign`
 --
+CREATE DATABASE IF NOT EXISTS `favoritedesign` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `favoritedesign`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `client`
 --
 
+DROP TABLE IF EXISTS `client`;
 CREATE TABLE `client` (
   `client_id` int(11) NOT NULL,
   `clientName` varchar(50) NOT NULL,
@@ -40,7 +43,10 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`client_id`, `clientName`, `address`) VALUES
 (11, 'Daniel', '789 earth street'),
 (12, 'Jericho', '456 sun street'),
-(13, 'Phil', '123 moon street');
+(13, 'Phil', '123 moon streets'),
+(14, 'Daniel', '44 Province'),
+(15, 'Daniel', '144 Mars Street'),
+(16, 'Daniel', '144 Mars Street');
 
 -- --------------------------------------------------------
 
@@ -48,6 +54,7 @@ INSERT INTO `client` (`client_id`, `clientName`, `address`) VALUES
 -- Table structure for table `expense`
 --
 
+DROP TABLE IF EXISTS `expense`;
 CREATE TABLE `expense` (
   `expense_id` int(11) NOT NULL,
   `supplierName` varchar(50) NOT NULL,
@@ -63,7 +70,7 @@ CREATE TABLE `expense` (
 INSERT INTO `expense` (`expense_id`, `supplierName`, `totalExpense`, `details`, `user_id`) VALUES
 (15, 'Rona', '1275.00', 'Spruce wood 2x4x2', 2),
 (16, 'HomeDepot', '60.00', '3 hammer', 3),
-(17, 'FedEx', '75.00', 'lamps', 2);
+(21, 'FedEx', '30.00', 'Hammer 3 wood', 5);
 
 -- --------------------------------------------------------
 
@@ -71,11 +78,23 @@ INSERT INTO `expense` (`expense_id`, `supplierName`, `totalExpense`, `details`, 
 -- Table structure for table `home`
 --
 
+DROP TABLE IF EXISTS `home`;
 CREATE TABLE `home` (
   `home_id` int(11) NOT NULL,
   `expense_id` int(11) DEFAULT NULL,
   `project_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `home`
+--
+
+INSERT INTO `home` (`home_id`, `expense_id`, `project_id`) VALUES
+(1, NULL, NULL),
+(2, 19, NULL),
+(3, 20, NULL),
+(4, 21, NULL),
+(5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,6 +102,7 @@ CREATE TABLE `home` (
 -- Table structure for table `payment_information`
 --
 
+DROP TABLE IF EXISTS `payment_information`;
 CREATE TABLE `payment_information` (
   `payment_id` int(11) NOT NULL,
   `paymentMethod` varchar(30) DEFAULT NULL,
@@ -97,8 +117,10 @@ CREATE TABLE `payment_information` (
 --
 
 INSERT INTO `payment_information` (`payment_id`, `paymentMethod`, `amount`, `date`, `project_id`, `user_id`) VALUES
-(1, 'cash', '2000.00', '2023-04-27', 4, 2),
-(2, 'cash', '4000.00', '2023-05-11', 4, 3);
+(2, 'cash', '4000.00', '2023-05-11', 4, 3),
+(12, 'e-transfer', '500.00', '2023-05-15', 4, 3),
+(13, 'cash', '600.00', '2003-04-17', 4, 5),
+(14, 'e-transfer', '800.00', '0000-00-00', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -106,6 +128,7 @@ INSERT INTO `payment_information` (`payment_id`, `paymentMethod`, `amount`, `dat
 -- Table structure for table `project`
 --
 
+DROP TABLE IF EXISTS `project`;
 CREATE TABLE `project` (
   `project_id` int(11) NOT NULL,
   `job` enum('Service','Installation','Estimation') NOT NULL,
@@ -135,6 +158,7 @@ INSERT INTO `project` (`project_id`, `job`, `projectCost`, `startDate`, `endDate
 -- Table structure for table `trip`
 --
 
+DROP TABLE IF EXISTS `trip`;
 CREATE TABLE `trip` (
   `trip_id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
@@ -146,7 +170,8 @@ CREATE TABLE `trip` (
 --
 
 INSERT INTO `trip` (`trip_id`, `project_id`, `distance`) VALUES
-(1, 4, 100);
+(1, 4, 100),
+(2, 4, 50);
 
 -- --------------------------------------------------------
 
@@ -154,6 +179,7 @@ INSERT INTO `trip` (`trip_id`, `project_id`, `distance`) VALUES
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
@@ -228,25 +254,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `expense`
 --
 ALTER TABLE `expense`
-  MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `home`
 --
 ALTER TABLE `home`
-  MODIFY `home_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `home_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `payment_information`
 --
 ALTER TABLE `payment_information`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `project`
@@ -258,7 +284,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `trip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `trip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
