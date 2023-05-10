@@ -21,7 +21,7 @@
 			</tr>
 		</thead>
 	<?php
-	for ($i = 0; $i < 10; $i++) { 
+	for ($i = 0; $i < 3; $i++) { 
 		$expense = $data[$i]?>
 		<tbody>
 			<tr>
@@ -38,7 +38,6 @@
 
 	</table>
 	<div class="break"></div>
-	<a class="redButton" name="loadMore" id="loadMore" onclick="loadMore(<?=?>)"><?=_('Load More')?><a>
 </div>
 
 <?php $this->view('shared/footer'); ?>

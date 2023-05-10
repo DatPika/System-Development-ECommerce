@@ -32,7 +32,7 @@
 						<?= htmlentities($project->spots) ?> spots / 
 						<?= htmlentities($project->vents) ?> vents / 
 						<?= htmlentities($project->works) ?> work / 
-						<?= htmlentities($project->other) ?>
+						<?= htmlentities($project->otherInformation) ?>
 					</td>
 					<td>
 						<?php
