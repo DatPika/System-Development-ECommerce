@@ -22,11 +22,11 @@
                     <div class="left">
                         <div class="input-box">
                             <label><?= _('Date:') ?></label>
-                            <input type="text" name="date1" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>" value="<?= $payment->date ?>">
+                            <input name="date" class="text-field" value="<?=\app\core\TimeHelper::DTOutBrowser($payment->date)?>"id="date" readonly>
                         </div>
                         <div class="input-box">
                             <label><?= _('Amount:') ?></label>
-                            <input type="text" name="amount1" class="text-field" placeholder="<?= _('Amount') ?>" value="<?= $payment->amount ?>">
+                            <input type="text" name="amount" class="text-field" placeholder="<?= _('Amount') ?>" value="<?= $payment->amount ?>">
                         </div>
                         <div class="input-box">
                             <label><?= _('Select the user:') ?></label>

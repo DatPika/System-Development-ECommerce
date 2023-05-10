@@ -21,7 +21,7 @@
                     <div class="left">
                         <div class="input-box">
                             <label><?= _('Date:') ?></label>
-                            <input type="text" name="date" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>" value="<?= $payment->date ?>">
+                            <input type="text" name='date' class="text-field" value="<?= \app\core\TimeHelper::DTOutBrowser($payment->date)?>" required>
                         </div>
                         <div class="input-box">
                             <label><?= _('Amount:') ?></label>
