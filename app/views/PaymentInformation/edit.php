@@ -1,4 +1,4 @@
-<?php $this->view('shared/header',_('Edit Expense')); ?>
+<?php $this->view('shared/header',_('Edit Payment')); ?>
 
 <?php
     $users = $data[0];

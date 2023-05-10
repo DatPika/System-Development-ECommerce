@@ -59,7 +59,6 @@ class Project extends \app\core\Controller{
     public function edit($project_id) {
         $project = new \app\models\Project();
         $project = $project->get($project_id);
-        // might make this into a filter the not null project
         if($project) {
             if(isset($_POST['action'])) {
                 $project->job = $_POST['job'];

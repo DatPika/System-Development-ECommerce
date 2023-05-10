@@ -20,9 +20,9 @@
 					<div class="renovation-type">
 						<label><?= _('Job:') ?></label>
 						<select name='job' class="job-type" disabled>
-							<option value='Installation'>Installation</option>
-							<option value='Service'>Service</option>
-							<option value='Estimation'>Estimation</option>
+							<option value='Installation' <?=($data->job == "Installation") ? "selected" : ""?>>Installation</option>
+							<option value='Service' <?=($data->job == "Service") ? "selected" : ""?>>Service</option>
+							<option value='Estimation' <?=($data->job == "Estimation") ? "selected" : ""?>>Estimation</option>
 						</select>
 					</div>
 					<div>
@@ -65,7 +65,7 @@
 					</div>
 					<div class="is-done">
 						<label><?= _('Done?') ?></label>
-						<input type="radio" name="done">
+						<input type="radio" name="done" <?=($data->done == "Done") ? "checked" : "disabled"?>>
 					</div>
 					<div>
 						<label><?= _('Other:') ?></label>
