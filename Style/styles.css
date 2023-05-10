@@ -160,6 +160,73 @@ div.input-box {
 	padding: 5px 0px;
 }
 
+.pageHeaderHome {
+	display: grid;
+	grid-template-columns: [start] 1fr [column2] 1fr [column3] 1fr [column4] 1fr [column5] 1fr [column6] 1fr [column7] 1fr [end];
+	width: 100%;
+	position: relative;
+	margin-top: 50px;
+	justify-content: center;
+	align-items: center;
+	z-index: 0;
+}
+
+.pageHeaderHome .project{
+	grid-column-start: column2;
+	grid-column-end: column3;
+	justify-self: stretch;
+	display: flex;
+	flex-direction: column;
+}
+
+.pageHeaderHome .expenses{
+	grid-column-start: column3;
+	grid-column-end: column4;
+	justify-self: stretch;
+	display: flex;
+	flex-direction: column;
+}
+
+.pageHeaderHome .trips{
+	grid-column-start: column4;
+	grid-column-end: column5;
+	justify-self: stretch;
+	display: flex;
+	flex-direction: column;
+}
+
+.pageHeaderHome .search{
+	grid-column-start: column5;
+	grid-column-end: column7;
+	justify-self: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	gap: 30px;
+}
+
+.pageHeaderHome .redButton {
+	height: 30px;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px 50px;
+}
+
+.pageHeaderHome input.redButton {
+	height: 40px;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px 50px;
+}
+
+.pageHeaderHome h2 {
+	text-align: center;
+}
+
 .pageHeader {
 	display: grid;
 	grid-template-columns: [start] 1fr [column2] 1fr [column3] 1fr [column4] 1fr [column5] 1fr [end];
@@ -186,7 +253,7 @@ div.input-box {
 	gap: 30px;
 }
 
-.pageHeader input[name="searchField"]{
+input[name="searchField"]{
 	background-color: #AAAAAA;
 	border-radius: 50px;
 	border-style: solid;
