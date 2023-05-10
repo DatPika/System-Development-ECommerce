@@ -69,6 +69,15 @@ class PaymentInformation extends \app\core\Model {
         return $STH->fetch();
     }
 
+    public function getByUserId($user_id){
+        $SQL = 'SELECT * FROM user WHERE user_id = :user_id';
+        $STH = self::$connection->prepare($SQL);
+
+        $STH->execute(['user_id'=>$user_id]);
+        $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\User');
+        return $STH->fetch();
+    }
+
     public function delete(){
         $SQL = "DELETE FROM payment_information WHERE payment_id=:payment_id";
         $STH = self::$connection->prepare($SQL);

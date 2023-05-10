@@ -64,7 +64,9 @@ class Expense extends \app\core\Controller{
                 header('location:/Expense/index');
             }
             else {
-                $this->view('Expense/delete', $expense);
+                $user = new \app\models\User();
+                $user = $user->getByUserId($expense->user_id);
+                $this->view('Expense/delete', [$user, $expense]);
             }
         }
         else {

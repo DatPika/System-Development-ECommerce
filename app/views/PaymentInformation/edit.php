@@ -52,7 +52,7 @@
                         </div>
                         <div class="input-box">
                             <label style="margin-left: 140px;"><?= _('E-Transfer') ?></label>
-                            <input style="margin-right: 140px;" type="radio" name="payment1" value="e-transfer" <?=($payment->paymentMethod == "interac") ? "checked" : ""?>>
+                            <input style="margin-right: 140px;" type="radio" name="payment1" value="e-transfer" <?=($payment->paymentMethod == "e-transfer") ? "checked" : ""?>>
                         </div>
                     </div>
                 </div>
