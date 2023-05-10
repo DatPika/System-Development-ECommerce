@@ -6,7 +6,6 @@
 <div class="createPage">
 
 	<div class="container">
-
 		<h1 class="form-title"><?= _('Add New Payment')?></h1>
 
 		<form method="post" action="">
@@ -16,20 +15,18 @@
 					<div class="left">
 						<div class="input-box">
 							<label><?= _('Date:') ?></label>
-							<input type="text" name="date1" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+							<input type="text" name="date" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
 						</div>
 						<div class="input-box">
 							<label><?= _('Amount:') ?></label>
-							<input type="text" name="amount1" class="text-field" placeholder="<?= _('Amount') ?>">
+							<input type="text" name="amount" class="text-field" placeholder="<?= _('Amount') ?>">
 						</div>
 						<div class="input-box">
 							<label><?= _('Select the user:') ?></label>
-							<select>
+							<select  name="user_id">
 								<?php
 									foreach ($data as $user) {
-										echo "<option value='$user->user_id'";
-										echo ($user->user_id == $_SESSION['user_id']?'selected':''); 
-										echo ">$user->username</option>\n";
+										echo "<option value='$user->user_id'>$user->username</option>";
 									}
 								?>
 							</select>
