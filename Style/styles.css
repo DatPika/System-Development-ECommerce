@@ -47,8 +47,8 @@ figure.back > figcaption {
 	text-align: center;
 }
 
-figure.back > img {
-	width: inherit;
+figure.back > a > img {
+	width: 50px;
 }
 
 div.break {

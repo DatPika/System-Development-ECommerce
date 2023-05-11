@@ -1,6 +1,6 @@
 <?php $this->view('shared/header',_('Add New Payment')); ?>
 <figure class="back hover-underline-animation" onclick="history.back()">
-	 <img src="/images/back-arrow.png" alt="Go Back">
+<a href="/User/logout"><img src="/images/back-arrow.png" alt="Go Back"></a>
 	 <figcaption><?=_('Back')?></figcaption>
 </figure>
 <div class="createPage">

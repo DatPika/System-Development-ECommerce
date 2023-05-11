@@ -1,7 +1,7 @@
 <?php $this->view('shared/header',_('Expense Table')); ?>
 
-<figure class="back hover-underline-animation" onclick="history.back()">
-	<img src="/images/back-arrow.png" alt="Go Back">
+<figure class="back hover-underline-animation">
+	<a href="/User/logout"><img src="/images/back-arrow.png" alt="Go Back"></a>
 	<figcaption><?=_('Back')?></figcaption>
 </figure>
 <div class="createPage">
@@ -57,7 +57,7 @@
 					<td><?= _('Project Cost: ') ?><?= $record->getProject()->projectCost ?> / 
 						<?= $record->getProject()->surfaceArea ?> ft^2 / 
 						<?= $record->getProject()->lights ?> <?= _('lights')?> / 
-						<?= $record->getProject()->spots ?> <?= _('spots') / 
+						<?= $record->getProject()->spots ?> <?= _('spots')?> / 
 						<?= $record->getProject()->vents ?> vents / 
 						<?= $record->getProject()->works ?> work / 
 						<?= $record->getProject()->otherInformation ?>

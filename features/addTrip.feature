@@ -10,7 +10,7 @@ Feature: Adding in Trip Table
   	When I input "120.75" in "distance"
     And I click "Service" in "job"
     And I input "Bob James" in "client_name"
-    And I input "123 moon street" in "address"
+    And I input "123 moon street" in "addres
     And I input "4/4/2023" in "startDate"
     And I input "4/4/2023" in "endDate"
     And I input "1" in "project_id"

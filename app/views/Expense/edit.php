@@ -5,8 +5,8 @@
     $users = $data['users'];
 ?>
 
-<figure class="back hover-underline-animation" onclick="history.back()">
-     <img src="/images/back-arrow.png" alt="Go Back">
+<figure class="back hover-underline-animation">
+<a href="/Expense/index"><img src="/images/back-arrow.png" alt="Go Back"></a>
      <figcaption><?=_('Back')?></figcaption>
 </figure>
 <div class="createPage">
