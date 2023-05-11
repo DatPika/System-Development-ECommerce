@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2023 at 10:10 PM
+-- Generation Time: May 11, 2023 at 10:45 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -69,7 +69,8 @@ CREATE TABLE `expense` (
 
 INSERT INTO `expense` (`expense_id`, `supplierName`, `totalExpense`, `details`, `user_id`) VALUES
 (15, 'Rona', '1275.00', 'Spruce wood 2x4x2', 2),
-(16, 'HomeDepot', '60.00', '3 hammer', 3);
+(16, 'HomeDepot', '60.00', '3 hammer', 3),
+(22, 'FedEx', '122.00', 'materials', 2);
 
 -- --------------------------------------------------------
 
@@ -93,7 +94,8 @@ INSERT INTO `home` (`home_id`, `expense_id`, `project_id`) VALUES
 (2, 19, NULL),
 (3, 20, NULL),
 (4, 21, NULL),
-(5, NULL, NULL);
+(5, NULL, NULL),
+(6, 22, NULL);
 
 -- --------------------------------------------------------
 
@@ -194,8 +196,10 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `secretkey`) VALUES
 (2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G', NULL),
 (3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK', NULL),
-(4, '123', '$2y$10$1GFjm5bs70XKoYmJHGMAM.E/ASGmtJ0aqJtEoKBXTEtFskqwBqOOa', NULL),
-(5, '45', '$2y$10$H0CatVFSbTP0ULHGXmRIOuuXhb4ienwaWKkdBzj9wC25N8d3Ku/FW', NULL);
+(5, '45', '$2y$10$H0CatVFSbTP0ULHGXmRIOuuXhb4ienwaWKkdBzj9wC25N8d3Ku/FW', NULL),
+(6, 'user2', '$2y$10$e84vRdgjKo5ccwJLOE4i.OEoOXAc881oahjbuHnOMiBfsDTjLwHzi', '6MRMG4DBT2MB4F36'),
+(7, 'user3', '$2y$10$0KXu3ybep2/3UHs.olsIpuOujV9ybhiDNi9t0CRRw/NDxoSZe6ZyO', NULL),
+(8, 'user4', '$2y$10$WsG8Nw9EzmJRXVVzrf6Lw.kuwNTZk3xHWHnh24pw7zQmPf.kW52ti', 'LIP5KVQADVLZOPWP');
 
 --
 -- Indexes for dumped tables
@@ -261,13 +265,13 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `expense`
 --
 ALTER TABLE `expense`
-  MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `home`
 --
 ALTER TABLE `home`
-  MODIFY `home_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `home_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `payment_information`
@@ -291,7 +295,7 @@ ALTER TABLE `trip`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
