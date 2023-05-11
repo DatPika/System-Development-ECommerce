@@ -2,7 +2,7 @@
 
 <figure class="back hover-underline-animation">
 	<a href="/User/logout"><img src="/images/back-arrow.png" alt="Go Back"></a>
-	<figcaption><?=_('Back')?></figcaption>
+	<figcaption><?=_('Logout')?></figcaption>
 </figure>
 <div class="createPage">
 	<div class="pageHeaderHome">
@@ -24,6 +24,10 @@
 		<div class="search">
 			<input type="text" name="searchField" placeholder="<?= _('Search') ?>">
 			<input type="submit" name="searchButton" class="redButton" value="Search">
+		</div>
+		<div class="2fa">
+		<h2><?=_('2FA')?></h2>
+			<a class="redButton" href="/User/setup2fa"><?=_('Set up')?></a>
 		</div>
 	</div>
 	<table class="content-table">

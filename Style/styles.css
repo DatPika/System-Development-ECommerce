@@ -171,6 +171,15 @@ div.input-box {
 	z-index: 0;
 }
 
+.pageHeaderHome .2fa {
+	grid-column-start: column7;
+	grid-column-end: end;
+	justify-self: stretch;
+	display: flex;
+	flex-direction: column;
+	
+}
+
 .pageHeaderHome .project{
 	grid-column-start: column2;
 	grid-column-end: column3;
@@ -403,6 +412,7 @@ input::placeholder {
 }
 
 .suppliers-edit {
+	flex-direction: column;
 	display: flex;
 	justify-content: center;
 }

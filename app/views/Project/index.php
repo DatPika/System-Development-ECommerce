@@ -1,6 +1,6 @@
 <?php $this->view('shared/header',_('Project Table')); ?>
-<figure class="back hover-underline-animation" onclick="history.back()">
-	 <img src="/images/back-arrow.png" alt="Go Back">
+<figure class="back hover-underline-animation">
+	 <a href="/Home/index"><img src="/images/back-arrow.png" alt="Go Back"></a>
 	 <figcaption><?=_('Back')?></figcaption>
 </figure>
 <div class="createPage">

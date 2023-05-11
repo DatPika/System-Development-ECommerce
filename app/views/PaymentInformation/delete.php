@@ -3,10 +3,11 @@
 <?php
     $user = $data[0];
     $payment = $data[1];
+    $project_id = $data[2];
 ?>
 
-<figure class="back hover-underline-animation" onclick="history.back()">
-     <img src="/images/back-arrow.png" alt="Go Back">
+<figure class="back hover-underline-animation">
+<a href="/PaymentInformation/index/<?=$project_id?>"><img src="/images/back-arrow.png" alt="Go Back"></a>
      <figcaption><?=_('Back')?></figcaption>
 </figure>
 <div class="createPage">
