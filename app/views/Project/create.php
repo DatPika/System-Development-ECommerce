@@ -19,9 +19,9 @@
 					<div class="renovation-type">
 						<label><?= _('Job:') ?></label>
 						<select name='job' class="job-type">
-							<option value='Installation'>Installation</option>
-							<option value='Service'>Service</option>
-							<option value='Estimation'>Estimation</option>
+							<option value='Installation'><?=_('Installation')?></option>
+							<option value='Service'><?=_('Service')?></option>
+							<option value='Estimation'><?=_('Estimation')?></option>
 						</select>
 					</div>
 					<div>
@@ -64,7 +64,7 @@
 					</div>
 					<div class="is-done">
 						<label><?= _('Done?') ?></label>
-						<input type="radio" name="endDate">
+						<input type="radio" name="done">
 					</div>
 					<div>
 						<label><?= _('Other:') ?></label>
@@ -86,7 +86,7 @@
 								</div>
 								<div class="input-box">
 									<label><?= _('Select the user:') ?></label>
-									<select>
+									<select name="user_id1">
 									<?php
 									foreach ($data as $user) {
 										echo "<option value='$user->user_id'";
@@ -128,7 +128,7 @@
 								</div>
 								<div class="input-box">
 									<label><?= _('Select the user:') ?></label>
-									<select>
+									<select name="user_id2">
 									<?php
 									foreach ($data as $user) {
 										echo "<option value='$user->user_id'";

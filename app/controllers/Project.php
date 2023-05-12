@@ -10,6 +10,17 @@ class Project extends \app\core\Controller{
         $this->view('Project/index', $projects);
     }
 
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+        if ($output == null) {
+            echo "<script>console.log('null');</script>";
+        }
+    }
+
     public function create() {
         if(isset($_POST['action'])) {
             $project = new \app\models\Project();
@@ -29,18 +40,22 @@ class Project extends \app\core\Controller{
             $client->address = $_POST['address'];
             $client->insert();
             $project->client_id = $client->client_id;
+            // $this->debug_to_console($project->project_id);
             $project->insert();
+            // $this->debug_to_console($project->project_id);
             $payment = new \app\models\PaymentInformation();
+            // $this->debug_to_console($payment->project_id);
             $payment->project_id = $project->project_id;
+            // $this->debug_to_console($payment->project_id);
             $payment->user_id = $_POST['user_id1'];
-            $payment->paymentMethod = $_POST['deposit'];
+            $payment->paymentMethod = $_POST['payment1'];
             $payment->amount = $_POST['amount1'];
             $payment->date = $_POST['date1'];
             $payment->insert();
             $payment2 = new \app\models\PaymentInformation();
             $payment2->project_id = $project->project_id;
             $payment2->user_id = $_POST['user_id2'];
-            $payment2->paymentMethod = $_POST['balance'];
+            $payment2->paymentMethod = $_POST['payment2'];
             $payment2->amount = $_POST['amount2'];
             $payment2->date = $_POST['date2'];
             $payment2->insert();
