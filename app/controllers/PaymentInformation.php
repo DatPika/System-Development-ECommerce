@@ -47,7 +47,7 @@ class PaymentInformation extends \app\core\Controller{
             else {
                 $user = new \app\models\User();
                 $users = $user->getAll();
-                $this->view('PaymentInformation/edit', [$users, $payment, $payment->$project_id]);
+                $this->view('PaymentInformation/edit', [$users, $payment]);
             }
         }
         else {
