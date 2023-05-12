@@ -60,13 +60,12 @@
 			        fclose($file);
 			        ?>
 				</div>
-				<a class="redButton" href="/Supplier/index/"><?=_('Edit Suppliers')?></a>
+				<a class="redButton" href="/Supplier/index"><?=_('Edit Suppliers')?></a>
 			</div>
 			<div class="form-submit-btn">
 				<input type="submit" name="action" value='<?= _('Add record') ?>'>
 			</div>
 
-			
 		</form>
 
 	</div>

@@ -46,10 +46,10 @@
 			}
 			?>
 			</table>
+			<div class="form-submit-btn">
+				<input type="submit" name="action" value='<?= _('Done') ?>'>
+			</div>
 		</form>
-		<div class="form-submit-btn">
-			<input type="submit" name="action" value='<?= _('Done') ?>'>
-		</div>
 	</div>
 </div>
 
