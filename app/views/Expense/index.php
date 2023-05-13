@@ -1,3 +1,38 @@
+<?php
+$env = \Dotenv\Dotenv::createImmutable(getcwd());
+$env->load();
+$env->required(['db_host', 'db_name', 'db_user', 'db_pass', 'db_charset'])->notEmpty();
+
+$host = $_ENV['db_host'];
+$dbname = $_ENV['db_name'];
+$user = $_ENV['db_user'];
+$pass = $_ENV['db_pass'];
+$charset = $_ENV['db_charset'];
+
+$mysqli = new mysqli('localhost', $user, $pass, $dbname);
+if($mysqli->connect_errno != 0) {
+	echo $mysqli->connect_error;
+	exit();
+}
+
+$start_from = 0;
+$num_per_page=10;
+$records = $mysqli->query("select * from expense");
+$num_rows = $records->num_rows;
+$pages = ceil($num_rows / $num_per_page);
+
+if(isset($_GET["page"])) {
+	$page=$_GET["page"] - 1;
+	$start_from=$page*$num_per_page;
+}
+else{
+	$page=1;
+}
+
+$rs_result = $mysqli->query("select * from expense order by expense_id DESC limit $start_from,$num_per_page");
+
+?>
+
 <?php $this->view('shared/header',_('Expense Table')); ?>
 
 <figure class="back hover-underline-animation">
@@ -21,23 +56,34 @@
 				<th><?= _('Actions') ?></th>
 			</tr>
 		</thead>
-	<?php
-	for ($i = 0; $i < 3; $i++) { 
-		$expense = $data[$i]?>
-		<tbody>
-			<tr>
-				<td><?= htmlentities($expense->supplierName) ?></td>
-				<td><?= htmlentities($expense->details) ?></td>
-				<td><?= htmlentities($expense->totalExpense) ?></td>
-				<td><a href='/Expense/edit/<?=$expense->expense_id?>'><?= _('Edit') ?></a> | <a href='/Expense/delete/<?=$expense->expense_id?>'><?= _('Delete') ?></a>
-			</tr>
-		</tbody>
 
-	<?php
-	}
-	?>
+		<?php
+			while($rows = mysqli_fetch_assoc($rs_result)) {
+		?>
+
+		<tr>
+			<td><?php echo $rows['supplierName']; ?></td>
+			<td><?php echo $rows['details']; ?></td>
+			<td><?php echo $rows['totalExpense']; ?></td>
+			<td><a href='/Expense/Edit/<?= $rows['expense_id']?>'><?= _('Edit') ?></a> | <a href='/Expense/Delete/<?=$rows['expense_id']?>'><?= _('Delete') ?></a></td>
+		</tr>		
+
+		<?php
+			}
+		?>
 
 	</table>
+
+	<?php
+		$sql="select * from expense";
+		$total_records=mysqli_num_rows($rs_result);
+		for($i=1;$i<=$pages;$i++) {
+			echo "<a href='/Expense/index.php?page=".$i."'>".$i."</a> ";
+		}
+	?>
+
 </div>
+
+
 
 <?php $this->view('shared/footer'); ?>
