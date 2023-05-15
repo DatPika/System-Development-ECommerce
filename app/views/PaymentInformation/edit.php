@@ -3,7 +3,7 @@
 <?php
     $users = $data[0];
     $payment = $data[1];
-    $project_id = $data[1]->project_id;
+    $project_id = $payment->project_id;
 ?>
 
 <figure class="back hover-underline-animation">

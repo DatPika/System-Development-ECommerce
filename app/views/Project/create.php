@@ -19,10 +19,9 @@
 					<div class="renovation-type">
 						<label><?= _('Job:') ?></label>
 						<select name='job' class="job-type">
-							<option value='Installation'>Installation</option>
-							<option value='Service'>Service</option>
-							<option value='Estimation'>Estimation</option>
-							<option value='Test'>Test</option>
+							<option value='Installation'><?=_('Installation')?></option>
+							<option value='Service'><?=_('Service')?></option>
+							<option value='Estimation'><?=_('Estimation')?></option>
 						</select>
 					</div>
 					<div>
