@@ -10,24 +10,13 @@ class Project extends \app\core\Controller{
         $this->view('Project/index', $projects);
     }
 
-    function debug_to_console($data) {
-        $output = $data;
-        if (is_array($output))
-            $output = implode(',', $output);
-
-        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-        if ($output == null) {
-            echo "<script>console.log('null');</script>";
-        }
-    }
-
     public function create() {
         if(isset($_POST['action'])) {
             $project = new \app\models\Project();
             $project->job = $_POST['job'];
             $project->startDate = $_POST['startDate'];
             $project->endDate = $_POST['endDate'];
-            $project->done = $_POST['done'];
+            $project->done = (isset($_POST['done'])) ? "Done": "Not Done";
             $project->surfaceArea = $_POST['surfaceArea'];
             $project->lights = $_POST['lights'];
             $project->spots = $_POST['spots'];
@@ -40,22 +29,18 @@ class Project extends \app\core\Controller{
             $client->address = $_POST['address'];
             $client->insert();
             $project->client_id = $client->client_id;
-            // $this->debug_to_console($project->project_id);
             $project->insert();
-            // $this->debug_to_console($project->project_id);
             $payment = new \app\models\PaymentInformation();
-            // $this->debug_to_console($payment->project_id);
             $payment->project_id = $project->project_id;
-            // $this->debug_to_console($payment->project_id);
             $payment->user_id = $_POST['user_id1'];
-            $payment->paymentMethod = $_POST['payment1'];
+            $payment->paymentMethod = $_POST['deposit'];
             $payment->amount = $_POST['amount1'];
             $payment->date = $_POST['date1'];
             $payment->insert();
             $payment2 = new \app\models\PaymentInformation();
             $payment2->project_id = $project->project_id;
             $payment2->user_id = $_POST['user_id2'];
-            $payment2->paymentMethod = $_POST['payment2'];
+            $payment2->paymentMethod = $_POST['balance'];
             $payment2->amount = $_POST['amount2'];
             $payment2->date = $_POST['date2'];
             $payment2->insert();
@@ -79,7 +64,7 @@ class Project extends \app\core\Controller{
                 $project->job = $_POST['job'];
                 $project->startDate = $_POST['startDate'];
                 $project->endDate = $_POST['endDate'];
-                $project->done = $_POST['done'];
+                $project->done = (isset($_POST['done'])) ? "Done": "Not Done";
                 $project->surfaceArea = $_POST['surfaceArea'];
                 $project->lights = $_POST['lights'];
                 $project->spots = $_POST['spots'];
@@ -89,9 +74,11 @@ class Project extends \app\core\Controller{
                 $project->otherInformation = $_POST['otherInformation'];
                 $client = new \app\models\Client();
                 $client = $client->get($project->client_id);
-                $client->clientName = $_POST['client'];
-                $client->address = $_POST['address'];
-                $client->update();
+                if($client) {
+                    $client->clientName = $_POST['client'];
+                    $client->address = $_POST['address'];
+                    $client->update();
+                }
                 $project->update();
                 header('location:/Project/index');
             }
@@ -110,7 +97,30 @@ class Project extends \app\core\Controller{
         // might make this into a filter the not null project
         if($project) {
             if(isset($_POST['action'])) {
+                $home = new \app\models\Home();
+                $home = $home->getByProject($project_id);
+                if($home) {
+                    $home->delete();
+                }
+                $payments = $project->getAllPayments();
+                if($payments) {
+                    foreach ($payments as $payment) {
+                        $payment->delete();
+                    }
+                }
+                $trips = $project->getAllTrips();
+                if($trips) {
+                    foreach ($trips as $trip) {
+                        $trip->delete();
+                    }
+                }
+                $client = new \app\models\Client();
+                $client = $project->getClient();
                 $project->delete();
+                if($client) {
+                    $client->delete();
+                }
+
                 header('location:/Project/index');
             }
             else {

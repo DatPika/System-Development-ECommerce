@@ -60,6 +60,9 @@ class Expense extends \app\core\Controller{
         $expense = $expense->get($expense_id);
         if($expense) {
             if(isset($_POST['action'])) {
+                $home = new \app\models\Home();
+                $home = $home->getByExpense($expense_id);
+                $home->delete();
                 $expense->delete();
                 header('location:/Expense/index');
             }

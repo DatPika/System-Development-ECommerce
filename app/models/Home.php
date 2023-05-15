@@ -41,4 +41,27 @@ class Home extends \app\core\Model{
 		$STH->execute($data);
 		$this->home_id = self::$connection->lastInsertId();
 	}
+
+	public function getByProject($project_id) {
+		$SQL = "SELECT * FROM home WHERE project_id=:project_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute(['project_id' => $project_id]);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Home');
+		return $STH->fetch();
+	}
+	public function getByExpense($expense_id) {
+		$SQL = "SELECT * FROM home WHERE expense_id=:expense_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute(['expense_id' => $expense_id]);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Home');
+		return $STH->fetch();
+	}
+
+	public function delete() {
+		$SQL = "DELETE FROM home WHERE home_id=:home_id";
+		$STH = self::$connection->prepare($SQL);
+		$data = ['home_id'=>$this->home_id];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
 }

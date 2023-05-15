@@ -1,5 +1,4 @@
 <?php $this->view('shared/header',_('Delete Project Record')); ?>
-
 <figure class="back hover-underline-animation">
 	<a href="/Project/index"><img src="/images/back-arrow.png" alt="Go Back"></a>
 	 <figcaption><?=_('Back')?></figcaption>

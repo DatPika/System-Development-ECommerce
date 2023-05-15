@@ -1,8 +1,4 @@
-<html>
-    <head>
-        <title><?=_('2FA set up')?></title>
-    </head>
-    <body>
+<?php $this->view('shared/header',_('Set up 2FA')); ?>
         <img src="/User/makeQRCode?data=<?= $data ?>">
             <?= _('Please scan the QR-code on the screen with your favorite
                                     Authenticator software, such as Google Authenticator. The
@@ -14,5 +10,4 @@
             <label><?=_('Current code:')?><input type="text" name="currentCode"></label>
             <input type="submit" name="action" value="<?= _('Verify code')?>" />
         </form>
-    </body>
-</html>
+<?php $this->view('shared/footer');?>

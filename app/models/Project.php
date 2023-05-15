@@ -146,6 +146,17 @@ class Project extends \app\core\Model{
         $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\PaymentInformation');
         return $STH->fetchAll();
     }
+
+	public function getAllTrips() {
+        $SQL = "SELECT * FROM trip WHERE project_id = :project_id";
+        $STH = self::$connection->prepare($SQL);
+        $data = [
+            'project_id'=>$this->project_id
+        ];
+        $STH->execute($data);
+        $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Trip');
+        return $STH->fetchAll();
+    }
     
 	public function getClient() {
 		$SQL = "SELECT client.* FROM project JOIN client ON project.client_id=client.client_id WHERE project.client_id=:client_id";
