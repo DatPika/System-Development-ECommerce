@@ -32,7 +32,7 @@ class Trip extends \app\core\Controller{
         if($trip) {
             if(isset($_POST['action'])) {
                 $trip->distance = $_POST['distance'];
-                $trip->project_id = $_POST['project'];
+                $trip->project_id = $_POST['project_id'];
                 $trip->update();
                 header('location:/Trip/index');
             }
