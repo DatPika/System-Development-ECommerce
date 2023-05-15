@@ -20,8 +20,6 @@ class Supplier extends \app\core\Controller{
         else {
             $expense = new \app\models\Expense();
             $contents = $expense->getAllSuppliers();
-            // $supplier = new \app\models\Supplier();
-            // $contents = $supplier->getAll();
             $this->view('Supplier/editSuppliers', $contents);
         }
     }

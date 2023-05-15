@@ -44,7 +44,7 @@
 						?>
 						<?= htmlentities($profit) ?>$
 					</td>
-					<td><a href='/Project/Edit/<?=$project->project_id?>'><?= _('Edit') ?></a> | <a href='/Project/Delete/<?=$project->project_id?>'><?= _('Delete') ?></a> | <a href='/PaymentInformation/index/<?=$project->project_id?>'><?= _('View Payments') ?></a>
+					<td><a href='/Project/edit/<?=$project->project_id?>'><?= _('Edit') ?></a> | <a href='/Project/delete/<?=$project->project_id?>'><?= _('Delete') ?></a> | <a href='/PaymentInformation/index/<?=$project->project_id?>'><?= _('View Payments') ?></a>
 				</tr>
 			</tbody>
 		<?php

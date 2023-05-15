@@ -67,7 +67,7 @@ class PaymentInformation extends \app\core\Controller{
             else {
                 $user = new \app\models\User();
                 $user = $user->getByUserId($payment->user_id);
-                $this->view('PaymentInformation/delete', [$user, $payment, $project_id]);
+                $this->view('PaymentInformation/delete', [$user, $payment]);
             }
         }
         else {

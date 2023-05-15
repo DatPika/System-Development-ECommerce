@@ -11,16 +11,16 @@ class Trip extends \app\core\Controller{
     }
 
     public function create($project_id) {
+        $project = new \app\models\Project();
+        $project = $project->get($project_id);
         if(isset($_POST['action'])) {
             $trip = new \app\models\Trip();
             $trip->distance = $_POST['distance'];
-            $trip->project_id = $_POST['project_id'];
+            $trip->project_id = $project->project_id;
             $trip->insert();
             header('location:/Trip/index');
         }
         else {
-            $project = new \app\models\Project();
-            $project = $project->get($project_id);
             $this->view('Trip/create', $project);
         }
     }
