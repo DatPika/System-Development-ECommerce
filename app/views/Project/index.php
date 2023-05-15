@@ -51,8 +51,7 @@
 		}
 		?>
 	</table>
-	<div class="break"></div>
-	<input type="submit" class="redButton" name="loadMore" value="<?=_('Load More')?>">
+
 </div>
 
 <?php $this->view('shared/footer'); ?>

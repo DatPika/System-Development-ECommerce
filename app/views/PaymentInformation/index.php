@@ -38,8 +38,7 @@
 	</table>
 	<div class="break"></div>
 	<a style="margin-bottom: 20px;" class="redButton" href="/PaymentInformation/create/<?=$data[1]?>"><?=_('Add New Payment')?></a>
-	<div class="break"></div>
-	<input type="submit" class="redButton" name="loadMore" value="<?=_('Load More')?>">
+
 </div>
 
 <?php $this->view('shared/footer'); ?>
