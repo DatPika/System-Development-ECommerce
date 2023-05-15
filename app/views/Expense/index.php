@@ -62,9 +62,9 @@ $rs_result = $mysqli->query("select * from expense order by expense_id DESC limi
 		?>
 
 		<tr>
-			<td><?php echo $rows['supplierName']; ?></td>
-			<td><?php echo $rows['details']; ?></td>
-			<td><?php echo $rows['totalExpense']; ?></td>
+			<td><?= htmlentities($rows['supplierName']); ?></td>
+			<td><?= htmlentities($rows['details']); ?></td>
+			<td><?= htmlentities($rows['totalExpense']); ?></td>
 			<td><a href='/Expense/Edit/<?= $rows['expense_id']?>'><?= _('Edit') ?></a> | <a href='/Expense/Delete/<?=$rows['expense_id']?>'><?= _('Delete') ?></a></td>
 		</tr>		
 
@@ -74,16 +74,14 @@ $rs_result = $mysqli->query("select * from expense order by expense_id DESC limi
 
 	</table>
 
-	<?php
+</div>
+
+<?php
 		$sql="select * from expense";
 		$total_records=mysqli_num_rows($rs_result);
 		for($i=1;$i<=$pages;$i++) {
-			echo "<a href='/Expense/index.php?page=".$i."'>".$i."</a> ";
+			echo "<a href='/Expense/index.php?page=".$i."'>".$i." &nbsp;</a> ";
 		}
 	?>
-
-</div>
-
-
 
 <?php $this->view('shared/footer'); ?>
