@@ -23,10 +23,9 @@ class Trip extends \app\core\Model{
 	}
 
 	protected function update(){
-		$SQL = "UPDATE trip SET project_id=:project_id, distance=:distance where trip_id=:trip_id";
+		$SQL = "UPDATE trip SET distance=:distance where trip_id=:trip_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
-			'project_id'=>$this->project_id,
 			'distance'=>$this->distance,
 			'trip_id'=>$this->trip_id
 		];

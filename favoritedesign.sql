@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 10:45 PM
+-- Generation Time: May 15, 2023 at 04:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -41,12 +41,7 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`client_id`, `clientName`, `address`) VALUES
-(11, 'Daniel', '789 earth street'),
-(12, 'Jericho', '456 sun street'),
-(13, 'Philip', '123 moon streets'),
-(14, 'Daniel', '44 Province'),
-(15, 'Daniel', '144 Mars Street'),
-(16, 'Daniel', '144 Mars Street');
+(24, 'phil', '123 sun streets');
 
 -- --------------------------------------------------------
 
@@ -68,9 +63,16 @@ CREATE TABLE `expense` (
 --
 
 INSERT INTO `expense` (`expense_id`, `supplierName`, `totalExpense`, `details`, `user_id`) VALUES
-(15, 'Rona', '1275.00', 'Spruce wood 2x4x2', 2),
-(16, 'HomeDepot', '60.00', '3 hammer', 3),
-(22, 'FedEx', '122.00', 'materials', 2);
+(23, 'HomeDepot ', '1080.00', 'Birch Wood', 3),
+(24, 'maxi ', '1000.00', 'Wood', 3),
+(25, 'test ', '50.00', 'Hammer', 3),
+(26, 'Rona', '100.00', 'Wood', 3),
+(27, 'Canadian Tire', '50.00', 'Lamps', 3),
+(28, 'Rona ', '13.00', 'Lamps', 3),
+(29, 'HomeDepot  ', '50.00', 'Wood', 3),
+(30, 'HomeDepot  ', '13.00', 'Wood', 3),
+(31, 'Rona ', '50.00', 'Wood', 3),
+(32, 'HomeDepot  ', '13.00', 'Hammer', 3);
 
 -- --------------------------------------------------------
 
@@ -90,12 +92,17 @@ CREATE TABLE `home` (
 --
 
 INSERT INTO `home` (`home_id`, `expense_id`, `project_id`) VALUES
-(1, NULL, NULL),
-(2, 19, NULL),
-(3, 20, NULL),
-(4, 21, NULL),
-(5, NULL, NULL),
-(6, 22, NULL);
+(8, 23, NULL),
+(13, NULL, 9),
+(18, 24, NULL),
+(19, 25, NULL),
+(20, 26, NULL),
+(21, 27, NULL),
+(22, 28, NULL),
+(23, 29, NULL),
+(24, 30, NULL),
+(25, 31, NULL),
+(26, 32, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,10 +125,8 @@ CREATE TABLE `payment_information` (
 --
 
 INSERT INTO `payment_information` (`payment_id`, `paymentMethod`, `amount`, `date`, `project_id`, `user_id`) VALUES
-(2, 'cash', '4000.00', '2023-05-11', 4, 3),
-(12, 'interac', '550.00', '2021-11-23', 4, 3),
-(13, 'cash', '600.00', '2003-04-17', 4, 5),
-(14, 'e-transfer', '800.00', '0000-00-00', 4, 3);
+(18, 'cash', '245.00', '2023-05-16', 9, 3),
+(19, 'cash', '200.00', '2023-05-17', 9, 3);
 
 -- --------------------------------------------------------
 
@@ -151,7 +156,7 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`project_id`, `job`, `projectCost`, `startDate`, `endDate`, `done`, `surfaceArea`, `lights`, `spots`, `vents`, `works`, `otherInformation`, `client_id`) VALUES
-(4, 'Service', '2400.00', '2023-04-27', '2023-05-10', 'Not Done', 78, 5, 6, 3, 'Electricity', 'Extra lamps', 13);
+(9, 'Service', '445.00', '2023-05-16', '2023-05-15', 'Done', 78, 5, 3, 3, 'TV', 'bla blah', 24);
 
 -- --------------------------------------------------------
 
@@ -171,9 +176,7 @@ CREATE TABLE `trip` (
 --
 
 INSERT INTO `trip` (`trip_id`, `project_id`, `distance`) VALUES
-(1, 4, 100),
-(2, 0, 100),
-(3, 4, 150);
+(8, 9, 101);
 
 -- --------------------------------------------------------
 
@@ -197,7 +200,7 @@ INSERT INTO `user` (`user_id`, `username`, `password_hash`, `secretkey`) VALUES
 (2, 'Username', '$2y$10$GJS0SIBPWfFW3c/yJQu7k.Yqz1AEaVz2RvN2P1ELIRoxZRGujni1G', NULL),
 (3, 'user1', '$2y$10$EF7AzFrt2Bo40f5r/ddtd.7cP40SPRBOaGnR7yDX4/6j8N932w/kK', NULL),
 (5, '45', '$2y$10$H0CatVFSbTP0ULHGXmRIOuuXhb4ienwaWKkdBzj9wC25N8d3Ku/FW', NULL),
-(6, 'user2', '$2y$10$e84vRdgjKo5ccwJLOE4i.OEoOXAc881oahjbuHnOMiBfsDTjLwHzi', '6MRMG4DBT2MB4F36'),
+(6, 'user2', '$2y$10$e84vRdgjKo5ccwJLOE4i.OEoOXAc881oahjbuHnOMiBfsDTjLwHzi', NULL),
 (7, 'user3', '$2y$10$0KXu3ybep2/3UHs.olsIpuOujV9ybhiDNi9t0CRRw/NDxoSZe6ZyO', NULL),
 (8, 'user4', '$2y$10$WsG8Nw9EzmJRXVVzrf6Lw.kuwNTZk3xHWHnh24pw7zQmPf.kW52ti', 'LIP5KVQADVLZOPWP');
 
@@ -259,37 +262,37 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `expense`
 --
 ALTER TABLE `expense`
-  MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `home`
 --
 ALTER TABLE `home`
-  MODIFY `home_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `home_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `payment_information`
 --
 ALTER TABLE `payment_information`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `trip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `trip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
