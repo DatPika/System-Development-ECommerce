@@ -80,7 +80,7 @@ $rs_result = $mysqli->query("select * from expense order by expense_id DESC limi
 		$sql="select * from expense";
 		$total_records=mysqli_num_rows($rs_result);
 		for($i=1;$i<=$pages;$i++) {
-			echo "<a href='/Expense/index.php?page=".$i."'>".$i." &nbsp;</a> ";
+			echo "<a href='/Expense/index.php?page=".$i."'>Page ".$i."</a> ";
 		}
 	?>
 

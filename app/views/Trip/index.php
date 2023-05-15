@@ -71,7 +71,7 @@ $rs_result = $mysqli->query("select * from trip order by trip_id DESC limit $sta
 				?>
 				<td><?= htmlentities($project->startDate); ?></td>
 				<td><?= htmlentities($client->address); ?></td>
-				<td><?= htmlentities($trip->distance); ?></td>
+				<td><?= htmlentities($trip->distance) . " km"; ?></td>
 				<td><a href='/Trip/edit/<?= $trip->trip_id ?>'><?= _('Edit') ?></a> | <a href='/Trip/delete/<?= $trip->trip_id?>'><?= _('Delete') ?></a>
 			</tr>
 		</tbody>
@@ -86,7 +86,7 @@ $rs_result = $mysqli->query("select * from trip order by trip_id DESC limit $sta
 		$sql="select * from trip";
 		$total_records=mysqli_num_rows($rs_result);
 		for($i=1;$i<=$pages;$i++) {
-			echo "<a href='/Trip/index.php?page=".$i."'>".$i." &nbsp;</a> ";
+			echo "<a href='/Trip/index.php?page=".$i."'>Page".$i."</a> ";
 		}
 	?>
 
