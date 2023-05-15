@@ -24,7 +24,7 @@
 					</div>
 					<div class ="input-box">
 						<label><?= _('Distance') ?></label>
-						<input type="text" name='distance' class="text-field" placeholder="<?=_('Distance')?>" value="<?=$data->distance?> km">
+						<input type="text" name='distance' class="text-field" placeholder="<?=_('Distance')?>" value="<?=$data->distance?>"><!--<label>km</label> -->
 					</div>
 				</div>
 				<div class="form-submit-btn">

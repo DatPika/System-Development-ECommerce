@@ -30,11 +30,11 @@
 					</div>
 					<div>
 						<label><?= _('Start Date:') ?></label>
-						<input type="text" name="startDate" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>" value="<?= \app\core\TimeHelper::DTOutBrowser($data->startDate)?>">
+						<input type="date" name="startDate" class="text-field" value="<?= $data->startDate?>">
 					</div>
 					<div>
 						<label><?= _('End Date:') ?></label>
-						<input type="text" name="endDate" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>" value="<?= ($data->endDate) ? \app\core\TimeHelper::DTOutBrowser($data->endDate) : "" ?>">
+						<input type="date" name="endDate" class="text-field" value="<?= ($data->endDate) ? \app\core\TimeHelper::DTOutBrowser($data->endDate) : "" ?>">
 					</div>
 					<div>
 						<label><?= _('Surface Area:') ?></label>
@@ -64,7 +64,7 @@
 					</div>
 					<div class="is-done">
 						<label><?= _('Done?') ?></label>
-						<input type="radio" name="done" <?=($data->done == "Done") ? "checked" : ""?>>
+						<input type="checkbox" name="done" value="Done" <?=($data->done == "Done") ? "checked" : ""?>>
 					</div>
 					<div>
 						<label><?= _('Other:') ?></label>

@@ -1,4 +1,4 @@
-<?php $this->view('shared/header',_('Expense Table')); ?>
+<?php $this->view('shared/header',_('Home Page')); ?>
 
 <figure class="back hover-underline-animation">
 	<a href="/User/logout"><img src="/images/back-arrow.png" alt="Go Back"></a>
@@ -23,7 +23,7 @@
 		</div>
 		<div class="search">
 			<input type="text" name="searchField" placeholder="<?= _('Search') ?>">
-			<input type="submit" name="searchButton" class="redButton" value="Search">
+			<input type="button" name="searchButton" class="redButton" value="Search" onclick="search();">
 		</div>
 		<div class="2fa">
 		<h2><?=_('2FA')?></h2>
@@ -41,7 +41,7 @@
 		</thead>
 	<?php
 	foreach ($data as $record) {
-		if($record->project_id == null) {
+		if($record->project_id == null && $record->expense_id) {
 		?>
 		<tbody>
 			<tr>
@@ -54,7 +54,7 @@
 
 	<?php
 		}
-		else if($record->expense_id == null) { ?>
+		else if($record->expense_id == null && $record->project_id) { ?>
 			<tbody>
 				<tr>
 					<td><?= $record->getProject()->getClient()->clientName ?></td>
@@ -66,8 +66,8 @@
 						<?= $record->getProject()->works ?> work / 
 						<?= $record->getProject()->otherInformation ?>
 					</td>
-					<td><?= $record->getExpense()->totalExpense ?></td>
-					<td><a href='/Expense/edit/<?=$record->getExpense()->expense_id?>'><?= _('Edit') ?></a> | <a href='/Expense/delete/<?=$record->getExpense()->expense_id?>'><?= _('Delete') ?></a>
+					<td><?= $record->getProject()->projectCost ?></td>
+					<td><a href='/Project/edit/<?=$record->getProject()->project_id?>'><?= _('Edit') ?></a> | <a href='/Project/delete/<?=$record->getProject()->project_id?>'><?= _('Delete') ?></a>
 				</tr>
 			</tbody>
 

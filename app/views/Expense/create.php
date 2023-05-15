@@ -31,7 +31,9 @@
 						<select name='user_id'>
 						<?php
 						foreach ($data as $user) {
-							echo "<option value='$user->user_id'>$user->username</option>\n";
+							echo "<option value='$user->user_id'";
+							echo ($user->user_id == $_SESSION['user_id']) ? "selected": "";
+							echo ">$user->username</option>";
 						}
 						?>
 						</select><br>

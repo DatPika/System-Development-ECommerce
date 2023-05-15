@@ -15,7 +15,7 @@
 					<div class="left">
 						<div class="input-box">
 							<label><?= _('Date:') ?></label>
-							<input type="text" name="date" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+							<input type="date" name="date" class="text-field">
 						</div>
 						<div class="input-box">
 							<label><?= _('Amount:') ?></label>
@@ -26,7 +26,9 @@
 							<select name="user_id">
 								<?php
 									foreach ($data[0] as $user) {
-										echo "<option value='$user->user_id'>$user->username</option>";
+										echo "<option value='$user->user_id'";
+										echo ($user->user_id == $_SESSION['user_id']) ? "selected": "";
+										echo ">$user->username</option>";
 									}
 								?>
 							</select>

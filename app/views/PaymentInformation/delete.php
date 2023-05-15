@@ -3,7 +3,7 @@
 <?php
     $user = $data[0];
     $payment = $data[1];
-    $project_id = $data[2];
+    $project_id = $data[1]->project_id;
 ?>
 
 <figure class="back hover-underline-animation">
@@ -23,11 +23,11 @@
                     <div class="left">
                         <div class="input-box">
                             <label><?= _('Date:') ?></label>
-                            <input name="date" class="text-field" value="<?=\app\core\TimeHelper::DTOutBrowser($payment->date)?>"id="date" readonly>
+                            <input name="date" class="text-field" value="<?=$payment->date?>"id="date" readonly>
                         </div>
                         <div class="input-box">
                             <label><?= _('Amount:') ?></label>
-                            <input type="text" name="amount" class="text-field" placeholder="<?= _('Amount') ?>" value="<?= $payment->amount ?>">
+                            <input type="text" name="amount" class="text-field" placeholder="<?= _('Amount') ?>" value="<?= $payment->amount ?>" readonly>
                         </div>
                         <div class="input-box">
                             <label><?= _('Select the user:') ?></label>

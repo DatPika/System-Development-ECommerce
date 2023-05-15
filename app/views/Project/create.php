@@ -22,6 +22,7 @@
 							<option value='Installation'>Installation</option>
 							<option value='Service'>Service</option>
 							<option value='Estimation'>Estimation</option>
+							<option value='Test'>Test</option>
 						</select>
 					</div>
 					<div>
@@ -30,11 +31,11 @@
 					</div>
 					<div>
 						<label><?= _('Start Date:') ?></label>
-						<input type="text" name="startDate" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+						<input type="date" name="startDate" class="text-field">
 					</div>
 					<div>
 						<label><?= _('End Date:') ?></label>
-						<input type="text" name="endDate" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+						<input type="date" name="endDate" class="text-field">
 					</div>
 					<div>
 						<label><?= _('Surface Area:') ?></label>
@@ -64,7 +65,7 @@
 					</div>
 					<div class="is-done">
 						<label><?= _('Done?') ?></label>
-						<input type="radio" name="endDate">
+						<input type="checkbox" name="done" value="Done">
 					</div>
 					<div>
 						<label><?= _('Other:') ?></label>
@@ -78,7 +79,7 @@
 							<div class="left">
 								<div class="input-box">
 									<label><?= _('Date:') ?></label>
-									<input type="text" name="date1" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+									<input type="date" name="date1" class="text-field">
 								</div>
 								<div class="input-box">
 									<label><?= _('Amount:') ?></label>
@@ -86,7 +87,7 @@
 								</div>
 								<div class="input-box">
 									<label><?= _('Select the user:') ?></label>
-									<select>
+									<select name="user_id1">
 									<?php
 									foreach ($data as $user) {
 										echo "<option value='$user->user_id'";
@@ -101,15 +102,15 @@
 								<label><?= _('Payment Method:') ?></label>
 								<div class="input-box">
 									<label><?= _('Cash') ?></label>
-									<input type="radio" name="payment1" value="cash">
+									<input type="radio" name="deposit" value="cash">
 								</div>
 								<div class="input-box">
 									<label><?= _('Interac') ?></label>
-									<input type="radio" name="payment1" value="interac">
+									<input type="radio" name="deposit" value="interac">
 								</div>
 								<div class="input-box">
 									<label><?= _('E-Transfer') ?></label>
-									<input type="radio" name="payment1" value="e-transfer">
+									<input type="radio" name="deposit" value="e-transfer">
 								</div>
 							</div>
 						</div>
@@ -120,7 +121,7 @@
 							<div class="left">
 								<div class="input-box">
 									<label><?= _('Date:') ?></label>
-									<input type="text" name="date2" class="text-field" placeholder="<?= _('DD/MM/YYYY') ?>">
+									<input type="date" name="date2" class="text-field">
 								</div>
 								<div class="input-box">
 									<label><?= _('Amount:') ?></label>
@@ -128,7 +129,7 @@
 								</div>
 								<div class="input-box">
 									<label><?= _('Select the user:') ?></label>
-									<select>
+									<select name="user_id2">
 									<?php
 									foreach ($data as $user) {
 										echo "<option value='$user->user_id'";
@@ -143,15 +144,15 @@
 								<label><?= _('Payment Method:') ?></label>
 								<div class="input-box">
 									<label><?= _('Cash') ?></label>
-									<input type="radio" name="payment2" value="cash">
+									<input type="radio" name="balance" value="cash">
 								</div>
 								<div class="input-box">
 									<label><?= _('Interac') ?></label>
-									<input type="radio" name="payment2" value="interac">
+									<input type="radio" name="balance" value="interac">
 								</div>
 								<div class="input-box">
 									<label><?= _('E-Transfer') ?></label>
-									<input type="radio" name="payment2" value="e-transfer">
+									<input type="radio" name="balance" value="e-transfer">
 								</div>
 							</div>
 						</div>
