@@ -22,8 +22,8 @@
 			<a class="redButton" href="/Trip/selectProject"><?=_('Add')?></a>
 		</div>
 		<div class="search">
-			<input type="text" name="searchField" placeholder="<?= _('Search') ?>">
-			<input type="button" name="searchButton" class="redButton" value="Search" onclick="search();">
+			<input type="text" name="searchField" id="searchField" placeholder="<?= _('Search') ?>">
+			<input type="button" id="searchButton" name="search" class="redButton" value="Search">
 		</div>
 		<div class="2fa">
 		<h2><?=_('2FA')?></h2>
