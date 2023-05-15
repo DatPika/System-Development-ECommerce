@@ -82,12 +82,14 @@ $rs_result = $mysqli->query("select * from trip order by trip_id DESC limit $sta
 	</table>
 </div>
 
-<?php
+<div class="center">
+	<?php
 		$sql="select * from trip";
 		$total_records=mysqli_num_rows($rs_result);
 		for($i=1;$i<=$pages;$i++) {
-			echo "<a href='/Trip/index.php?page=".$i."'>".$i." &nbsp;</a> ";
+			echo "<a class='redButton' href='/Trip/index.php?page=".$i."'>Page ".$i."</a> ";
 		}
 	?>
+</div>
 
 <?php $this->view('shared/footer'); ?>
