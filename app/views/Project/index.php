@@ -51,12 +51,13 @@ $rs_result = $mysqli->query("select * from project order by project_id DESC limi
 				<th><?= _('Actions') ?></th>
 			</tr>
 		</thead>
+
 		<?php
 		while($rows = mysqli_fetch_assoc($rs_result)) {
-			?>
+	 	?>
 			<tbody>
 				<tr>
-				<?php 
+					<?php 
 					$project = new \app\models\Project();
 					$project = $project->get($rows['project_id']);
 					$client = new \app\models\Client();
@@ -87,6 +88,7 @@ $rs_result = $mysqli->query("select * from project order by project_id DESC limi
 		<?php
 		}
 		?>
+
 	</table>
 
 </div>
