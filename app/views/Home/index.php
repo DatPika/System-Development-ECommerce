@@ -40,7 +40,9 @@
 			</tr>
 		</thead>
 	<?php
-	foreach ($data as $record) {
+	// foreach ($data as $record) 
+	for ($i = 0; $i <= 10; $i++) {
+		$record = $data[$i];
 		if($record->project_id == null && $record->expense_id) {
 		?>
 		<tbody>

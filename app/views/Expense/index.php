@@ -1,4 +1,4 @@
-<?php// This is not supposed to be here but, we do not know where it could go
+<?php //This is not supposed to be here but, we do not know where it could go
 $env = \Dotenv\Dotenv::createImmutable(getcwd());
 $env->load();
 $env->required(['db_host', 'db_name', 'db_user', 'db_pass', 'db_charset'])->notEmpty();
