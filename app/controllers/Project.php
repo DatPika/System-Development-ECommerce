@@ -5,9 +5,7 @@ namespace app\controllers;
 #[\app\filters\twofa]
 class Project extends \app\core\Controller{
     public function index() {
-        $project = new \app\models\Project();
-        $projects = $project->getAll();
-        $this->view('Project/index', $projects);
+        $this->view('Project/index');
     }
 
     public function create() {

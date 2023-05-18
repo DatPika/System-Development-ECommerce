@@ -168,4 +168,13 @@ class Project extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Client');
 		return $STH->fetch();
 	}
+	// this works however it interfers/ messes up with our pagenation
+	public function search($searchTerm){
+        //get all newest first
+        $SQL = "SELECT p.* FROM project as p join client as c on p.client_id=c.client_id WHERE clientName LIKE :searchTerm";
+        $STH = self::$connection->prepare($SQL);
+        $STH->execute(['searchTerm'=>"%$searchTerm%"]);
+        $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Project');
+        return $STH->fetchAll();
+    }
 }

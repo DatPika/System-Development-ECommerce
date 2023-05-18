@@ -42,10 +42,6 @@ $rs_result = $mysqli->query("select * from trip order by trip_id DESC limit $sta
 <div class="createPage">
 	<div class="pageHeader">
 		<h2 class="title"><?=_('Trip Table')?></h2>
-		<div class="headerSearch">
-			<input type="text" name="searchField" placeholder="<?= _('Search') ?>">
-			<input type="submit" name="searchButton" class="redButton" value="<?= _('Search') ?>">
-		</div>
 	</div>
 	<table class="content-table">
 		<thead>
