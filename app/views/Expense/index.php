@@ -1,4 +1,4 @@
-<?php
+<?php// This is not supposed to be here but, we do not know where it could go
 $env = \Dotenv\Dotenv::createImmutable(getcwd());
 $env->load();
 $env->required(['db_host', 'db_name', 'db_user', 'db_pass', 'db_charset'])->notEmpty();
@@ -77,7 +77,6 @@ $rs_result = $mysqli->query("select * from expense order by expense_id DESC limi
 </div>
 <div class="center">
 	<?php
-		$sql="select * from expense";
 		$total_records=mysqli_num_rows($rs_result);
 		for($i=1;$i<=$pages;$i++) {
 			echo "<a class='redButton' href='/Expense/index.php?page=".$i."'>Page ".$i."</a> ";
